@@ -1,0 +1,337 @@
+.hero {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  background: #fdfaf3;
+}
+
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.videoControls {
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+  z-index: 4;
+  display: flex;
+  gap: 10px;
+}
+
+.controlBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.controlBtn:hover {
+  background: rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    #fdfaf3 0%,
+    #fdfaf3 24%,
+    rgba(253, 250, 243, 0.85) 36%,
+    rgba(253, 250, 243, 0.2) 50%,
+    rgba(253, 250, 243, 0) 62%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 78px 0 0 80px;
+  max-width: 600px;
+  transition: transform 0.6s ease, opacity 0.5s ease;
+}
+
+.contentHidden {
+  transform: translateX(-110%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gradientHidden {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.contentToggle {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid #c2a063;
+  background: transparent;
+  color: #c2a063;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.contentToggle:hover {
+  background: rgba(194, 160, 99, 0.15);
+  border-color: #e0c080;
+  color: #e0c080;
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+}
+
+.eyebrowText {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #b6924f;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 74px;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: #3c3326;
+  margin: 0 0 12px;
+  white-space: nowrap;
+}
+
+.subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #b6924f;
+  margin-bottom: 20px;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.dividerLine {
+  width: 100px;
+  height: 1px;
+  background: #cdb27c;
+}
+
+.dividerDot {
+  color: #c2a063;
+  font-size: 12px;
+}
+
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: #4a4234;
+  margin: 0 0 32px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 340px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 22px;
+  width: 100%;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.13);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateX(4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.btn span:nth-child(2) {
+  flex: 1;
+}
+
+.btnGreen {
+  background: #4c5436;
+  color: #f4efe2;
+}
+
+.btnRose {
+  background: #bf6f6c;
+  color: #fbf3ef;
+}
+
+.btnGold {
+  background: #c6a163;
+  color: #fbf6ea;
+}
+
+.arrow {
+  font-size: 15px;
+}
+
+/* ── Tablet ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero { height: 540px; }
+
+  .content {
+    padding: 60px 0 0 48px;
+    max-width: 500px;
+  }
+
+  .title { font-size: 58px; }
+  .eyebrowText { font-size: 16px; }
+  .subtitle { font-size: 22px; }
+  .tagline { font-size: 19px; }
+  .buttons { width: 300px; }
+}
+
+/* ── Mobile ─────────────────────────────── */
+@media (max-width: 768px) {
+  .hero { height: 580px; }
+
+  .gradient {
+    background: linear-gradient(
+      to bottom,
+      rgba(253, 250, 243, 0.94) 0%,
+      rgba(253, 250, 243, 0.65) 42%,
+      rgba(253, 250, 243, 0) 75%
+    );
+  }
+
+  .overlay { background: rgba(0, 0, 0, 0.38); }
+
+  /* Перемещаем кнопку вниз по центру, стрелки поворачиваем на 90° */
+  .contentToggle {
+    display: flex;
+    top: auto;
+    bottom: 76px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contentToggle svg {
+    transform: rotate(90deg);
+  }
+
+  /* Контент исчезает вверх вместо влево */
+  .contentHidden {
+    transform: translateY(-110%);
+  }
+
+  .content {
+    padding: 52px 24px 0;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 52px;
+    white-space: normal;
+  }
+
+  .eyebrowText {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+  }
+
+  .subtitle { font-size: 20px; }
+
+  .tagline { font-size: 17px; }
+
+  .divider { justify-content: center; }
+
+  .buttons {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+/* ── Small mobile ────────────────────────── */
+@media (max-width: 480px) {
+  .hero { height: 600px; }
+
+  .content { padding: 48px 20px 0; }
+
+  .title { font-size: 40px; }
+
+  .eyebrowText {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  .subtitle { font-size: 17px; }
+  .tagline { font-size: 15px; margin-bottom: 24px; }
+
+  .btn {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    padding: 13px 16px;
+    gap: 10px;
+    white-space: normal;
+  }
+
+  .buttons { max-width: 280px; }
+
+  .videoControls {
+    bottom: 16px;
+    right: 16px;
+  }
+}

@@ -1,0 +1,194 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 70px;
+  position: relative;
+  z-index: 10;
+  background: #fdfaf3;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.logoBox {
+  width: 72px;
+  height: 82px;
+  border: 1.5px solid #c2a063;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.brandText {
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.brandName {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #5a4f3f;
+}
+
+.brandSub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  color: #b6924f;
+  margin-top: 3px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #4a4234;
+  white-space: nowrap;
+}
+
+.navLink {
+  color: #4a4234;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: #b6924f;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.socialLink:hover {
+  opacity: 1;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.burger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: #5a4f3f;
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burgerOpen span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burgerOpen span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ── Tablet ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .header { padding: 12px 40px; }
+  .nav { gap: 24px; font-size: 13px; }
+}
+
+/* ── Mobile ─────────────────────────────── */
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 12px 20px;
+  }
+
+  .nav {
+    display: none;
+    order: 3;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0;
+    padding: 6px 0 12px;
+    margin-top: 6px;
+    border-top: 1px solid #ece1cd;
+  }
+
+  .navOpen {
+    display: flex;
+  }
+
+  .navLink {
+    padding: 12px 2px;
+    font-size: 16px;
+    width: 100%;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid rgba(210, 190, 160, 0.25);
+  }
+
+  .navLink:last-child {
+    border-bottom: none;
+  }
+
+  .socials {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .logoBox {
+    width: 56px;
+    height: 64px;
+  }
+
+  .brandName {
+    font-size: 16px;
+  }
+
+  .brandSub {
+    font-size: 11px;
+    letter-spacing: 0.26em;
+  }
+}

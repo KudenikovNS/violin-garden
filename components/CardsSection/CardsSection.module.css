@@ -1,0 +1,88 @@
+.section {
+  display: flex;
+  gap: 32px;
+  padding: 8px 80px 60px;
+  background: #fdfaf3;
+}
+
+.card {
+  flex: 1;
+  border: 1px solid #ece1cd;
+  background: #fff;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 185px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.body {
+  padding: 24px 28px 28px;
+  text-align: center;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: 0.05em;
+  color: #5a4f3f;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #5a5346;
+  margin: 0 0 18px;
+}
+
+.link {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: #b6924f;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+
+.link:hover {
+  opacity: 0.75;
+}
+
+/* ── Tablet ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .section { padding: 8px 40px 50px; gap: 20px; }
+}
+
+/* ── Stack to column on tablet and below ── */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    padding: 8px 24px 40px;
+    gap: 16px;
+  }
+
+  .imageWrapper { height: 220px; }
+
+  .body { padding: 20px 22px 24px; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 8px 16px 36px; }
+}
