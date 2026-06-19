@@ -158,9 +158,9 @@
 .tagline {
   font-family: "Cormorant Garamond", serif;
   font-style: italic;
-  font-size: 22px;
+  font-size: 26px;
   color: #4a4234;
-  margin: 0 0 32px;
+  margin: 0 0 28px;
 }
 
 /* ── Buttons ─────────────────────────────── */
@@ -179,7 +179,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   font-family: "Cormorant Garamond", serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 18px;
   letter-spacing: 0.09em;
   white-space: nowrap;
   text-decoration: none;
