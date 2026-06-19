@@ -1,4 +1,4 @@
-import Header from "@/components/Header/Header";
+// import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import ZbirkaSection from "@/components/ZbirkaSection/ZbirkaSection";
 import CardsSection from "@/components/CardsSection/CardsSection";
@@ -9,7 +9,7 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <div className={styles.wrapper}>
-      <Header />
+      {/* <Header /> */}
       <main>
         <Hero />
         <ZbirkaSection />

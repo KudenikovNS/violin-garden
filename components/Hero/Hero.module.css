@@ -1,40 +1,105 @@
 .hero {
-  position: relative;
-  height: 600px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #fdfaf3;
 }
 
-.imageWrapper {
-  position: absolute;
-  inset: 0;
+/* ── Above video ─────────────────────────── */
+
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 20px;
 }
 
-.image {
-  object-fit: cover;
-  object-position: center;
+.logo {
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.text {
+  text-align: center;
+}
+
+.nav {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.navLink {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #4a4234;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: #b6924f;
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+}
+
+.eyebrowText {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #b6924f;
+}
+
+.title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 74px;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: #3c3326;
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #b6924f;
+  margin: 0;
+}
+
+/* ── Video ───────────────────────────────── */
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
 }
 
 .video {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
+  height: 560px;
   object-fit: cover;
-  object-position: center;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.28);
+  display: block;
 }
 
 .videoControls {
   position: absolute;
-  bottom: 24px;
-  right: 28px;
-  z-index: 4;
+  bottom: 20px;
+  right: 24px;
   display: flex;
   gap: 10px;
 }
@@ -51,101 +116,24 @@
   color: #fff;
   cursor: pointer;
   backdrop-filter: blur(4px);
-  transition: background 0.2s, border-color 0.2s;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
 }
 
 .controlBtn:hover {
-  background: rgba(0, 0, 0, 0.55);
-  border-color: rgba(255, 255, 255, 0.85);
-}
-
-.gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    100deg,
-    #fdfaf3 0%,
-    #fdfaf3 24%,
-    rgba(253, 250, 243, 0.85) 36%,
-    rgba(253, 250, 243, 0.2) 50%,
-    rgba(253, 250, 243, 0) 62%
-  );
-}
-
-.content {
-  position: relative;
-  z-index: 2;
-  padding: 78px 0 0 80px;
-  max-width: 600px;
-  transition: transform 0.6s ease, opacity 0.5s ease;
-}
-
-.contentHidden {
-  transform: translateX(-110%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.gradientHidden {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.contentToggle {
-  position: absolute;
-  left: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1.5px solid #c2a063;
-  background: transparent;
-  color: #c2a063;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px);
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
-}
-
-.contentToggle:hover {
   background: rgba(194, 160, 99, 0.15);
   border-color: #e0c080;
   color: #e0c080;
 }
 
-.eyebrow {
-  margin-bottom: 16px;
-}
+/* ── Below video ─────────────────────────── */
 
-.eyebrowText {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  color: #b6924f;
-}
-
-.title {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-size: 74px;
-  line-height: 0.95;
-  letter-spacing: 0.01em;
-  color: #3c3326;
-  margin: 0 0 12px;
-  white-space: nowrap;
-}
-
-.subtitle {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
-  font-weight: 500;
-  color: #b6924f;
-  margin-bottom: 20px;
+.below {
+  text-align: center;
+  padding: 30px 80px 0px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .divider {
@@ -168,39 +156,41 @@
 }
 
 .tagline {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-style: italic;
   font-size: 22px;
   color: #4a4234;
   margin: 0 0 32px;
 }
 
+/* ── Buttons ─────────────────────────────── */
+
 .buttons {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 340px;
+  gap: 16px;
 }
 
 .btn {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 15px 22px;
-  width: 100%;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.13);
-  font-family: 'Cormorant Garamond', serif;
+  padding: 18px 24px;
+  flex: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  font-family: "Cormorant Garamond", serif;
   font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.1em;
+  font-size: 15px;
+  letter-spacing: 0.09em;
   white-space: nowrap;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .btn:hover {
-  transform: translateX(4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
 }
 
 .btn span:nth-child(2) {
@@ -228,110 +218,50 @@
 
 /* ── Tablet ─────────────────────────────── */
 @media (max-width: 1024px) {
-  .hero { height: 540px; }
-
-  .content {
-    padding: 60px 0 0 48px;
-    max-width: 500px;
+  .title {
+    font-size: 58px;
   }
-
-  .title { font-size: 58px; }
-  .eyebrowText { font-size: 16px; }
-  .subtitle { font-size: 22px; }
-  .tagline { font-size: 19px; }
-  .buttons { width: 300px; }
+  .video {
+    height: 460px;
+  }
 }
 
 /* ── Mobile ─────────────────────────────── */
 @media (max-width: 768px) {
-  .hero { height: 580px; }
-
-  .gradient {
-    background: linear-gradient(
-      to bottom,
-      rgba(253, 250, 243, 0.94) 0%,
-      rgba(253, 250, 243, 0.65) 42%,
-      rgba(253, 250, 243, 0) 75%
-    );
-  }
-
-  .overlay { background: rgba(0, 0, 0, 0.38); }
-
-  /* Перемещаем кнопку вниз по центру, стрелки поворачиваем на 90° */
-  .contentToggle {
-    display: flex;
-    top: auto;
-    bottom: 76px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .contentToggle svg {
-    transform: rotate(90deg);
-  }
-
-  /* Контент исчезает вверх вместо влево */
-  .contentHidden {
-    transform: translateY(-110%);
-  }
-
   .content {
-    padding: 52px 24px 0;
-    max-width: 100%;
-    text-align: center;
+    padding: 48px 20px 32px;
   }
-
   .title {
-    font-size: 52px;
-    white-space: normal;
+    font-size: 48px;
   }
-
-  .eyebrowText {
-    font-size: 13px;
-    letter-spacing: 0.14em;
+  .subtitle {
+    font-size: 20px;
   }
-
-  .subtitle { font-size: 20px; }
-
-  .tagline { font-size: 17px; }
-
-  .divider { justify-content: center; }
-
-  .buttons {
+  .video {
+    height: 360px;
+  }
+  .below {
+    padding: 32px 20px 48px;
+  }
+  .tagline {
+    font-size: 18px;
+  }
+  .btn {
     width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
+    max-width: 340px;
+    white-space: normal;
   }
 }
 
 /* ── Small mobile ────────────────────────── */
 @media (max-width: 480px) {
-  .hero { height: 600px; }
-
-  .content { padding: 48px 20px 0; }
-
-  .title { font-size: 40px; }
-
+  .title {
+    font-size: 38px;
+  }
   .eyebrowText {
-    font-size: 11px;
-    letter-spacing: 0.1em;
+    font-size: 13px;
   }
-
-  .subtitle { font-size: 17px; }
-  .tagline { font-size: 15px; margin-bottom: 24px; }
-
-  .btn {
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    padding: 13px 16px;
-    gap: 10px;
-    white-space: normal;
-  }
-
-  .buttons { max-width: 280px; }
-
-  .videoControls {
-    bottom: 16px;
-    right: 16px;
+  .video {
+    height: 280px;
   }
 }

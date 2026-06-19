@@ -1,13 +1,13 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(true);
-  const [contentVisible, setContentVisible] = useState(true);
 
   function togglePlay() {
     const v = videoRef.current;
@@ -39,57 +39,78 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
 
-      {/* VIDEO BACKGROUND */}
-      <video
-        ref={videoRef}
-        className={styles.video}
-        src="https://res.cloudinary.com/dnukoemsb/video/upload/v1781868265/video-output-2A77ED18-D80B-441F-8277-9317EC158FF2-1_cppmea.mov"
-        autoPlay
-        muted
-        playsInline
-        poster="/images/hero.png"
-      />
-
-      {/* IMAGE BACKGROUND (commented out)
-      <div className={styles.imageWrapper}>
+      <div className={styles.content}>
         <Image
-          src="/images/hero.png"
-          alt="Violinistka v vrtnici — hero fotografija"
-          fill
+          src="/images/logo_new.png"
+          alt="Violin Garden logo"
+          width={240}
+          height={190}
+          className={styles.logo}
           priority
-          className={styles.image}
-          sizes="100vw"
         />
-      </div>
-      */}
-
-      <div className={styles.overlay} />
-      <div className={`${styles.gradient} ${!contentVisible ? styles.gradientHidden : ""}`} />
-
-      <button
-        className={styles.contentToggle}
-        onClick={() => setContentVisible(v => !v)}
-        aria-label={contentVisible ? "Hide content" : "Show content"}
-      >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-          {contentVisible
-            ? <path d="M15 18l-6-6 6-6" />
-            : <path d="M9 18l6-6-6-6" />}
-        </svg>
-      </button>
-
-      <div className={`${styles.content} ${!contentVisible ? styles.contentHidden : ""}`}>
-        <div className={styles.eyebrow}>
-          <span className={styles.eyebrowText}>VIOLIN GARDEN COLLECTION</span>
+        <div className={styles.text}>
+          <div className={styles.eyebrow}>
+            <span className={styles.eyebrowText}>VIOLIN GARDEN COLLECTION</span>
+          </div>
+          <h1 className={styles.title}>VIOLINSKI VRT</h1>
+          <p className={styles.subtitle}>Ekskluzivna zbirka violin</p>
         </div>
-        <h1 className={styles.title}>VIOLINSKI VRT</h1>
-        <p className={styles.subtitle}>Ekskluzivna zbirka violin</p>
+        <nav className={styles.nav}>
+          <a href="#" className={styles.navLink}>DOMOV</a>
+          <a href="#" className={styles.navLink}>VIOLINSKI VRT</a>
+          <a href="#" className={styles.navLink}>VIOLINE ZA NOVE ZGODBE</a>
+          <a href="#" className={styles.navLink}>PROJEKTI</a>
+        </nav>
+      </div>
+
+      <div className={styles.videoWrapper}>
+        <video
+          ref={videoRef}
+          className={styles.video}
+          src="https://res.cloudinary.com/dnukoemsb/video/upload/v1781873549/compressed-al50Dazp_sg6mpt.mp4"
+          autoPlay
+          muted
+          playsInline
+          poster="/images/hero.png"
+        />
+        <div className={styles.videoControls}>
+          <button onClick={togglePlay} className={styles.controlBtn} aria-label={playing ? "Pause" : "Play"}>
+            {playing ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="5" y="4" width="4" height="16" rx="1" />
+                <rect x="15" y="4" width="4" height="16" rx="1" />
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 4l14 8-14 8V4z" />
+              </svg>
+            )}
+          </button>
+          <button onClick={toggleMute} className={styles.controlBtn} aria-label={muted ? "Unmute" : "Mute"}>
+            {muted ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M11 5L6 9H3v6h3l5 4V5z" />
+                <line x1="17" y1="9" x2="23" y2="15" />
+                <line x1="23" y1="9" x2="17" y2="15" />
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M11 5L6 9H3v6h3l5 4V5z" />
+                <path d="M15.5 8.5a5 5 0 010 7M19 6a9 9 0 010 12" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+
+      <div className={styles.below}>
         <div className={styles.divider}>
           <span className={styles.dividerLine} />
           <span className={styles.dividerDot}>✦</span>
           <span className={styles.dividerLine} />
         </div>
         <p className={styles.tagline}>Zvočni vrt, v katerem cvetijo violine.</p>
+
         <div className={styles.buttons}>
           <a href="#" className={`${styles.btn} ${styles.btnGreen}`}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e7d9b8" strokeWidth="1.3">
@@ -115,43 +136,6 @@ export default function Hero() {
             <span className={styles.arrow}>→</span>
           </a>
         </div>
-      </div>
-
-      <div className={styles.videoControls}>
-        <button
-          onClick={togglePlay}
-          className={styles.controlBtn}
-          aria-label={playing ? "Pause" : "Play"}
-        >
-          {playing ? (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <rect x="5" y="4" width="4" height="16" rx="1" />
-              <rect x="15" y="4" width="4" height="16" rx="1" />
-            </svg>
-          ) : (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6 4l14 8-14 8V4z" />
-            </svg>
-          )}
-        </button>
-        <button
-          onClick={toggleMute}
-          className={styles.controlBtn}
-          aria-label={muted ? "Unmute" : "Mute"}
-        >
-          {muted ? (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-              <path d="M11 5L6 9H3v6h3l5 4V5z" />
-              <line x1="17" y1="9" x2="23" y2="15" />
-              <line x1="23" y1="9" x2="17" y2="15" />
-            </svg>
-          ) : (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-              <path d="M11 5L6 9H3v6h3l5 4V5z" />
-              <path d="M15.5 8.5a5 5 0 010 7M19 6a9 9 0 010 12" />
-            </svg>
-          )}
-        </button>
       </div>
 
     </section>
