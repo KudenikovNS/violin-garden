@@ -8,6 +8,7 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   function togglePlay() {
     const v = videoRef.current;
@@ -55,12 +56,27 @@ export default function Hero() {
           <h1 className={styles.title}>VIOLINSKI VRT</h1>
           <p className={styles.subtitle}>Ekskluzivna zbirka violin</p>
         </div>
-        <nav className={styles.nav}>
-          <a href="#" className={styles.navLink}>DOMOV</a>
-          <a href="#" className={styles.navLink}>VIOLINSKI VRT</a>
-          <a href="#" className={styles.navLink}>VIOLINE ZA NOVE ZGODBE</a>
-          <a href="#" className={styles.navLink}>PROJEKTI</a>
+        <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
+          <button className={styles.closeBtn} onClick={() => setMenuOpen(false)} aria-label="Zapri meni">✕</button>
+          <Image src="/images/logo_new.png" alt="Violin Garden logo" width={120} height={95} className={styles.menuLogo} />
+          <div className={styles.menuDivider}>
+            <span className={styles.menuDividerLine} /><span className={styles.menuDividerDot}>✦</span><span className={styles.menuDividerLine} />
+          </div>
+          <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>DOMOV</a>
+          <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>VIOLINSKI VRT</a>
+          <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>VIOLINE ZA NOVE ZGODBE</a>
+          <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>PROJEKTI</a>
         </nav>
+
+        <button
+          className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label="Menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
 
       <div className={styles.videoWrapper}>

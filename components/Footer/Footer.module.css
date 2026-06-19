@@ -64,7 +64,7 @@
   align-items: center;
   justify-content: center;
   gap: 24px;
-  font-size: 14px;
+  font-size: 16px;
   color: #6a5f4d;
   flex-wrap: wrap;
   position: relative;
@@ -73,7 +73,7 @@
 .contact {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .sep {
@@ -91,7 +91,7 @@
   .contacts {
     flex-direction: column;
     gap: 10px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .sep { display: none; }
