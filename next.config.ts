@@ -4,7 +4,8 @@ const nextConfig: NextConfig = {
   output: "export",
   basePath: "/violin-garden",
   images: {
-    unoptimized: true,
+    loader: "custom",
+    loaderFile: "./imageLoader.ts",
   },
 };
 
