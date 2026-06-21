@@ -32,7 +32,7 @@ const sl = {
     title: "VIOLINSKI VRT",
     subtitle: "Ekskluzivna zbirka violin",
     tagline: "Zvočni vrt, v katerem cvetijo violine.",
-    enterGarden: "VSTOPITE V VIOLINSKI VRT",
+    enterGarden: "SPOZNAJTE VIOLINSKI VRT",
     forNewStories: "VIOLINE ZA NOVE ZGODBE",
     discoverProjects: "SPOZNAJTE PROJEKTE",
   },

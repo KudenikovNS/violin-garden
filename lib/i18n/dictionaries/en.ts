@@ -34,7 +34,7 @@ const en: Dict = {
     title: "THE VIOLIN GARDEN",
     subtitle: "An exclusive collection of violins",
     tagline: "A garden of sound where violins bloom.",
-    enterGarden: "ENTER THE VIOLIN GARDEN",
+    enterGarden: "MEET THE VIOLIN GARDEN",
     forNewStories: "VIOLINS FOR NEW STORIES",
     discoverProjects: "DISCOVER THE PROJECTS",
   },

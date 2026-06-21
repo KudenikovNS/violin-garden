@@ -68,7 +68,6 @@ export default function SplashGate({ children }: { children: ReactNode }) {
 
             <button className={styles.enterBtn} onClick={enter}>
               <span>{t.splash.enter}</span>
-              <span className={styles.arrow}>→</span>
             </button>
 
             <LanguageSwitcher className={styles.langSwitcher} />

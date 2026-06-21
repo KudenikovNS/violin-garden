@@ -24,12 +24,28 @@ export default function CollectionView() {
       <section className={styles.grid}>
         {violins.map((raw) => {
           const v = localizeViolin(raw, lang);
+          // Cvet → sprednja stran → hrbet: do tri sličice za brezkončni preliv.
+          const slides = [v.illustration, ...(v.photos ?? [])].filter(Boolean) as string[];
           return (
             <Link key={v.id} href={`/violinski-vrt/${v.id}`} className={styles.card}>
               <div className={styles.flowerWrap}>
-                {v.illustration ? (
+                {slides.length > 1 ? (
+                  <div className={styles.slideshow}>
+                    {slides.slice(0, 3).map((src, i) => (
+                      <Image
+                        key={src}
+                        src={src}
+                        alt={t.a11y.floralIllustration(v.name)}
+                        fill
+                        sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 360px"
+                        className={styles.slide}
+                        priority={i === 0}
+                      />
+                    ))}
+                  </div>
+                ) : slides.length === 1 ? (
                   <Image
-                    src={v.illustration}
+                    src={slides[0]}
                     alt={t.a11y.floralIllustration(v.name)}
                     width={360}
                     height={450}

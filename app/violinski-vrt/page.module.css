@@ -45,6 +45,54 @@
   object-fit: cover;
 }
 
+/* Brezkončni preliv treh fotografij: cvet → sprednja stran → hrbet. */
+.slideshow {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 360 / 450;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  /* Animiramo le opacity → kompozitor opravi delo na GPU, brez prerisovanja. */
+  animation: cardCycle 6s ease-in-out infinite;
+  will-change: opacity;
+}
+
+/* Prva sličica (cvet) je vidna takoj ob nalaganju, brez preblisaka. */
+.slide:nth-child(1) {
+  opacity: 1;
+  animation-delay: 0s;
+}
+/* Sprednja stran sledi cvetu, hrbet pa za njo (zato obratne zakasnitve). */
+.slide:nth-child(2) {
+  animation-delay: -4s;
+}
+.slide:nth-child(3) {
+  animation-delay: -2s;
+}
+
+@keyframes cardCycle {
+  0%, 25% { opacity: 1; }
+  33.34%, 91.66% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Spoštujemo nastavitev za zmanjšano gibanje: pokažemo le prvo sličico. */
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    animation: none;
+  }
+  .slide:nth-child(n + 2) {
+    display: none;
+  }
+}
+
 /* Nadomestni SVG cvet, kadar ilustracije ni — z notranjim robom. */
 .flowerWrap svg {
   margin: 28px auto 0;
