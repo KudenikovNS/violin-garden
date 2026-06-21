@@ -1,0 +1,137 @@
+.page {
+  background: #fdfaf3;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* Vrstice ena pod drugo (stolpec), polna predstavitev v vsaki. */
+.list {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.row {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding: 32px 40px;
+  background: #fdfaf3;
+  border: 1px solid #ece1cd;
+  border-radius: 10px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.row:hover {
+  box-shadow: 0 14px 30px rgba(90, 60, 40, 0.12);
+}
+
+/* ── Vizual (ilustracija) ──────────────────────── */
+.visual {
+  position: relative;
+  flex: 0 0 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* ── Opis ──────────────────────────────────────── */
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #3c3326;
+  margin: 0;
+}
+
+.name a:hover {
+  color: #b6924f;
+}
+
+.meta {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: #b6924f;
+  margin: 6px 0 0;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #5a5346;
+  margin: 14px 0 16px;
+}
+
+.link {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: #b6924f;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link:hover {
+  opacity: 0.75;
+}
+
+.inquiry {
+  margin-top: 20px;
+}
+
+/* ── Nazaj ─────────────────────────────────────── */
+.backRow {
+  text-align: center;
+  margin-top: 44px;
+}
+
+.backLink {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #4a4234;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: #b6924f;
+}
+
+/* ── Mobilno: vrstica postane stolpec ──────────── */
+@media (max-width: 768px) {
+  .list {
+    padding: 32px 24px 0;
+  }
+  .row {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 24px;
+    gap: 22px;
+  }
+  .visual {
+    flex: none;
+    width: 100%;
+    max-width: 280px;
+  }
+}

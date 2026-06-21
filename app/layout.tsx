@@ -15,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sl">
-      <body>{children}</body>
+      <body>
+        <div className="appShell">{children}</div>
+      </body>
     </html>
   );
 }

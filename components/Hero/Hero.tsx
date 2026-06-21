@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEntered } from "../SplashGate/SplashGate";
 import styles from "./Hero.module.css";
 
@@ -76,9 +77,9 @@ export default function Hero() {
           <div className={styles.menuDivider}>
             <span className={styles.menuDividerLine} /><span className={styles.menuDividerDot}>✦</span><span className={styles.menuDividerLine} />
           </div>
-          <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>DOMOV</a>
-          <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>VIOLINSKI VRT</a>
-          <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>VIOLINE ZA NOVE ZGODBE</a>
+          <Link href="/" className={styles.navLink} onClick={() => setMenuOpen(false)}>DOMOV</Link>
+          <Link href="/violinski-vrt" className={styles.navLink} onClick={() => setMenuOpen(false)}>VIOLINSKI VRT</Link>
+          <Link href="/violine-za-nove-zgodbe" className={styles.navLink} onClick={() => setMenuOpen(false)}>VIOLINE ZA NOVE ZGODBE</Link>
           <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>PROJEKTI</a>
         </nav>
 
@@ -156,16 +157,16 @@ export default function Hero() {
         <p className={styles.tagline}>Zvočni vrt, v katerem cvetijo violine.</p>
 
         <div className={styles.buttons}>
-          <a href="#" className={`${styles.btn} ${styles.btnGreen}`}>
+          <Link href="/violinski-vrt" className={`${styles.btn} ${styles.btnGreen}`}>
             <Image src="/images/btn1.png" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>VSTOPITE V VIOLINSKI VRT</span>
             <span className={styles.arrow}>→</span>
-          </a>
-          <a href="#" className={`${styles.btn} ${styles.btnRose}`}>
+          </Link>
+          <Link href="/violine-za-nove-zgodbe" className={`${styles.btn} ${styles.btnRose}`}>
             <Image src="/images/btn2.png" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>VIOLINE ZA NOVE ZGODBE</span>
             <span className={styles.arrow}>→</span>
-          </a>
+          </Link>
           <a href="#" className={`${styles.btn} ${styles.btnGold}`}>
             <Image src="/images/btn3.png" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>SPOZNAJTE PROJEKTE</span>

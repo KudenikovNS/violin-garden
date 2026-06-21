@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./CardsSection.module.css";
 
 const cards = [
@@ -15,6 +16,7 @@ const cards = [
     title: "VIOLINSKI VRT",
     text: "Spoznajte zbirko petnajstih izjemnih violin, vsaka s svojim glasom, značajem in zgodbo.",
     linkText: "VEČ O ZBIRKI",
+    href: "/violinski-vrt",
   },
   {
     id: "card2",
@@ -29,6 +31,7 @@ const cards = [
     title: "VIOLINE ZA NOVE ZGODBE",
     text: "Izbrane violine iz zbirke, pripravljene za novo glasbeno pot.",
     linkText: "OGLED IN POVPRAŠEVANJE",
+    href: "/violine-za-nove-zgodbe",
   },
   {
     id: "card3",
@@ -42,6 +45,7 @@ const cards = [
     title: "PROJEKTI",
     text: "Koncerti, glasbene pravljice in umetniški projekti, kjer violine ponovno zaživijo.",
     linkText: "VEČ O PROJEKTIH",
+    href: "#",
   },
 ];
 
@@ -65,9 +69,9 @@ export default function CardsSection() {
               <span className={styles.title}>{card.title}</span>
             </div>
             <p className={styles.text}>{card.text}</p>
-            <a href="#" className={styles.link}>
+            <Link href={card.href} className={styles.link}>
               {card.linkText} <span>→</span>
-            </a>
+            </Link>
           </div>
         </div>
       ))}

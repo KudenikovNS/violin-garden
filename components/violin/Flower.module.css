@@ -1,0 +1,4 @@
+.flower {
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(90, 60, 40, 0.12));
+}

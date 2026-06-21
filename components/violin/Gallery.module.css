@@ -1,0 +1,143 @@
+/* ── Sličice ──────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.item {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: #fff;
+  border: 1px solid #e3d6bd;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover {
+  border-color: #cdb27c;
+}
+
+.img {
+  object-fit: contain;
+  padding: 8px;
+  transition: transform 0.3s ease;
+}
+
+.item:hover .img {
+  transform: scale(1.04);
+}
+
+/* ── Modalno okno (lightbox) ──────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px;
+  background: rgba(249, 245, 236, 0.95);
+  animation: fade 0.2s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.figure {
+  position: relative;
+  width: min(88vw, 720px);
+  height: min(86vh, 940px);
+}
+
+.full {
+  object-fit: contain;
+}
+
+.close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #5a4f3f;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px;
+  transition: color 0.2s ease;
+}
+
+.close:hover {
+  color: #b6924f;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid #d8c8a0;
+  background: rgba(255, 255, 255, 0.7);
+  color: #5a4f3f;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav:hover {
+  background: #fff;
+  border-color: #b6924f;
+  color: #b6924f;
+}
+
+.prev {
+  left: 24px;
+}
+
+.next {
+  right: 24px;
+}
+
+.counter {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  color: #5a4f3f;
+}
+
+@media (max-width: 600px) {
+  .overlay {
+    padding: 56px 16px;
+  }
+  .nav {
+    width: 44px;
+    height: 44px;
+    font-size: 26px;
+  }
+  .prev {
+    left: 10px;
+  }
+  .next {
+    right: 10px;
+  }
+}
