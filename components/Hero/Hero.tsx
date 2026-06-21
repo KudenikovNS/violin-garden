@@ -60,7 +60,7 @@ export default function Hero() {
 
       <div className={styles.content}>
         <Image
-          src="/images/logo_new.png"
+          src="/images/logo_new.webp"
           alt="Violin Garden logo"
           width={240}
           height={190}
@@ -76,7 +76,7 @@ export default function Hero() {
         </div>
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
           <button className={styles.closeBtn} onClick={() => setMenuOpen(false)} aria-label={t.a11y.closeMenu}>✕</button>
-          <Image src="/images/logo_new.png" alt="Violin Garden logo" width={120} height={95} className={styles.menuLogo} />
+          <Image src="/images/logo_new.webp" alt="Violin Garden logo" width={120} height={95} className={styles.menuLogo} />
           <div className={styles.menuDivider}>
             <span className={styles.menuDividerLine} /><span className={styles.menuDividerDot}>✦</span><span className={styles.menuDividerLine} />
           </div>
@@ -101,7 +101,7 @@ export default function Hero() {
       <div className={styles.videoWrapper}>
         {videoError ? (
           <Image
-            src="/images/card1.jpg"
+            src="/images/card1.webp"
             alt="Violinski vrt"
             width={1600}
             height={560}
@@ -116,7 +116,7 @@ export default function Hero() {
             autoPlay
             muted
             playsInline
-            poster="/images/card1.jpg"
+            poster="/images/card1.webp"
             onError={() => setVideoError(true)}
           />
         )}
@@ -162,17 +162,17 @@ export default function Hero() {
 
         <div className={styles.buttons}>
           <Link href="/violinski-vrt" className={`${styles.btn} ${styles.btnGreen}`}>
-            <Image src="/images/btn1.png" alt="" width={40} height={40} className={styles.btnIcon} />
+            <Image src="/images/btn1.webp" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>{t.hero.enterGarden}</span>
             <span className={styles.arrow}>→</span>
           </Link>
           <Link href="/violine-za-nove-zgodbe" className={`${styles.btn} ${styles.btnRose}`}>
-            <Image src="/images/btn2.png" alt="" width={40} height={40} className={styles.btnIcon} />
+            <Image src="/images/btn2.webp" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>{t.hero.forNewStories}</span>
             <span className={styles.arrow}>→</span>
           </Link>
           <a href="#" className={`${styles.btn} ${styles.btnGold}`}>
-            <Image src="/images/btn3.png" alt="" width={40} height={40} className={styles.btnIcon} />
+            <Image src="/images/btn3.webp" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>{t.hero.discoverProjects}</span>
             <span className={styles.arrow}>→</span>
           </a>

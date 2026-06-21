@@ -16,7 +16,7 @@ const cards: {
 }[] = [
   {
     id: "card1",
-    image: "/images/card1.jpg",
+    image: "/images/card1.webp",
     href: "/violinski-vrt",
     key: "garden",
     icon: (
@@ -28,7 +28,7 @@ const cards: {
   },
   {
     id: "card2",
-    image: "/images/card2.png",
+    image: "/images/card2.webp",
     href: "/violine-za-nove-zgodbe",
     key: "forSale",
     icon: (
@@ -40,7 +40,7 @@ const cards: {
   },
   {
     id: "card3",
-    image: "/images/card3.jpg",
+    image: "/images/card3.webp",
     href: "#",
     key: "projects",
     icon: (

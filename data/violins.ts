@@ -58,10 +58,10 @@ export const violins: Violin[] = [
 
     maker: { sl: "Natale Carletti »Fu Carlo«", en: "Natale Carletti »Fu Carlo«" },
     size: "4/4",
-    illustration: "/images/violins/rosa-alba/rosa-alba-ilustracija.png",
+    illustration: "/images/violins/rosa-alba/rosa-alba-ilustracija.webp",
     photos: [
-      "/images/violins/rosa-alba/rosa-alba-spredaj.png",
-      "/images/violins/rosa-alba/rosa-alba-zadaj.png",
+      "/images/violins/rosa-alba/rosa-alba-spredaj.webp",
+      "/images/violins/rosa-alba/rosa-alba-zadaj.webp",
     ],
     lead: {
       sl: "Tako kot bela vrtnica tudi Rosa Alba očara z eleganco, toplino in plemenitim značajem.",
@@ -116,10 +116,10 @@ export const violins: Violin[] = [
 
     maker: { sl: "Maurenkirchen – Bohemia šola", en: "Maurenkirchen – Bohemian school" },
     size: "4/4",
-    illustration: "/images/violins/azalea-aurea/azalea-aurea-ilustracija.png",
+    illustration: "/images/violins/azalea-aurea/azalea-aurea-ilustracija.webp",
     photos: [
-      "/images/violins/azalea-aurea/azalea-aurea-spredaj.png",
-      "/images/violins/azalea-aurea/azalea-aurea-zadaj.png",
+      "/images/violins/azalea-aurea/azalea-aurea-spredaj.webp",
+      "/images/violins/azalea-aurea/azalea-aurea-zadaj.webp",
     ],
     lead: {
       sl: "Zlata muza — kakor zlata azaleja tudi ta violina izžareva toplino, milino in plemenitost duha.",
