@@ -1,0 +1,39 @@
+.switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sep {
+  margin: 0 0.45rem;
+  color: #c2a06388;
+  user-select: none;
+}
+
+.lang {
+  background: none;
+  border: none;
+  padding: 0.1rem 0.15rem;
+  cursor: pointer;
+  color: #9c8a6a;
+  font: inherit;
+  letter-spacing: inherit;
+  transition: color 0.2s ease;
+}
+
+.lang:hover {
+  color: #b6924f;
+}
+
+.active {
+  color: #b6924f;
+  font-weight: 700;
+  border-bottom: 1px solid currentColor;
+}

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { useT } from "@/lib/i18n/useT";
 import styles from "./Gallery.module.css";
 
 export default function Gallery({
@@ -11,6 +12,7 @@ export default function Gallery({
   photos: string[];
   alt: string;
 }) {
+  const t = useT();
   const [index, setIndex] = useState<number | null>(null);
   const open = index !== null;
   const count = photos.length;
@@ -49,7 +51,7 @@ export default function Gallery({
             type="button"
             className={styles.item}
             onClick={() => setIndex(i)}
-            aria-label={`Odpri fotografijo ${i + 1}`}
+            aria-label={t.a11y.openPhoto(i + 1)}
           >
             <Image
               src={src}
@@ -69,7 +71,7 @@ export default function Gallery({
           role="dialog"
           aria-modal="true"
         >
-          <button className={styles.close} onClick={close} aria-label="Zapri">
+          <button className={styles.close} onClick={close} aria-label={t.a11y.close}>
             ✕
           </button>
 
@@ -80,7 +82,7 @@ export default function Gallery({
                 e.stopPropagation();
                 prev();
               }}
-              aria-label="Prejšnja fotografija"
+              aria-label={t.a11y.prevPhoto}
             >
               ‹
             </button>
@@ -107,7 +109,7 @@ export default function Gallery({
                 e.stopPropagation();
                 next();
               }}
-              aria-label="Naslednja fotografija"
+              aria-label={t.a11y.nextPhoto}
             >
               ›
             </button>

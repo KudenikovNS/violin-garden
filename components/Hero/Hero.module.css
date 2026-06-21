@@ -379,3 +379,7 @@
   .below { padding: 20px 16px 0; }
   .btn { padding: 14px 16px; font-size: 13px; }
 }
+
+.langSwitcher {
+  margin-top: 1.4rem;
+}

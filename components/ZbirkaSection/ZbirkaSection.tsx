@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useT } from "@/lib/i18n/useT";
 import styles from "./ZbirkaSection.module.css";
 
 export default function ZbirkaSection() {
+  const t = useT();
   return (
     <section className={styles.section}>
       <svg
@@ -20,7 +24,7 @@ export default function ZbirkaSection() {
       <div className={styles.imageWrapper}>
         <Image
           src="/images/zbirka_new.png"
-          alt="Violina in vrtnica na notah — zbirka"
+          alt={t.zbirka.imageAlt}
           fill
           className={styles.image}
           sizes="580px"
@@ -28,24 +32,17 @@ export default function ZbirkaSection() {
       </div>
 
       <div className={styles.text}>
-        <h2 className={styles.heading}>ZBIRKA, KI PRIPOVEDUJE ZGODBE</h2>
+        <h2 className={styles.heading}>{t.zbirka.heading}</h2>
         <span className={styles.underline} />
-        <p className={styles.paragraph}>
-          Violinski vrt je osebna zbirka violin akademske violinistke Inge Ulokine, mag. art.
-        </p>
-        <p className={styles.paragraph}>
-          Zbirka nastaja že več kot dvajset let in trenutno obsega petnajst violin različnih obdobij,
-          goslarskih šol in značajev.
-        </p>
-        <p className={styles.paragraph}>
-          Vsaka nosi svojo zgodbo, svoj glas in svojo edinstveno lepoto.
-        </p>
+        <p className={styles.paragraph}>{t.zbirka.p1}</p>
+        <p className={styles.paragraph}>{t.zbirka.p2}</p>
+        <p className={styles.paragraph}>{t.zbirka.p3}</p>
         <p className={styles.quote}>
-          Dobrodošli v svetu, kjer les postane glasba<br />
-          in kjer vsaka violina še naprej pripoveduje svojo zgodbo.
+          {t.zbirka.quoteLine1}<br />
+          {t.zbirka.quoteLine2}
         </p>
         <a href="#" className={styles.link}>
-          VEČ O ZBIRKI <span>→</span>
+          {t.zbirka.link} <span>→</span>
         </a>
       </div>
     </section>

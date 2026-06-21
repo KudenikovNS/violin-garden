@@ -9,6 +9,8 @@ import {
   type ReactNode,
 } from "react";
 import Image from "next/image";
+import { useT } from "@/lib/i18n/useT";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./SplashGate.module.css";
 
 /** True once the visitor has clicked "VSTOPITE". Consumed by Hero to unmute the video. */
@@ -25,6 +27,7 @@ const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export default function SplashGate({ children }: { children: ReactNode }) {
+  const t = useT();
   const [entered, setEntered] = useState(false);
   const [hidden, setHidden] = useState(false);
 
@@ -64,9 +67,11 @@ export default function SplashGate({ children }: { children: ReactNode }) {
             />
 
             <button className={styles.enterBtn} onClick={enter}>
-              <span>Vstopite</span>
+              <span>{t.splash.enter}</span>
               <span className={styles.arrow}>→</span>
             </button>
+
+            <LanguageSwitcher className={styles.langSwitcher} />
           </div>
         </div>
       )}

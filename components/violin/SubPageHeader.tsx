@@ -3,16 +3,13 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useT } from "@/lib/i18n/useT";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./SubPageHeader.module.css";
 
-const MENU_LINKS = [
-  { href: "/violinski-vrt", label: "VIOLINSKI VRT" },
-  { href: "/violine-za-nove-zgodbe", label: "VIOLINE ZA NOVE ZGODBE" },
-];
-
-const HOME_BACK = { href: "/", label: "Nazaj" };
-const VRT_BACK = { href: "/violinski-vrt", label: "Nazaj" };
-const PRODAJA_BACK = { href: "/violine-za-nove-zgodbe", label: "Nazaj" };
+const HOME_BACK = "/";
+const VRT_BACK = "/violinski-vrt";
+const PRODAJA_BACK = "/violine-za-nove-zgodbe";
 
 export default function SubPageHeader({
   eyebrow,
@@ -25,22 +22,28 @@ export default function SubPageHeader({
   subtitle?: string;
   detailBack?: boolean;
 }) {
+  const t = useT();
   const [menuOpen, setMenuOpen] = useState(false);
   // Na strani posamezne violine je gumb nazaj odvisen od izvora obiska
   // (Violinski vrt ali Violine za nove zgodbe) — preberemo iz ?from=.
-  const [back, setBack] = useState(detailBack ? VRT_BACK : HOME_BACK);
+  const [backHref, setBackHref] = useState(detailBack ? VRT_BACK : HOME_BACK);
+
+  const menuLinks = [
+    { href: "/violinski-vrt", label: t.nav.collection },
+    { href: "/violine-za-nove-zgodbe", label: t.nav.forSale },
+  ];
 
   useEffect(() => {
     if (!detailBack) return;
     const from = new URLSearchParams(window.location.search).get("from");
-    setBack(from === "prodaja" ? PRODAJA_BACK : VRT_BACK);
+    setBackHref(from === "prodaja" ? PRODAJA_BACK : VRT_BACK);
   }, [detailBack]);
 
   return (
     <header className={styles.header}>
       <div className={styles.bar}>
-        <Link href={back.href} className={styles.back} aria-label={back.label}>
-          <span className={styles.backArrow}>←</span> {back.label}
+        <Link href={backHref} className={styles.back} aria-label={t.subHeader.back}>
+          <span className={styles.backArrow}>←</span> {t.subHeader.back}
         </Link>
 
         <Link href="/" className={styles.logoLink}>
@@ -58,7 +61,7 @@ export default function SubPageHeader({
             <button
               className={styles.closeBtn}
               onClick={() => setMenuOpen(false)}
-              aria-label="Zapri meni"
+              aria-label={t.a11y.closeMenu}
             >
               ✕
             </button>
@@ -74,7 +77,7 @@ export default function SubPageHeader({
               <span className={styles.menuDividerDot}>✦</span>
               <span className={styles.menuDividerLine} />
             </div>
-            {MENU_LINKS.map((l) => (
+            {menuLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
@@ -84,12 +87,13 @@ export default function SubPageHeader({
                 {l.label}
               </Link>
             ))}
+            <LanguageSwitcher className={styles.langSwitcher} />
           </nav>
 
           <button
             className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
             onClick={() => setMenuOpen((o) => !o)}
-            aria-label="Meni"
+            aria-label={t.a11y.menu}
             aria-expanded={menuOpen}
           >
             <span />

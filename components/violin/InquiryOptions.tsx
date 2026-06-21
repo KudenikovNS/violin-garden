@@ -1,8 +1,17 @@
-import { INQUIRY_OPTIONS, InquiryKind } from "@/data/violins";
+"use client";
+
+import { InquiryKind } from "@/data/violins";
+import { useT } from "@/lib/i18n/useT";
 import styles from "./InquiryOptions.module.css";
 
 // Trije "predali" pod predstavitvijo: nakup / izposoja / preizkus.
-// Gumbi so zaenkrat placeholder — povezavo (e-pošta / obrazec / WhatsApp) dodamo pozneje.
+// Emojis are language-neutral; titles/actions come from the dictionary.
+const EMOJI: Record<InquiryKind, string> = {
+  nakup: "✨",
+  izposoja: "🎻",
+  preizkus: "🤍",
+};
+
 export default function InquiryOptions({
   options,
   violinName,
@@ -12,12 +21,13 @@ export default function InquiryOptions({
   violinName?: string;
   compact?: boolean;
 }) {
+  const t = useT();
   if (options.length === 0) return null;
 
   return (
     <div className={`${styles.grid} ${compact ? styles.compact : ""}`}>
       {options.map((kind) => {
-        const opt = INQUIRY_OPTIONS[kind];
+        const opt = t.inquiry[kind];
         return (
           <button
             key={kind}
@@ -26,7 +36,7 @@ export default function InquiryOptions({
             data-inquiry={kind}
             data-violin={violinName}
           >
-            <span className={styles.emoji}>{opt.emoji}</span>
+            <span className={styles.emoji}>{EMOJI[kind]}</span>
             <span className={styles.optTitle}>{opt.title}</span>
             <span className={styles.optAction}>{opt.action}</span>
           </button>

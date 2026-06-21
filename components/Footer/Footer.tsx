@@ -1,6 +1,10 @@
+"use client";
+
+import { useT } from "@/lib/i18n/useT";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const t = useT();
   return (
     <footer className={styles.footer}>
       <svg
@@ -29,8 +33,8 @@ export default function Footer() {
       </svg>
 
       <p className={styles.quote}>
-        Melodija violine je kot aroma najlepše vrtnice.<br />
-        Kot pesem slavčka ob jutranji zori.
+        {t.footer.quoteLine1}<br />
+        {t.footer.quoteLine2}
       </p>
 
       <div className={styles.divider}>
@@ -39,7 +43,7 @@ export default function Footer() {
         <span className={styles.dividerLine} />
       </div>
 
-      <p className={styles.welcome}>DOBRODOŠLI V VIOLINSKEM VRTU.</p>
+      <p className={styles.welcome}>{t.footer.welcome}</p>
 
       <div className={styles.contacts}>
         <span className={styles.contact}>

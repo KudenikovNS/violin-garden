@@ -94,3 +94,8 @@
 @media (max-width: 480px) {
   .enterBtn { font-size: 19px; }
 }
+
+.langSwitcher {
+  margin-top: 1.6rem;
+  justify-content: center;
+}

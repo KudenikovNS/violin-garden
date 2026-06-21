@@ -4,9 +4,12 @@ import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEntered } from "../SplashGate/SplashGate";
+import { useT } from "@/lib/i18n/useT";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
+  const t = useT();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(true);
@@ -66,27 +69,28 @@ export default function Hero() {
         />
         <div className={styles.text}>
           <div className={styles.eyebrow}>
-            <span className={styles.eyebrowText}>VIOLIN GARDEN COLLECTION</span>
+            <span className={styles.eyebrowText}>{t.hero.eyebrow}</span>
           </div>
-          <h1 className={styles.title}>VIOLINSKI VRT</h1>
-          <p className={styles.subtitle}>Ekskluzivna zbirka violin</p>
+          <h1 className={styles.title}>{t.hero.title}</h1>
+          <p className={styles.subtitle}>{t.hero.subtitle}</p>
         </div>
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
-          <button className={styles.closeBtn} onClick={() => setMenuOpen(false)} aria-label="Zapri meni">✕</button>
+          <button className={styles.closeBtn} onClick={() => setMenuOpen(false)} aria-label={t.a11y.closeMenu}>✕</button>
           <Image src="/images/logo_new.png" alt="Violin Garden logo" width={120} height={95} className={styles.menuLogo} />
           <div className={styles.menuDivider}>
             <span className={styles.menuDividerLine} /><span className={styles.menuDividerDot}>✦</span><span className={styles.menuDividerLine} />
           </div>
-          <Link href="/" className={styles.navLink} onClick={() => setMenuOpen(false)}>DOMOV</Link>
-          <Link href="/violinski-vrt" className={styles.navLink} onClick={() => setMenuOpen(false)}>VIOLINSKI VRT</Link>
-          <Link href="/violine-za-nove-zgodbe" className={styles.navLink} onClick={() => setMenuOpen(false)}>VIOLINE ZA NOVE ZGODBE</Link>
-          <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>PROJEKTI</a>
+          <Link href="/" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.home}</Link>
+          <Link href="/violinski-vrt" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.collection}</Link>
+          <Link href="/violine-za-nove-zgodbe" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.forSale}</Link>
+          <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.projects}</a>
+          <LanguageSwitcher className={styles.langSwitcher} />
         </nav>
 
         <button
           className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
           onClick={() => setMenuOpen(o => !o)}
-          aria-label="Menu"
+          aria-label={t.a11y.menu}
         >
           <span />
           <span />
@@ -118,7 +122,7 @@ export default function Hero() {
         )}
         {!videoError && (
         <div className={styles.videoControls}>
-          <button onClick={togglePlay} className={styles.controlBtn} aria-label={playing ? "Pause" : "Play"}>
+          <button onClick={togglePlay} className={styles.controlBtn} aria-label={playing ? t.a11y.pause : t.a11y.play}>
             {playing ? (
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <rect x="5" y="4" width="4" height="16" rx="1" />
@@ -130,7 +134,7 @@ export default function Hero() {
               </svg>
             )}
           </button>
-          <button onClick={toggleMute} className={styles.controlBtn} aria-label={muted ? "Unmute" : "Mute"}>
+          <button onClick={toggleMute} className={styles.controlBtn} aria-label={muted ? t.a11y.unmute : t.a11y.mute}>
             {muted ? (
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                 <path d="M11 5L6 9H3v6h3l5 4V5z" />
@@ -154,22 +158,22 @@ export default function Hero() {
           <span className={styles.dividerDot}>✦</span>
           <span className={styles.dividerLine} />
         </div>
-        <p className={styles.tagline}>Zvočni vrt, v katerem cvetijo violine.</p>
+        <p className={styles.tagline}>{t.hero.tagline}</p>
 
         <div className={styles.buttons}>
           <Link href="/violinski-vrt" className={`${styles.btn} ${styles.btnGreen}`}>
             <Image src="/images/btn1.png" alt="" width={40} height={40} className={styles.btnIcon} />
-            <span>VSTOPITE V VIOLINSKI VRT</span>
+            <span>{t.hero.enterGarden}</span>
             <span className={styles.arrow}>→</span>
           </Link>
           <Link href="/violine-za-nove-zgodbe" className={`${styles.btn} ${styles.btnRose}`}>
             <Image src="/images/btn2.png" alt="" width={40} height={40} className={styles.btnIcon} />
-            <span>VIOLINE ZA NOVE ZGODBE</span>
+            <span>{t.hero.forNewStories}</span>
             <span className={styles.arrow}>→</span>
           </Link>
           <a href="#" className={`${styles.btn} ${styles.btnGold}`}>
             <Image src="/images/btn3.png" alt="" width={40} height={40} className={styles.btnIcon} />
-            <span>SPOZNAJTE PROJEKTE</span>
+            <span>{t.hero.discoverProjects}</span>
             <span className={styles.arrow}>→</span>
           </a>
         </div>
