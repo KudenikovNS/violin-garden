@@ -1,0 +1,96 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background:
+    radial-gradient(120% 90% at 50% 30%, #fdfaf3 0%, #efe7d7 55%, #e4d8c1 100%);
+  opacity: 1;
+  transition: opacity 0.7s ease;
+}
+
+.overlayHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+  animation: rise 0.8s ease both;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  width: clamp(260px, 38vw, 520px);
+  max-width: 86vw;
+  height: auto;
+}
+
+.enterBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #b6924f;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: 0.18em;
+  transition: opacity 0.2s ease;
+}
+
+/* Thin underline that grows from the center on hover. */
+.enterBtn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #b6924f;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.enterBtn:hover::after {
+  width: 100%;
+}
+
+.enterBtn:hover .arrow {
+  transform: translateX(4px);
+}
+
+.arrow {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* ── Tablet ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .enterBtn { font-size: 23px; }
+}
+
+/* ── Mobile ─────────────────────────────── */
+@media (max-width: 768px) {
+  .enterBtn { font-size: 21px; }
+}
+
+/* ── Small mobile ────────────────────────── */
+@media (max-width: 480px) {
+  .enterBtn { font-size: 19px; }
+}

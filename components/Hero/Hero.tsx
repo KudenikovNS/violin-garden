@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import { useEntered } from "../SplashGate/SplashGate";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -9,6 +10,8 @@ export default function Hero() {
   const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const entered = useEntered();
 
   function togglePlay() {
     const v = videoRef.current;
@@ -23,6 +26,17 @@ export default function Hero() {
     v.muted = !v.muted;
     setMuted(v.muted);
   }
+
+  // When the visitor clicks "VSTOPITE", that user gesture lets us unmute the video.
+  useEffect(() => {
+    if (!entered) return;
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = false;
+    setMuted(false);
+    v.currentTime = 0;
+    v.play().catch(() => {});
+  }, [entered]);
 
   useEffect(() => {
     const v = videoRef.current;
@@ -80,15 +94,28 @@ export default function Hero() {
       </div>
 
       <div className={styles.videoWrapper}>
-        <video
-          ref={videoRef}
-          className={styles.video}
-          src="https://res.cloudinary.com/dnukoemsb/video/upload/v1781873549/compressed-al50Dazp_sg6mpt.mp4"
-          autoPlay
-          muted
-          playsInline
-          poster="/images/hero.png"
-        />
+        {videoError ? (
+          <Image
+            src="/images/card1.jpg"
+            alt="Violinski vrt"
+            width={1600}
+            height={560}
+            className={styles.video}
+            priority
+          />
+        ) : (
+          <video
+            ref={videoRef}
+            className={styles.video}
+            src="https://res.cloudinary.com/dnukoemsb/video/upload/v1781873549/compressed-al50Dazp_sg6mpt.mp4"
+            autoPlay
+            muted
+            playsInline
+            poster="/images/card1.jpg"
+            onError={() => setVideoError(true)}
+          />
+        )}
+        {!videoError && (
         <div className={styles.videoControls}>
           <button onClick={togglePlay} className={styles.controlBtn} aria-label={playing ? "Pause" : "Play"}>
             {playing ? (
@@ -117,6 +144,7 @@ export default function Hero() {
             )}
           </button>
         </div>
+        )}
       </div>
 
       <div className={styles.below}>
@@ -129,25 +157,17 @@ export default function Hero() {
 
         <div className={styles.buttons}>
           <a href="#" className={`${styles.btn} ${styles.btnGreen}`}>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e7d9b8" strokeWidth="1.3">
-              <circle cx="12" cy="10" r="3.4" />
-              <path d="M12 13.5V20M9 17l-3 1.5M15 17l3 1.5M10 8c-2-1-3.5-.4-4.4 1M14 8c2-1 3.5-.4 4.4 1" />
-            </svg>
+            <Image src="/images/btn1.png" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>VSTOPITE V VIOLINSKI VRT</span>
             <span className={styles.arrow}>→</span>
           </a>
           <a href="#" className={`${styles.btn} ${styles.btnRose}`}>
-            <svg width="20" height="22" viewBox="0 0 24 24" fill="none" stroke="#f6e2db" strokeWidth="1.3">
-              <path d="M12 2c1 2 .5 4-1 5.5C9 9.5 8 11 8 14a4 4 0 008 0c0-3-1-4.5-3-6.5C11.5 6 11 4 12 2z" />
-              <path d="M12 8v8" />
-            </svg>
+            <Image src="/images/btn2.png" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>VIOLINE ZA NOVE ZGODBE</span>
             <span className={styles.arrow}>→</span>
           </a>
           <a href="#" className={`${styles.btn} ${styles.btnGold}`}>
-            <svg width="20" height="22" viewBox="0 0 24 24" fill="none" stroke="#f6ecd4" strokeWidth="1.3">
-              <path d="M7 4v10a5 5 0 0010 0V4M7 4c0 3 1.5 5 5 5s5-2 5-5M10 7v9M14 7v9" />
-            </svg>
+            <Image src="/images/btn3.png" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>SPOZNAJTE PROJEKTE</span>
             <span className={styles.arrow}>→</span>
           </a>

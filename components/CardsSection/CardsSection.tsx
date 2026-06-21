@@ -4,8 +4,8 @@ import styles from "./CardsSection.module.css";
 const cards = [
   {
     id: "card1",
-    image: "/images/violina.png",
-    alt: "Violina",
+    image: "/images/card1.jpg",
+    alt: "Violinski vrt",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#bf8f8c" strokeWidth="1.2">
         <circle cx="12" cy="11" r="4" />
@@ -18,8 +18,8 @@ const cards = [
   },
   {
     id: "card2",
-    image: "/images/violina.png",
-    alt: "Violina",
+    image: "/images/card2.png",
+    alt: "Violine za nove zgodbe",
     icon: (
       <svg width="18" height="22" viewBox="0 0 24 24" fill="none" stroke="#bf8f8c" strokeWidth="1.2">
         <path d="M12 2c1 2 .5 4-1 5.5C9 9.5 8 11 8 14a4 4 0 008 0c0-3-1-4.5-3-6.5C11.5 6 11 4 12 2z" />
@@ -32,8 +32,8 @@ const cards = [
   },
   {
     id: "card3",
-    image: "/images/violina.png",
-    alt: "Violina",
+    image: "/images/card3.jpg",
+    alt: "Projekti",
     icon: (
       <svg width="20" height="22" viewBox="0 0 24 24" fill="none" stroke="#bf8f8c" strokeWidth="1.2">
         <path d="M7 4v10a5 5 0 0010 0V4M7 4c0 3 1.5 5 5 5s5-2 5-5M10 7v9M14 7v9" />
