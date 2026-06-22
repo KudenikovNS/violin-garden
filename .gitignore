@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 docs
+# image backup (originals, not deployed)
+/image-originals-backup/
+scripts

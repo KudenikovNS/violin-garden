@@ -23,14 +23,30 @@ export default function ForSaleView() {
       />
 
       <section className={styles.list}>
-        {availableViolins.map((raw) => {
+        {availableViolins.map((raw, cardIndex) => {
           const v = localizeViolin(raw, lang);
+          // Cvet → sprednja stran → hrbet: do tri sličice za brezkončni preliv.
+          const slides = [v.illustration, ...(v.photos ?? [])].filter(Boolean) as string[];
           return (
             <article key={v.id} className={styles.row}>
               <Link href={`/violinski-vrt/${v.id}?from=prodaja`} className={styles.visual}>
-                {v.illustration ? (
+                {slides.length > 1 ? (
+                  <div className={styles.slideshow}>
+                    {slides.slice(0, 3).map((src, i) => (
+                      <Image
+                        key={src}
+                        src={src}
+                        alt={t.a11y.floralIllustration(v.name)}
+                        fill
+                        sizes="(max-width: 768px) 280px, 240px"
+                        className={styles.slide}
+                        priority={cardIndex === 0 && i === 0}
+                      />
+                    ))}
+                  </div>
+                ) : slides.length === 1 ? (
                   <Image
-                    src={v.illustration}
+                    src={slides[0]}
                     alt={t.a11y.floralIllustration(v.name)}
                     width={280}
                     height={350}

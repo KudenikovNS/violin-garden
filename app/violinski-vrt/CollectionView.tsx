@@ -22,7 +22,7 @@ export default function CollectionView() {
       />
 
       <section className={styles.grid}>
-        {violins.map((raw) => {
+        {violins.map((raw, cardIndex) => {
           const v = localizeViolin(raw, lang);
           // Cvet → sprednja stran → hrbet: do tri sličice za brezkončni preliv.
           const slides = [v.illustration, ...(v.photos ?? [])].filter(Boolean) as string[];
@@ -39,7 +39,7 @@ export default function CollectionView() {
                         fill
                         sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 360px"
                         className={styles.slide}
-                        priority={i === 0}
+                        priority={cardIndex === 0 && i === 0}
                       />
                     ))}
                   </div>

@@ -98,7 +98,6 @@ export default function Gallery({
               fill
               className={styles.full}
               sizes="100vw"
-              priority
             />
           </div>
 
