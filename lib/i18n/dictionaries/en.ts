@@ -96,7 +96,7 @@ const en: Dict = {
     title: "The Violin Garden",
     subtitle:
       "Each violin in the garden blooms in its own way. Choose a bloom and discover its full story.",
-    badgeForSale: "FOR SALE",
+    badge: { sale: "FOR SALE", rent: "FOR RENT" },
     fullPresentation: "FULL PRESENTATION",
   },
 
@@ -113,14 +113,23 @@ const en: Dict = {
     technicalDetails: "Technical details",
     gallery: "Gallery",
     statusEyebrow: "INSTRUMENT STATUS",
-    statusForSale: "For sale",
-    statusInCollection: "Part of the collection",
-    statusForSaleDefault:
-      "This violin is ready to continue its story with a new musician.",
-    statusInCollectionText:
-      "This violin is a permanent part of the Violin Garden collection and is not currently for sale.",
+    status: {
+      sale: {
+        label: "For sale",
+        text: "This violin is ready to continue its story with a new musician.",
+      },
+      rent: {
+        label: "Available for rent",
+        text: "This violin is available for long-term or project rental.",
+      },
+      collection: {
+        label: "Permanent collection",
+        text: "This violin is a permanent part of the Violin Garden collection and is not for sale or rent.",
+      },
+    },
     ctaEyebrow: "A NEW MUSICAL JOURNEY",
     ctaTitle: "This violin is looking for a new musician",
+    ctaTitleCollection: "Discover this violin",
     inquiryInvitation:
       "For a more detailed description or to arrange a personal trial, fill in the contact form — we will gladly present the instrument and answer any questions.",
     notFoundTitle: "Violin not found — The Violin Garden",

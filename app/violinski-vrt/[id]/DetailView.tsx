@@ -1,13 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import { localizeViolin, type Violin } from "@/data/violins";
+import { localizeViolin, type Violin, type ViolinStatus } from "@/data/violins";
 import { useLang } from "@/lib/i18n/LanguageProvider";
 import { useT } from "@/lib/i18n/useT";
 import SubPageHeader from "@/components/violin/SubPageHeader";
 import InquiryOptions from "@/components/violin/InquiryOptions";
 import Gallery from "@/components/violin/Gallery";
 import styles from "./page.module.css";
+
+// Status → simbol ob statusu inštrumenta (jezikovno nevtralno).
+const STATUS_MARK: Record<ViolinStatus, string> = {
+  sale: "✦",
+  rent: "🎻",
+  collection: "❀",
+};
 
 export default function DetailView({ violin }: { violin: Violin }) {
   const t = useT();
@@ -62,15 +69,11 @@ export default function DetailView({ violin }: { violin: Violin }) {
             <div className={styles.statusBlock}>
               <span className={styles.statusEyebrow}>{t.detail.statusEyebrow}</span>
               <div className={styles.statusRow}>
-                <span className={styles.statusMark}>{v.forSale ? "✦" : "❀"}</span>
+                <span className={styles.statusMark}>{STATUS_MARK[v.status]}</span>
                 <div>
-                  <p className={styles.statusName}>
-                    {v.forSale ? t.detail.statusForSale : t.detail.statusInCollection}
-                  </p>
+                  <p className={styles.statusName}>{t.detail.status[v.status].label}</p>
                   <p className={styles.statusText}>
-                    {v.forSale
-                      ? v.statusNote ?? t.detail.statusForSaleDefault
-                      : t.detail.statusInCollectionText}
+                    {v.statusNote ?? t.detail.status[v.status].text}
                   </p>
                 </div>
               </div>
@@ -105,10 +108,12 @@ export default function DetailView({ violin }: { violin: Violin }) {
         )}
 
         {/* ── Nova glasbena pot ──────────────────────── */}
-        {v.forSale && (
+        {v.options.length > 0 && (
           <section className={styles.cta}>
             <span className={styles.ctaEyebrow}>{t.detail.ctaEyebrow}</span>
-            <h2 className={styles.ctaTitle}>{t.detail.ctaTitle}</h2>
+            <h2 className={styles.ctaTitle}>
+              {v.status === "collection" ? t.detail.ctaTitleCollection : t.detail.ctaTitle}
+            </h2>
             <p className={styles.ctaText}>{t.detail.inquiryInvitation}</p>
             <InquiryOptions options={v.options} violinName={v.name} />
           </section>

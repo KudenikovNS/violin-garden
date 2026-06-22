@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { violinsForSale, localizeViolin } from "@/data/violins";
+import { availableViolins, localizeViolin } from "@/data/violins";
 import { useLang } from "@/lib/i18n/LanguageProvider";
 import { useT } from "@/lib/i18n/useT";
 import Flower from "@/components/violin/Flower";
@@ -23,7 +23,7 @@ export default function ForSaleView() {
       />
 
       <section className={styles.list}>
-        {violinsForSale.map((raw) => {
+        {availableViolins.map((raw) => {
           const v = localizeViolin(raw, lang);
           return (
             <article key={v.id} className={styles.row}>

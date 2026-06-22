@@ -94,7 +94,7 @@ const sl = {
     title: "Violinski vrt",
     subtitle:
       "Vsaka violina v vrtu cveti po svoje. Izberite cvet in spoznajte njeno celotno zgodbo.",
-    badgeForSale: "NAPRODAJ",
+    badge: { sale: "NAPRODAJ", rent: "ZA IZPOSOJO" },
     fullPresentation: "CELOTNA PREDSTAVITEV",
   },
 
@@ -111,14 +111,23 @@ const sl = {
     technicalDetails: "Tehnični podatki",
     gallery: "Galerija",
     statusEyebrow: "STATUS INŠTRUMENTA",
-    statusForSale: "Naprodaj",
-    statusInCollection: "Del zbirke",
-    statusForSaleDefault:
-      "Ta violina je pripravljena nadaljevati svojo zgodbo z novim glasbenikom.",
-    statusInCollectionText:
-      "Ta violina je stalni del zbirke Violinskega vrta in trenutno ni naprodaj.",
+    status: {
+      sale: {
+        label: "Naprodaj",
+        text: "Ta violina je pripravljena nadaljevati svojo zgodbo z novim glasbenikom.",
+      },
+      rent: {
+        label: "Na voljo za izposojo",
+        text: "Ta violina je na voljo za dolgoročno ali projektno izposojo.",
+      },
+      collection: {
+        label: "Stalna zbirka",
+        text: "Ta violina je stalni del zbirke Violinskega vrta in ni naprodaj ne za izposojo.",
+      },
+    },
     ctaEyebrow: "NOVA GLASBENA POT",
     ctaTitle: "Ta violina išče novega glasbenika",
+    ctaTitleCollection: "Spoznajte to violino",
     inquiryInvitation:
       "Za podrobnejši opis ali dogovor za osebni preizkus izpolnite kontaktni obrazec — z veseljem vam bomo inštrument predstavili in odgovorili na vsa vprašanja.",
     notFoundTitle: "Violina ni najdena — Violinski vrt",

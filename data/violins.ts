@@ -4,6 +4,13 @@ import type { Lang } from "@/lib/i18n/config";
 // (Translated labels live in the i18n dictionary under `inquiry`.)
 export type InquiryKind = "nakup" | "izposoja" | "preizkus";
 
+// Status inštrumenta v zbirki:
+//   "sale"       — naprodaj
+//   "rent"       — na voljo (samo) za izposojo
+//   "collection" — stalni del zbirke, ni naprodaj in ne za izposojo
+// (Translated labels live in the i18n dictionary under `detail.status`.)
+export type ViolinStatus = "sale" | "rent" | "collection";
+
 // A localized string / string list: one value per supported language.
 type L = Record<Lang, string>;
 type LList = Record<Lang, string[]>;
@@ -21,7 +28,7 @@ export interface Violin {
   flowerVariant: number; // izbira cvetne ilustracije
   intro: L; // kratek opis na pregledni strani
   description: L; // celotna predstavitev
-  forSale: boolean; // ali je violina naprodaj
+  status: ViolinStatus; // naprodaj / za izposojo / stalna zbirka
   options: InquiryKind[]; // razpoložljive vrste povpraševanja
   price?: L;
 
@@ -52,7 +59,7 @@ export const violins: Violin[] = [
       sl: "Elegantna violina polne velikosti (4/4) z etiketo Natale Carletti »Fu Carlo«, ki združuje privlačno estetsko podobo s krasnimi zvočnimi lastnostmi.",
       en: "An elegant full-size (4/4) violin labelled Natale Carletti »Fu Carlo«, combining an attractive appearance with beautiful tonal qualities.",
     },
-    forSale: true,
+    status: "sale",
     options: ["nakup", "izposoja", "preizkus"],
     price: { sl: "Na povpraševanje", en: "On request" },
 
@@ -110,7 +117,7 @@ export const violins: Violin[] = [
       sl: "Zanimiva violina polne velikosti (4/4) iz tradicije nemško-bohemske goslarske šole, ki s svojo naravno patino in toplim videzom izžareva brezčasno eleganco.",
       en: "An intriguing full-size (4/4) violin from the German-Bohemian lutherie tradition, radiating timeless elegance with its natural patina and warm appearance.",
     },
-    forSale: true,
+    status: "sale",
     options: ["nakup", "izposoja", "preizkus"],
     price: { sl: "Na povpraševanje", en: "On request" },
 
@@ -155,13 +162,182 @@ export const violins: Violin[] = [
     ],
     statusNote: { sl: "Violina je naprodaj.", en: "The violin is for sale." },
   },
+  {
+    id: "paeonia-regia",
+    name: "Paeonia Regia",
+    origin: { sl: "Evropska šola", en: "European school" },
+    year: { sl: "okoli 1900", en: "c. 1900" },
+    flowerVariant: 2,
+    intro: {
+      sl: "Bogata barva, zrel ton in plemenita prisotnost.",
+      en: "Rich colour, a mature tone and a noble presence.",
+    },
+    description: {
+      sl: "Elegantna violina polne velikosti (4/4) z etiketo Pietro Pallotta, kakovosten evropski inštrument iz obdobja okoli leta 1900, ki se zgleduje po klasičnih italijanskih vzorih.",
+      en: "An elegant full-size (4/4) violin bearing a Pietro Pallotta label — a quality European instrument from around 1900, modelled on classic Italian patterns.",
+    },
+    status: "sale",
+    options: ["nakup", "izposoja", "preizkus"],
+    price: { sl: "Na povpraševanje", en: "On request" },
+
+    maker: { sl: "etiketa Pietro Pallotta", en: "Pietro Pallotta label" },
+    size: "4/4",
+    illustration: "/images/violins/paeonia-regia/paeonia-regia-ilustracija.webp",
+    photos: [
+      "/images/violins/paeonia-regia/paeonia-regia-spredaj.webp",
+      "/images/violins/paeonia-regia/paeonia-regia-zadaj.webp",
+    ],
+    lead: {
+      sl: "Tako kot kraljevska potonika tudi Paeonia Regia očara s svojo bogato barvo, izrazito osebnostjo in plemenito prisotnostjo.",
+      en: "Like a royal peony, Paeonia Regia enchants with its rich colour, distinctive personality and noble presence.",
+    },
+    descriptionParas: {
+      sl: [
+        "Elegantna violina polne velikosti (4/4) nosi etiketo Pietro Pallotta fece l'anno 1795 N.26 Perugia. Po značilnostih izdelave in uporabljenih materialih gre za kakovosten evropski inštrument iz obdobja okoli leta 1900, ki se zgleduje po tradiciji klasičnih italijanskih vzorov.",
+        "Inštrument odlikuje dvodelna smrekova zgornja plošča ter lepo plameničen dvodelen javorjev hrbet. Topel rdeče-rjav lak poudarja naravno lepoto lesa in daje violini izrazit, plemenit značaj.",
+        "Violina nosi odmev dolge glasbene poti, ima eleganten videz in privlačno estetsko podobo. Ta inštrument združuje bogato vizualno prezenco z zrelim in karakterističnim tonom, zaradi česar je lahko odlična izbira za violiniste vseh generacij.",
+      ],
+      en: [
+        "This elegant full-size (4/4) violin bears the label Pietro Pallotta fece l'anno 1795 N.26 Perugia. By its workmanship and materials it is a quality European instrument from around 1900, modelled on the tradition of classic Italian patterns.",
+        "The instrument features a two-piece spruce top and a beautifully flamed two-piece maple back. The warm red-brown varnish emphasises the natural beauty of the wood and gives the violin a distinctive, noble character.",
+        "The violin carries the echo of a long musical journey, with an elegant look and an attractive appearance. It combines a rich visual presence with a mature, characterful tone, making it an excellent choice for violinists of all generations.",
+      ],
+    },
+    specs: [
+      { label: { sl: "Velikost", en: "Size" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)" } },
+      { label: { sl: "Dolžina korpusa", en: "Body length" }, value: { sl: "358 mm", en: "358 mm" } },
+      { label: { sl: "Zgornji obod", en: "Upper bout" }, value: { sl: "169 mm", en: "169 mm" } },
+      { label: { sl: "Srednji obod", en: "Middle bout" }, value: { sl: "116 mm", en: "116 mm" } },
+      { label: { sl: "Spodnji obod", en: "Lower bout" }, value: { sl: "207 mm", en: "207 mm" } },
+      { label: { sl: "Zgornja plošča", en: "Top plate" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece" } },
+      { label: { sl: "Hrbet", en: "Back" }, value: { sl: "javor, dvodelen", en: "maple, two-piece" } },
+      { label: { sl: "Stranice", en: "Ribs" }, value: { sl: "javor", en: "maple" } },
+      { label: { sl: "Polž", en: "Scroll" }, value: { sl: "javor", en: "maple" } },
+      { label: { sl: "Lak", en: "Varnish" }, value: { sl: "originalni rdeče-rjav", en: "original red-brown" } },
+      { label: { sl: "Etiketa", en: "Label" }, value: { sl: "Pietro Pallotta", en: "Pietro Pallotta" } },
+    ],
+    statusNote: { sl: "Violina je naprodaj.", en: "The violin is for sale." },
+  },
+  {
+    id: "amaryllis-regia",
+    name: "Amaryllis Regia",
+    origin: { sl: "Švedska mojstrska violina", en: "Swedish master violin" },
+    year: { sl: "1962", en: "1962" },
+    flowerVariant: 3,
+    intro: {
+      sl: "Odprt, nosilen in zrel ton z močnim koncertnim značajem.",
+      en: "An open, carrying and mature tone with a strong concert character.",
+    },
+    description: {
+      sl: "Mojstrska violina polne velikosti (4/4) z etiketo Birger Nilsson, izdelana leta 1962 v švedskem mestu Ystad — kakovostna severnoevropska goslarska tradicija z izjemno odprtim, nosilnim tonom.",
+      en: "A full-size (4/4) master violin labelled Birger Nilsson, made in 1962 in Ystad, Sweden — quality Northern European lutherie with an exceptionally open, carrying tone.",
+    },
+    status: "rent",
+    options: ["izposoja", "preizkus"],
+
+    maker: { sl: "Birger Nilsson, Ystad", en: "Birger Nilsson, Ystad" },
+    size: "4/4",
+    illustration: "/images/violins/amaryllis-regia/amaryllis-regia-ilustracija.webp",
+    photos: [
+      "/images/violins/amaryllis-regia/amaryllis-regia-spredaj.webp",
+      "/images/violins/amaryllis-regia/amaryllis-regia-zadaj.webp",
+    ],
+    lead: {
+      sl: "Tako kot kraljevski amarilis tudi Amaryllis Regia očara z veličastno pojavnostjo, žarečo lepoto in izrazitim značajem.",
+      en: "Like a royal amaryllis, Amaryllis Regia enchants with its majestic appearance, radiant beauty and distinctive character.",
+    },
+    descriptionParas: {
+      sl: [
+        "Mojstrska violina polne velikosti (4/4), izdelana leta 1962 v švedskem mestu Ystad, nosi etiketo Birger Nilsson. Inštrument združuje kakovostno severnoevropsko goslarsko tradicijo z izjemno odprtim, nosilnim in zrelim tonom.",
+        "Violino odlikuje dvodelna smrekova zgornja plošča ter dvodelen javorjev hrbet z nežnimi do srednje izrazitimi plamenicami. Posebno pozornost pritegne njen živahen originalni rdeče-jantarni lak, ki inštrumentu daje toplino, sijaj in prepoznaven umetniški značaj.",
+        "Model violine je nekoliko širši in robustnejši, kar prispeva k bogati zvočni sliki, odlični projekciji in uravnoteženosti vseh registrov. Inštrument se odlikuje po jasnem odzivu, polnem tonu ter zanesljivem nastopu tako v komorni igri kot na koncertnem odru.",
+        "Tako kot cvet kraljevskega amarilisa tudi ta violina ne ostane neopažena. Njena zvočna prisotnost je izrazita, a hkrati plemenita in elegantna. Primerna je za naprednejše učence glasbenih šol, dijake konservatorijev, študente akademij in violiniste, ki iščejo kakovosten evropski mojstrski inštrument z močnim koncertnim značajem.",
+      ],
+      en: [
+        "This full-size (4/4) master violin, made in 1962 in the Swedish town of Ystad, bears the label Birger Nilsson. The instrument combines the quality Northern European lutherie tradition with an exceptionally open, carrying and mature tone.",
+        "It features a two-piece spruce top and a two-piece maple back with fine to moderately pronounced flames. Its lively original red-amber varnish stands out, giving the instrument warmth, lustre and a recognisable artistic character.",
+        "The violin's model is somewhat wider and more robust, which contributes to a rich sound, excellent projection and balance across all registers. The instrument is distinguished by a clear response, a full tone and a reliable performance both in chamber playing and on the concert stage.",
+        "Like the flower of the royal amaryllis, this violin does not go unnoticed. Its sonic presence is distinctive, yet noble and elegant. It suits advanced students of music schools, conservatory and academy students, and violinists seeking a quality European master instrument with a strong concert character.",
+      ],
+    },
+    specs: [
+      { label: { sl: "Velikost", en: "Size" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)" } },
+      { label: { sl: "Dolžina korpusa", en: "Body length" }, value: { sl: "359 mm", en: "359 mm" } },
+      { label: { sl: "Zgornji obod", en: "Upper bout" }, value: { sl: "169 mm", en: "169 mm" } },
+      { label: { sl: "Srednji obod", en: "Middle bout" }, value: { sl: "115 mm", en: "115 mm" } },
+      { label: { sl: "Spodnji obod", en: "Lower bout" }, value: { sl: "208 mm", en: "208 mm" } },
+      { label: { sl: "Zgornja plošča", en: "Top plate" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece" } },
+      { label: { sl: "Hrbet", en: "Back" }, value: { sl: "javor, dvodelen", en: "maple, two-piece" } },
+      { label: { sl: "Stranice", en: "Ribs" }, value: { sl: "javor", en: "maple" } },
+      { label: { sl: "Polž", en: "Scroll" }, value: { sl: "javor", en: "maple" } },
+      { label: { sl: "Lak", en: "Varnish" }, value: { sl: "originalni rdeče-jantarni", en: "original red-amber" } },
+      { label: { sl: "Leto izdelave", en: "Year made" }, value: { sl: "1962", en: "1962" } },
+      { label: { sl: "Goslar", en: "Luthier" }, value: { sl: "Birger Nilsson", en: "Birger Nilsson" } },
+      { label: { sl: "Kraj izdelave", en: "Place made" }, value: { sl: "Ystad, Švedska", en: "Ystad, Sweden" } },
+    ],
+    statusNote: {
+      sl: "Violina je del zbirke Violin Garden Collection in je na voljo za dolgoročno ali projektno izposojo.",
+      en: "The violin is part of the Violin Garden Collection and is available for long-term or project rental.",
+    },
+  },
+  {
+    id: "rosa-aurea",
+    name: "Rosa Aurea",
+    origin: { sl: "Nemška / saška šola", en: "German / Saxon school" },
+    year: { sl: "okoli 1890–1900", en: "c. 1890–1900" },
+    flowerVariant: 4,
+    intro: {
+      sl: "Bogat, odprt in nosilen solistični zvok.",
+      en: "A rich, open and carrying solo sound.",
+    },
+    description: {
+      sl: "Kakovostna violina polne velikosti (4/4), izdelana okoli leta 1900 v znameniti goslarski pokrajini Markneukirchen–Vogtland, ki predstavlja najboljše značilnosti pozne nemško-saške goslarske tradicije.",
+      en: "A quality full-size (4/4) violin made around 1900 in the renowned lutherie region of Markneukirchen–Vogtland, showcasing the best features of the late German-Saxon lutherie tradition.",
+    },
+    status: "collection",
+    options: ["preizkus"],
+
+    maker: { sl: "Markneukirchen – Vogtland", en: "Markneukirchen – Vogtland" },
+    size: "4/4",
+    illustration: "/images/violins/rosa-aurea/rosa-aurea-ilustracija.webp",
+    photos: [
+      "/images/violins/rosa-aurea/rosa-aurea-spredaj.webp",
+      "/images/violins/rosa-aurea/rosa-aurea-zadaj.webp",
+    ],
+    lead: {
+      sl: "Tako kot zlata vrtnica tudi Rosa Aurea očara s svojo toplino, plemenitostjo in žarečo prisotnostjo.",
+      en: "Like a golden rose, Rosa Aurea enchants with its warmth, nobility and radiant presence.",
+    },
+    descriptionParas: {
+      sl: [
+        "Zlata vrtnica je plemenit cvet, ki olepšuje najbolj sončen del Violinskega vrta. Njeni zlato obarvani cvetovi simbolizirajo svetlobo, bogastvo duha, dostojanstvo in brezčasno lepoto. Tudi Rosa Aurea izstopa s svojo žlahtno podobo, bogatim tonom in izrazito koncertno prisotnostjo.",
+        "Kakovostna violina polne velikosti (4/4), izdelana okoli leta 1900 v znameniti goslarski pokrajini Markneukirchen–Vogtland, predstavlja najboljše značilnosti pozne nemško-saške goslarske tradicije. Inštrument združuje elegantno izdelavo, bogat zven in izrazito umetniško prepričljivost.",
+        "Violino odlikuje lepo izbran resonančni les ter privlačen zlato-jantarni lak, ki poudarja njeno plemenito podobo. Model je uravnotežen in zrel, z elegantnimi linijami ter izrazito profesionalnim značajem.",
+        "Njena največja odlika je ton. Rosa Aurea premore bogat, odprt in izjemno nosilen solistični zvok, ki se z lahkoto prebije skozi koncertni prostor. Ton je poln, plemenit in barvito razgiban, z lepim ravnovesjem med toplino in projekcijo. Inštrument se odziva hitro in zanesljivo ter omogoča širok izrazni razpon.",
+        "Gre za violino z izrazitim umetniškim značajem, ki nagrajuje zrelo tehniko in muzikalnost. Primerna je za profesionalne violiniste, študente glasbenih akademij, dijake konservatorijev ter vse, ki iščejo kakovosten evropski inštrument z vrhunskim koncertnim potencialom.",
+      ],
+      en: [
+        "The golden rose is a noble bloom that adorns the sunniest part of the Violin Garden. Its golden flowers symbolise light, richness of spirit, dignity and timeless beauty. Rosa Aurea, too, stands out with its noble appearance, rich tone and distinctive concert presence.",
+        "A quality full-size (4/4) violin made around 1900 in the renowned lutherie region of Markneukirchen–Vogtland, it embodies the best features of the late German-Saxon lutherie tradition. The instrument combines elegant craftsmanship, a rich sound and striking artistic conviction.",
+        "It is distinguished by beautifully selected tonewood and an attractive golden-amber varnish that emphasises its noble appearance. The model is balanced and mature, with elegant lines and a distinctly professional character.",
+        "Its greatest quality is the tone. Rosa Aurea possesses a rich, open and exceptionally carrying solo sound that easily cuts through a concert hall. The tone is full, noble and colourfully varied, with a fine balance between warmth and projection. The instrument responds quickly and reliably, allowing a wide expressive range.",
+        "This is a violin with a distinctive artistic character that rewards mature technique and musicianship. It suits professional violinists, students of music academies, conservatory students and anyone seeking a quality European instrument with top concert potential.",
+      ],
+    },
+    statusNote: {
+      sl: "Violina je del stalne zbirke Violin Garden Collection.",
+      en: "The violin is part of the permanent Violin Garden Collection.",
+    },
+  },
 ];
 
 export function getViolin(id: string): Violin | undefined {
   return violins.find((v) => v.id === id);
 }
 
-export const violinsForSale = violins.filter((v) => v.forSale);
+// Violine, ki iščejo novega glasbenika (naprodaj ali za izposojo) — prikazane
+// na strani »Violine za nove zgodbe«. Stalna zbirka je izključena.
+export const availableViolins = violins.filter((v) => v.status !== "collection");
 
 // ── Localization helper ──────────────────────────────────────────────────────
 // Flattens a Violin's per-language fields down to plain strings for one language,
@@ -174,7 +350,7 @@ export interface LocalViolin {
   flowerVariant: number;
   intro: string;
   description: string;
-  forSale: boolean;
+  status: ViolinStatus;
   options: InquiryKind[];
   price?: string;
   maker?: string;
@@ -196,7 +372,7 @@ export function localizeViolin(v: Violin, lang: Lang): LocalViolin {
     flowerVariant: v.flowerVariant,
     intro: v.intro[lang],
     description: v.description[lang],
-    forSale: v.forSale,
+    status: v.status,
     options: v.options,
     price: v.price?.[lang],
     maker: v.maker?.[lang],

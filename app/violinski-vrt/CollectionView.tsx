@@ -54,7 +54,9 @@ export default function CollectionView() {
                 ) : (
                   <Flower variant={v.flowerVariant} size={150} />
                 )}
-                {v.forSale && <span className={styles.badge}>{t.collectionPage.badgeForSale}</span>}
+                {v.status !== "collection" && (
+                  <span className={styles.badge}>{t.collectionPage.badge[v.status]}</span>
+                )}
               </div>
               <div className={styles.body}>
                 <h2 className={styles.name}>{v.name}</h2>
