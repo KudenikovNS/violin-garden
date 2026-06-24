@@ -114,7 +114,15 @@ export default function DetailView({ violin }: { violin: Violin }) {
             <h2 className={styles.ctaTitle}>
               {v.status === "collection" ? t.detail.ctaTitleCollection : t.detail.ctaTitle}
             </h2>
-            <p className={styles.ctaText}>{t.detail.inquiryInvitation}</p>
+            {v.ctaParas ? (
+              v.ctaParas.map((p, i) => (
+                <p key={i} className={styles.ctaText}>
+                  {p}
+                </p>
+              ))
+            ) : (
+              <p className={styles.ctaText}>{t.detail.inquiryInvitation}</p>
+            )}
             <InquiryOptions options={v.options} violinName={v.name} />
           </section>
         )}

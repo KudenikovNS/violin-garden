@@ -41,6 +41,7 @@ export interface Violin {
   descriptionParas?: LList; // celotna predstavitev po odstavkih
   specs?: SpecRow[]; // tehnični podatki
   statusNote?: L; // besedilo ob statusu / povpraševanju
+  ctaParas?: LList; // lastno besedilo razdelka »Nova glasbena pot« (nadomesti privzeti vabilni stavek)
 }
 
 // Začasni (placeholder) podatki — nadomestimo z resničnimi, ko jih prejmemo od Inge.
@@ -329,6 +330,81 @@ export const violins: Violin[] = [
       en: "The violin is part of the permanent Violin Garden Collection.",
     },
   },
+  {
+    id: "dahlia-rubra",
+    name: "Dahlia Rubra",
+    origin: { sl: "Nemško-avstrijska violina", en: "German-Austrian violin" },
+    year: { sl: "okoli 1900–1930", en: "c. 1900–1930" },
+    flowerVariant: 5,
+    intro: {
+      sl: "Topel, sonoren in zaobljen ton z dušo in bogato glasbeno preteklostjo.",
+      en: "A warm, sonorous and rounded tone with soul and a rich musical past.",
+    },
+    description: {
+      sl: "Kakovostna violina polne velikosti (4/4) iz tradicije srednjeevropskih goslarskih delavnic nemško-avstrijskega prostora (okoli 1900–1930), katere največja vrednost je v bogastvu njene glasbene preteklosti.",
+      en: "A quality full-size (4/4) violin from the tradition of the Central European lutherie workshops of the German-Austrian region (c. 1900–1930), whose greatest value lies in the richness of its musical past.",
+    },
+    status: "collection",
+    options: ["izposoja", "preizkus"],
+
+    maker: { sl: "Srednjeevropska goslarska delavnica", en: "Central European lutherie workshop" },
+    size: "4/4",
+    illustration: "/images/violins/dahlia-rubra/dahlia-rubra-ilustracija.webp",
+    photos: [
+      "/images/violins/dahlia-rubra/dahlia-rubra-spredaj.webp",
+      "/images/violins/dahlia-rubra/dahlia-rubra-zadaj.webp",
+    ],
+    lead: {
+      sl: "Tako kot rdeča dalija tudi Dahlia Rubra očara s svojo toplino, zrelostjo in bogato življenjsko zgodbo.",
+      en: "Like a red dahlia, Dahlia Rubra enchants with its warmth, maturity and rich life story.",
+    },
+    descriptionParas: {
+      sl: [
+        "Rdeča dalija je cvet poznega poletja, ki simbolizira vztrajnost, notranjo moč in lepoto, ki se skozi čas ne izgublja, temveč poglablja. Njeni žareči odtenki rubina, bakra in zlata spominjajo na toplino sončnega zahoda ter na dragocene sledi časa, ki vsaki stvari podarijo edinstven značaj.",
+        "Takšna je tudi ta violina – izstopa s svojo žlahtno patino, toplim sonornim glasom in zgodbo, ki jo je skozi desetletja zapisovalo življenje samo. Kakovostna violina polne velikosti (4/4), izdelana v tradiciji srednjeevropskih goslarskih delavnic nemško-avstrijskega prostora okoli let 1900–1930, predstavlja inštrument, katerega največja vrednost ni zgolj v izdelavi, temveč v bogastvu njegove glasbene preteklosti.",
+        "Violino odlikuje privlačen rdeče-jantarni lak, ki v različnih svetlobah prehaja med odtenki rubina, bakra in zlata. Model je uravnotežen in eleganten, z lepo oblikovanimi linijami ter značajem, značilnim za kakovostne srednjeevropske inštrumente prve polovice 20. stoletja.",
+        "Njena največja posebnost pa je nekaj drugega. Dahlia Rubra je bila veliko igrana. Na njej so vidne sledi časa, drobne obrabe in naravna patina, ki pričajo o desetletjih glasbenega življenja. To ni inštrument, ki bi večino svojega obstoja preživel pozabljen v omari ali zaprt v vitrini. To je violina, ki je izpolnjevala svoj namen.",
+        "Bila je spremljevalka glasbenikov. Njeni robovi, lak in površina pripovedujejo zgodbo neštetih vaj, nastopov, koncertov in glasbenih srečanj. Vsaka sled ima svoj pomen, vsaka obraba svojo zgodbo.",
+        "Prav v tem je njena posebna vrednost. Inštrumenti, ki so desetletja živeli skozi glasbo, pogosto razvijejo posebno zvočno osebnost. Les skozi dolga leta vibracij dozori, ton postane mehkejši, polnejši in bolj povezan. Dahlia Rubra nosi v sebi prav to izkušnjo.",
+        "Njena največja odlika je ton. Dahlia Rubra premore topel, sonoren in prijetno zaobljen zvok, z lepo globino v srednjem registru in mehko, plemenito barvo, ki poslušalca pritegne brez ostrine ali agresivnosti. Ton je zrel, pevski in naravno odprt. Njegov glas ne išče pozornosti z močjo, temveč z lepoto zvočne barve, muzikalnostjo in občutkom pristnosti.",
+        "Gre za violino z dušo – inštrument, ki ne pripoveduje svoje zgodbe skozi popolnost, temveč skozi življenje, ki ga je preživel v glasbi.",
+      ],
+      en: [
+        "The red dahlia is a flower of late summer, a symbol of perseverance, inner strength and a beauty that does not fade with time but deepens. Its glowing shades of ruby, copper and gold recall the warmth of a sunset and the precious traces of time that lend every thing a character of its own.",
+        "So it is with this violin — it stands out with its noble patina, warm and sonorous voice, and a story written over decades by life itself. A quality full-size (4/4) violin made in the tradition of the Central European lutherie workshops of the German-Austrian region around 1900–1930, it is an instrument whose greatest value lies not merely in its craftsmanship, but in the richness of its musical past.",
+        "The violin is distinguished by an attractive red-amber varnish that shifts between shades of ruby, copper and gold in different lights. The model is balanced and elegant, with beautifully shaped lines and a character typical of quality Central European instruments of the first half of the 20th century.",
+        "Its greatest distinction, however, is something else. Dahlia Rubra was played a great deal. It bears visible traces of time — small signs of wear and a natural patina that testify to decades of musical life. This is not an instrument that spent most of its existence forgotten in a cupboard or shut away in a display case. This is a violin that fulfilled its purpose.",
+        "It was a companion to musicians. Its edges, varnish and surface tell the story of countless rehearsals, performances, concerts and musical encounters. Every mark has its meaning, every trace of wear its own story.",
+        "Therein lies its special value. Instruments that have lived through music for decades often develop a particular sonic personality. Over long years of vibration the wood matures, and the tone becomes softer, fuller and more connected. Dahlia Rubra carries exactly this experience within it.",
+        "Its greatest quality is the tone. Dahlia Rubra possesses a warm, sonorous and pleasantly rounded sound, with fine depth in the middle register and a soft, noble colour that draws the listener in without harshness or aggression. The tone is mature, singing and naturally open. Its voice seeks attention not through power, but through the beauty of its colour, its musicality and a sense of authenticity.",
+        "This is a violin with a soul — an instrument that tells its story not through perfection, but through the life it has lived in music.",
+      ],
+    },
+    statusNote: {
+      sl: "Violina je del stalne zbirke Violin Garden Collection.",
+      en: "The violin is part of the permanent Violin Garden Collection.",
+    },
+    ctaParas: {
+      sl: [
+        "Tako kot rdeča dalija vsako leto znova zacveti, tudi Dahlia Rubra vedno znova oživi skozi glasbo.",
+        "Njena zgodba se je začela že dolgo pred prihodom v Violinski vrt. Desetletja je spremljala glasbenike, zbirala njihove spomine in vase shranjevala odmeve njihovih interpretacij.",
+        "Danes je del zbirke Violin Garden Collection, kjer vsaka violina nosi svoj značaj, svojo zgodbo in svoj glas.",
+        "Njena zgodba ni namenjena temu, da bi se zaključila z novim lastnikom, temveč da se skozi glasbo vedno znova nadaljuje. Večino časa ostaja v svojem vrtu, med inštrumenti, ki so skozi desetletja soustvarjali zbirko.",
+        "Le občasno in po predhodnem dogovoru lahko za določen čas postane del glasbene poti izbranega violinista. Na voljo je za izposojo. Takrat njena zgodba znova steče skozi nove interpretacije, koncertne odre, pomembne projekte in umetniška srečanja.",
+        "Morda bo prav njen topel, sonoren glas navdihnil novo interpretacijo, pomemben nastop ali novo poglavje umetniške poti.",
+        "Ko se to poglavje zaključi, se vrne tja, kamor pripada — v zbirko Violin Garden Collection, bogatejša za nov odmev in nov del svoje zgodbe.",
+      ],
+      en: [
+        "Just as the red dahlia blooms anew each year, so too does Dahlia Rubra come alive again and again through music.",
+        "Her story began long before she arrived at the Violin Garden. For decades she accompanied musicians, gathering their memories and storing within herself the echoes of their interpretations.",
+        "Today she is part of the Violin Garden Collection, where every violin carries its own character, its own story and its own voice.",
+        "Her story is not meant to end with a new owner, but to continue again and again through music. Most of the time she remains in her garden, among the instruments that have shaped the collection over the decades.",
+        "Only occasionally, and by prior arrangement, may she become part of the musical journey of a chosen violinist for a time. She is available for rental. Then her story flows once more through new interpretations, concert stages, important projects and artistic encounters.",
+        "Perhaps it will be her warm, sonorous voice that inspires a new interpretation, an important performance or a new chapter of an artistic path.",
+        "When that chapter comes to a close, she returns where she belongs — to the Violin Garden Collection, richer for a new echo and a new part of her story.",
+      ],
+    },
+  },
 ];
 
 export function getViolin(id: string): Violin | undefined {
@@ -361,6 +437,7 @@ export interface LocalViolin {
   descriptionParas?: string[];
   specs?: { label: string; value: string }[];
   statusNote?: string;
+  ctaParas?: string[];
 }
 
 export function localizeViolin(v: Violin, lang: Lang): LocalViolin {
@@ -383,5 +460,6 @@ export function localizeViolin(v: Violin, lang: Lang): LocalViolin {
     descriptionParas: v.descriptionParas?.[lang],
     specs: v.specs?.map((s) => ({ label: s.label[lang], value: s.value[lang] })),
     statusNote: v.statusNote?.[lang],
+    ctaParas: v.ctaParas?.[lang],
   };
 }
