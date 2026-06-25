@@ -153,14 +153,6 @@
   margin: 4px 0 0;
 }
 
-.statusPrice {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: #b6924f;
-  margin: 6px 0 0;
-}
-
 /* ── Tehnični podatki + galerija ──────────────── */
 .details {
   display: grid;

@@ -127,7 +127,6 @@ const en: Dict = {
         text: "This violin is a permanent part of the Violin Garden collection and is not for sale or rent.",
       },
     },
-    priceLabel: "Price",
     ctaEyebrow: "A NEW MUSICAL JOURNEY",
     ctaTitle: "This violin is looking for a new musician",
     ctaTitleCollection: "Discover this violin",

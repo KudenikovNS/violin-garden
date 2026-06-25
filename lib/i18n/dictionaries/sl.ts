@@ -125,7 +125,6 @@ const sl = {
         text: "Ta violina je stalni del zbirke Violinskega vrta in ni naprodaj ne za izposojo.",
       },
     },
-    priceLabel: "Cena violine",
     ctaEyebrow: "NOVA GLASBENA POT",
     ctaTitle: "Ta violina išče novega glasbenika",
     ctaTitleCollection: "Spoznajte to violino",
