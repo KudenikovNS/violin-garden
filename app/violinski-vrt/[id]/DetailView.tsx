@@ -108,9 +108,9 @@ export default function DetailView({ violin }: { violin: Violin }) {
         )}
 
         {/* ── Nova glasbena pot ──────────────────────── */}
-        {v.options.length > 0 && (
+        {(v.options.length > 0 || v.ctaParas) && (
           <section className={styles.cta}>
-            <span className={styles.ctaEyebrow}>{t.detail.ctaEyebrow}</span>
+            <span className={styles.ctaEyebrow}>{v.ctaEyebrow ?? t.detail.ctaEyebrow}</span>
             <h2 className={styles.ctaTitle}>
               {v.status === "collection" ? t.detail.ctaTitleCollection : t.detail.ctaTitle}
             </h2>
@@ -123,7 +123,9 @@ export default function DetailView({ violin }: { violin: Violin }) {
             ) : (
               <p className={styles.ctaText}>{t.detail.inquiryInvitation}</p>
             )}
-            <InquiryOptions options={v.options} violinName={v.name} />
+            {v.options.length > 0 && (
+              <InquiryOptions options={v.options} violinName={v.name} />
+            )}
           </section>
         )}
       </article>

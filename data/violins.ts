@@ -41,6 +41,7 @@ export interface Violin {
   descriptionParas?: LList; // celotna predstavitev po odstavkih
   specs?: SpecRow[]; // tehnični podatki
   statusNote?: L; // besedilo ob statusu / povpraševanju
+  ctaEyebrow?: L; // lasten naslov razdelka (nadomesti privzeti »Nova glasbena pot«)
   ctaParas?: LList; // lastno besedilo razdelka »Nova glasbena pot« (nadomesti privzeti vabilni stavek)
 }
 
@@ -553,6 +554,82 @@ export const violins: Violin[] = [
       ],
     },
   },
+  {
+    id: "rosa-flammea",
+    name: "Rosa Flammea",
+    origin: { sl: "Evropska šola", en: "European school" },
+    year: { sl: "začetek 20. stoletja", en: "early 20th century" },
+    flowerVariant: 8,
+    intro: {
+      sl: "Žameten, zelo globok in uravnotežen ton z žarečim rdečim lakom kakor plamen.",
+      en: "A velvety, very deep and balanced tone with a glowing red varnish like a flame.",
+    },
+    description: {
+      sl: "Kakovosten evropski inštrument polne velikosti (4/4) z začetka 20. stoletja, izdelan po modelu torinskega mojstra Giovannija Francesca Pressende, z žametnim globokim tonom in žarečim rdečim lakom.",
+      en: "A quality full-size (4/4) European instrument from the early 20th century, made after the model of the Turin master Giovanni Francesco Pressenda, with a velvety, deep tone and a glowing red varnish.",
+    },
+    status: "collection",
+    options: [],
+
+    maker: { sl: "po modelu G. F. Pressenda (Torino)", en: "after the model of G. F. Pressenda (Turin)" },
+    size: "4/4",
+    illustration: "/images/violins/rosa-flammea/rosa-flammea-ilustracija.webp",
+    photos: [
+      "/images/violins/rosa-flammea/rosa-flammea-spredaj.webp",
+      "/images/violins/rosa-flammea/rosa-flammea-zadaj.webp",
+    ],
+    lead: {
+      sl: "Tako kot ognjena vrtnica tudi Rosa Flammea združuje eleganco, moč in brezčasno lepoto.",
+      en: "Like a fiery rose, Rosa Flammea unites elegance, strength and timeless beauty.",
+    },
+    descriptionParas: {
+      sl: [
+        "Njena žareča rdeča barva, prefinjena izdelava in odprt, topel glas ustvarjajo inštrument z izrazitim značajem. Navdih črpa iz modela znamenitega torinskega mojstra Giovannija Francesca Pressende, katerega violine slovijo po plemenitem tonu, muzikalnosti in izvrstni igralnosti.",
+        "Gre za kakovosten evropski inštrument polne velikosti (4/4), izdelan v začetku 20. stoletja. Dvodelna smrekova zgornja plošča z drobnimi do srednje širokimi letnicami omogoča bogato resonanco in hiter odziv pod lokom. Dvodelni rahlo plamenast javorjev hrbet skupaj z enodelnimi javorjevimi obodi ter ujemajočo se javorjevo glavo ustvarja harmonično in elegantno celoto.",
+        "Njegova največja odlika je poseben žameten, zelo globok in uravnotežen ton z lepo projekcijo skozi vse registre. Inštrument se odziva zanesljivo in omogoča bogat glasbeni izraz tako pri liričnih kot virtuoznih skladbah.",
+        "Originalni rdeči oljni lak z nežnimi senčenji ustvarja vtis plamena, ki prehaja od svetlo žareče rdeče do globokih rubinastih odtenkov. Prav ta izjemna barvna igra je navdihnila ime Rosa Flammea.",
+        "Inštrument je strokovno pregledala priznana dunajska goslarka Gerlinde Reutterer.",
+      ],
+      en: [
+        "Its glowing red colour, refined craftsmanship and open, warm voice create an instrument with a distinctive character. It draws its inspiration from the model of the famous Turin master Giovanni Francesco Pressenda, whose violins are renowned for their noble tone, musicality and excellent playability.",
+        "It is a quality full-size (4/4) European instrument made in the early 20th century. The two-piece spruce top with fine to medium-wide grain allows a rich resonance and a quick response under the bow. The two-piece, slightly flamed maple back, together with one-piece maple ribs and a matching maple head, creates a harmonious and elegant whole.",
+        "Its greatest quality is a distinctive velvety, very deep and balanced tone with fine projection across all registers. The instrument responds reliably and allows a rich musical expression in both lyrical and virtuosic works.",
+        "The original red oil varnish with gentle shading creates the impression of a flame that shifts from a bright, glowing red to deep ruby shades. It is precisely this exceptional play of colour that inspired the name Rosa Flammea.",
+        "The instrument was professionally inspected by the renowned Viennese luthier Gerlinde Reutterer.",
+      ],
+    },
+    specs: [
+      { label: { sl: "Velikost", en: "Size" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)" } },
+      { label: { sl: "Dolžina korpusa", en: "Body length" }, value: { sl: "35,7 cm", en: "35.7 cm" } },
+      { label: { sl: "Celotna dolžina", en: "Overall length" }, value: { sl: "58,4 cm", en: "58.4 cm" } },
+      { label: { sl: "Zgornji obod", en: "Upper bout" }, value: { sl: "16,9 cm", en: "16.9 cm" } },
+      { label: { sl: "Srednji obod", en: "Middle bout" }, value: { sl: "11,1 cm", en: "11.1 cm" } },
+      { label: { sl: "Spodnji obod", en: "Lower bout" }, value: { sl: "20,7 cm", en: "20.7 cm" } },
+      { label: { sl: "Zgornja plošča", en: "Top plate" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece" } },
+      { label: { sl: "Hrbet", en: "Back" }, value: { sl: "javor, dvodelen, rahlo plamenast", en: "maple, two-piece, slightly flamed" } },
+      { label: { sl: "Stranice", en: "Ribs" }, value: { sl: "javor, enodelne", en: "maple, one-piece" } },
+      { label: { sl: "Polž", en: "Scroll" }, value: { sl: "javor", en: "maple" } },
+      { label: { sl: "Lak", en: "Varnish" }, value: { sl: "originalni rdeči oljni", en: "original red oil" } },
+      { label: { sl: "Etiketa", en: "Label" }, value: { sl: "faksimile G. F. Pressenda (Torino 1836)", en: "facsimile G. F. Pressenda (Turin 1836)" } },
+    ],
+    statusNote: {
+      sl: "Ta violina je del zasebne zbirke Violin Garden Collection in trenutno ni na voljo za prodajo ali izposojo. Predstavlja pomemben del zbirke ter ohranja svojo zgodbo kot del Violinskega vrta.",
+      en: "This violin is part of the private Violin Garden Collection and is currently not available for sale or rental. It represents an important part of the collection and preserves its story as part of the Violin Garden.",
+    },
+    ctaEyebrow: { sl: "GLASBENA ZGODBA", en: "A MUSICAL STORY" },
+    ctaParas: {
+      sl: [
+        "Tako kot vrtnica vsako leto znova zacveti z novo močjo, tudi Rosa Flammea nosi v sebi glas številnih generacij glasbenikov.",
+        "Njena zgodba se nadaljuje kot del zbirke Violin Garden Collection, kjer ohranja bogato evropsko violinsko dediščino in navdihuje nove generacije violinistov.",
+        "Vsak inštrument v Violinskem vrtu nosi svojo zgodbo. Rosa Flammea pripoveduje zgodbo ognja, plemenitosti in brezčasne glasbe.",
+      ],
+      en: [
+        "Just as a rose blooms anew with fresh strength each year, so too does Rosa Flammea carry within her the voice of many generations of musicians.",
+        "Her story continues as part of the Violin Garden Collection, where she preserves the rich European violin heritage and inspires new generations of violinists.",
+        "Every instrument in the Violin Garden carries its own story. Rosa Flammea tells a story of fire, nobility and timeless music.",
+      ],
+    },
+  },
 ];
 
 export function getViolin(id: string): Violin | undefined {
@@ -585,6 +662,7 @@ export interface LocalViolin {
   descriptionParas?: string[];
   specs?: { label: string; value: string }[];
   statusNote?: string;
+  ctaEyebrow?: string;
   ctaParas?: string[];
 }
 
@@ -608,6 +686,7 @@ export function localizeViolin(v: Violin, lang: Lang): LocalViolin {
     descriptionParas: v.descriptionParas?.[lang],
     specs: v.specs?.map((s) => ({ label: s.label[lang], value: s.value[lang] })),
     statusNote: v.statusNote?.[lang],
+    ctaEyebrow: v.ctaEyebrow?.[lang],
     ctaParas: v.ctaParas?.[lang],
   };
 }
