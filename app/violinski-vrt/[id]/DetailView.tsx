@@ -72,6 +72,11 @@ export default function DetailView({ violin }: { violin: Violin }) {
                 <span className={styles.statusMark}>{STATUS_MARK[v.status]}</span>
                 <div>
                   <p className={styles.statusName}>{t.detail.status[v.status].label}</p>
+                  {v.price && (
+                    <p className={styles.statusPrice}>
+                      {t.detail.priceLabel}: {v.price}
+                    </p>
+                  )}
                   <p className={styles.statusText}>
                     {v.statusNote ?? t.detail.status[v.status].text}
                   </p>

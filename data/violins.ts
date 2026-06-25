@@ -405,6 +405,76 @@ export const violins: Violin[] = [
       ],
     },
   },
+  {
+    id: "helianthus-aureus",
+    name: "Helianthus Aureus",
+    origin: { sl: "Evropska šola", en: "European school" },
+    year: { sl: "1931", en: "1931" },
+    flowerVariant: 6,
+    intro: {
+      sl: "Topel, poln in prijeten ton s sončnim značajem in muzikalnim ravnovesjem skozi vse registre.",
+      en: "A warm, full and pleasant tone with a sunny character and musical balance across all registers.",
+    },
+    description: {
+      sl: "Kakovostna violina polne velikosti (4/4) z etiketo Paolo Leonori (Roma 1931) – izrazito sončnega značaja, s čudovitim zlatim sončničnim lakom in toplim, muzikalnim zvenom.",
+      en: "A quality full-size (4/4) violin labelled Paolo Leonori (Rome 1931) — markedly sunny in character, with a magnificent golden sunflower varnish and a warm, musical sound.",
+    },
+    status: "sale",
+    options: ["nakup", "preizkus"],
+    price: { sl: "2.500 €", en: "€2,500" },
+
+    maker: { sl: "etiketa Paolo Leonori, Roma 1931", en: "Paolo Leonori label, Rome 1931" },
+    size: "4/4",
+    illustration: "/images/violins/helianthus-aureus/helianthus-aureus-ilustracija.webp",
+    photos: [
+      "/images/violins/helianthus-aureus/helianthus-aureus-spredaj.webp",
+      "/images/violins/helianthus-aureus/helianthus-aureus-zadaj.webp",
+    ],
+    lead: {
+      sl: "Tako kot sončnica tudi Helianthus Aureus sledi svetlobi.",
+      en: "Like a sunflower, Helianthus Aureus follows the light.",
+    },
+    descriptionParas: {
+      sl: [
+        "Njena zlata podoba, sončnični lak in topel, prijeten glas ustvarjajo občutek vedrine, topline in naravne elegance. Je inštrument, ki ne očara le z videzom, temveč tudi z zvočno iskrenostjo in muzikalnostjo.",
+        "Kakovostna violina polne velikosti (4/4) združuje privlačno estetsko podobo z muzikalnim in uravnoteženim zvenom. Inštrument odlikuje izrazito sončen značaj, ki ga poudarja čudovit zlat sončnični lak, zaradi katerega violina izstopa tako vizualno kot zvočno.",
+        "Lepo izbran resonančni les omogoča prijeten odziv pod lokom in naravno projekcijo tona. Zvok je topel, mehak in prijazen, z dovolj nosilnosti za samostojno igranje, hkrati pa ostaja poslušalcu blizu in prijeten.",
+        "Njena največja odlika je prav njena barva tona. Helianthus Aureus premore topel, poln in prijeten zvok, ki združuje mehkobo, muzikalnost in lepo zvočno ravnovesje skozi vse registre. Inštrument se odziva zanesljivo in omogoča sproščeno, naravno muziciranje.",
+        "Violina je bila strokovno pregledana, nastavljena in urejena pri goslarskem mojstru ter je pripravljena za takojšnje igranje.",
+        "Inštrument ima tudi cenitveni certifikat priznane dunajske goslarke Gerlinde Reutterer.",
+        "Primerna je za dijake konservatorijev, študente glasbenih akademij ter naprednejše učence glasbenih šol, ki iščejo kakovosten evropski inštrument s toplim, prijetnim in muzikalnim značajem. S svojo zanesljivostjo, uravnoteženim odzivom in prijetno zvočno barvo predstavlja odlično izbiro za vsakodnevni študij, nastope in nadaljnji umetniški razvoj.",
+      ],
+      en: [
+        "Its golden appearance, sunflower varnish and warm, pleasant voice create a feeling of brightness, warmth and natural elegance. It is an instrument that enchants not only by its looks, but also by its tonal sincerity and musicality.",
+        "This quality full-size (4/4) violin combines an attractive appearance with a musical, balanced sound. The instrument is distinguished by a markedly sunny character, emphasised by a magnificent golden sunflower varnish that makes the violin stand out both visually and tonally.",
+        "Beautifully selected tonewood allows a pleasant response under the bow and a natural projection of tone. The sound is warm, soft and friendly, with enough carrying power for solo playing, while remaining close and pleasant to the listener.",
+        "Its greatest quality is precisely its tone colour. Helianthus Aureus possesses a warm, full and pleasant sound that combines softness, musicality and a fine tonal balance across all registers. The instrument responds reliably and allows relaxed, natural music-making.",
+        "The violin has been professionally inspected, set up and adjusted by a master luthier and is ready for immediate playing.",
+        "The instrument also comes with an appraisal certificate from the renowned Viennese luthier Gerlinde Reutterer.",
+        "It suits conservatory students, students of music academies and advanced students of music schools seeking a quality European instrument with a warm, pleasant and musical character. With its reliability, balanced response and pleasant tone colour, it is an excellent choice for everyday study, performances and further artistic development.",
+      ],
+    },
+    statusNote: {
+      sl: "Violina je del zbirke Violin Garden Collection in trenutno išče svoj novi dom.",
+      en: "The violin is part of the Violin Garden Collection and is currently seeking its new home.",
+    },
+    ctaParas: {
+      sl: [
+        "Tako kot sončnica vsak dan znova obrača svoj cvet proti soncu, tudi Helianthus Aureus čaka na glasbenika, ki bo v njej prebudil nove zgodbe.",
+        "Njena pot ni več vezana le na zbirko, temveč na prihodnje koncerte, nastope, tekmovanja, študij in glasbene trenutke, ki jih bo ustvarjala skupaj z novim lastnikom.",
+        "Morda bo spremljala prve pomembne nastope, sprejemne izpite, koncerte ali preprosto vsakodnevno veselje do igranja. Morda bo ravno njen topel glas navdihnil novo interpretacijo, nov umetniški korak ali novo poglavje vaše glasbene poti.",
+        "Kot sončnica prinaša svetlobo v vrt, tako Helianthus Aureus prinaša toplino v glasbo.",
+        "Za podrobnejše informacije ali dogovor za osebni preizkus izpolnite kontaktni obrazec — z veseljem vam bomo inštrument predstavili in odgovorili na vsa vprašanja.",
+      ],
+      en: [
+        "Just as a sunflower turns its bloom toward the sun anew each day, so too does Helianthus Aureus await a musician who will awaken new stories within her.",
+        "Her path is no longer bound to the collection alone, but to future concerts, performances, competitions, study and musical moments she will create together with her new owner.",
+        "Perhaps she will accompany first important performances, entrance exams, concerts or simply the everyday joy of playing. Perhaps it will be her warm voice that inspires a new interpretation, a new artistic step or a new chapter of your musical path.",
+        "As the sunflower brings light to the garden, so Helianthus Aureus brings warmth to music.",
+        "For more detailed information or to arrange a personal trial, fill in the contact form — we will gladly present the instrument and answer all your questions.",
+      ],
+    },
+  },
 ];
 
 export function getViolin(id: string): Violin | undefined {
