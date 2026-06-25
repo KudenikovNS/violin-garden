@@ -107,7 +107,7 @@ export const violins: Violin[] = [
   },
   {
     id: "azalea-aurea",
-    name: "Azalea Aurea 222",
+    name: "Azalea Aurea",
     origin: { sl: "Nemško-bohemska violina", en: "German-Bohemian violin" },
     year: { sl: "okoli 1900", en: "c. 1900" },
     flowerVariant: 1,
