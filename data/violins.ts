@@ -475,6 +475,84 @@ export const violins: Violin[] = [
       ],
     },
   },
+  {
+    id: "rosa-mystica",
+    name: "Rosa Mystica",
+    origin: { sl: "Evropska šola", en: "European school" },
+    year: { sl: "okoli 1850–1880", en: "c. 1850–1880" },
+    flowerVariant: 7,
+    intro: {
+      sl: "Globok, topel in temen ton z bogato resonanco in plemenito patino več kot 150 let starega lesa.",
+      en: "A deep, warm and dark tone with rich resonance and the noble patina of wood more than 150 years old.",
+    },
+    description: {
+      sl: "Star evropski inštrument polne velikosti (4/4), najverjetneje izdelan v Mittenwaldu v drugi polovici 19. stoletja, z globokim, žametnim tonom in izrazitim umetniškim videzom.",
+      en: "An old full-size (4/4) European instrument, most likely made in Mittenwald in the second half of the 19th century, with a deep, velvety tone and a striking artistic appearance.",
+    },
+    status: "rent",
+    options: ["izposoja", "preizkus"],
+
+    maker: { sl: "etiketa Carlo Bergonzi (Cremona 1730)", en: "Carlo Bergonzi label (Cremona 1730)" },
+    size: "4/4",
+    illustration: "/images/violins/rosa-mystica/rosa-mystica-ilustracija.webp",
+    photos: [
+      "/images/violins/rosa-mystica/rosa-mystica-spredaj.webp",
+      "/images/violins/rosa-mystica/rosa-mystica-zadaj.webp",
+    ],
+    lead: {
+      sl: "Tako kot skrivnostna vrtnica tudi Rosa Mystica svojo pravo lepoto razkrije šele tistemu, ki ji prisluhne.",
+      en: "Like a mystical rose, Rosa Mystica reveals her true beauty only to those who listen to her.",
+    },
+    descriptionParas: {
+      sl: [
+        "Njena bogata jantarna patina, plemenita starost in globok, topel glas ustvarjajo občutek skrivnostnosti, elegance in brezčasne lepote. To je inštrument z značajem, ki nosi sledi mnogih desetletij muziciranja in pripoveduje svojo lastno zgodbo.",
+        "Gre za star evropski inštrument polne velikosti (4/4), najverjetneje izdelan v Mittenwaldu na Bavarskem v drugi polovici 19. stoletja. Inštrument navdušuje z izrazitim umetniškim videzom in zrelim zvočnim značajem. Več kot stoletje in pol star les je razvil bogato resonanco, zaradi katere violina zveni mehko, žametno in polno.",
+        "Njena največja odlika je globina tona. Rosa Mystica premore topel, temen in izrazno bogat zvok z lepo projekcijo skozi vse registre. Posebej očara v liričnih skladbah, kjer pride do izraza njena pevska kakovost in naravna muzikalnost.",
+        "Inštrument odlikujejo lepo oblikovana resonančna smreka na zgornji plošči, enodelni javorjev hrbet z nežnim plamenom, eleganten jantarni lak ter harmonične proporcije, značilne za kakovostne srednjeevropske violine 19. stoletja.",
+        "Na zgornji plošči je bila v preteklosti strokovno sanirana razpoka pod kobilico. Inštrument je stabilen in primeren za nadaljnje igranje.",
+        "Inštrument je bil strokovno pregledan in pripravljen za nadaljnjo uporabo.",
+        "Primeren je za violiniste, študente glasbenih akademij, zbiratelje ter vse, ki cenijo stare evropske inštrumente z izrazitim karakterjem. Zaradi svoje starosti, estetske lepote in zvočne zrelosti predstavlja zanimivo izbiro tako za koncertno uporabo kot tudi za zbirko.",
+      ],
+      en: [
+        "Its rich amber patina, noble age and deep, warm voice create a feeling of mystery, elegance and timeless beauty. This is an instrument with character, bearing the traces of many decades of music-making and telling its own story.",
+        "It is an old full-size (4/4) European instrument, most likely made in Mittenwald in Bavaria in the second half of the 19th century. The instrument impresses with its striking artistic appearance and mature tonal character. Wood more than a century and a half old has developed a rich resonance that makes the violin sound soft, velvety and full.",
+        "Its greatest quality is the depth of its tone. Rosa Mystica possesses a warm, dark and expressively rich sound with fine projection across all registers. It is especially enchanting in lyrical works, where its singing quality and natural musicality come to the fore.",
+        "The instrument is distinguished by a beautifully shaped resonant spruce top, a one-piece maple back with a gentle flame, an elegant amber varnish and harmonious proportions typical of quality Central European violins of the 19th century.",
+        "A crack under the bridge on the top plate was professionally repaired in the past. The instrument is stable and suitable for further playing.",
+        "The instrument has been professionally inspected and prepared for further use.",
+        "It suits violinists, students of music academies, collectors and all who appreciate old European instruments with a distinctive character. By virtue of its age, aesthetic beauty and tonal maturity, it is an appealing choice both for concert use and for a collection.",
+      ],
+    },
+    specs: [
+      { label: { sl: "Velikost", en: "Size" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)" } },
+      { label: { sl: "Celotna dolžina", en: "Overall length" }, value: { sl: "591 mm", en: "591 mm" } },
+      { label: { sl: "Dolžina korpusa", en: "Body length" }, value: { sl: "360 mm", en: "360 mm" } },
+      { label: { sl: "Zgornji obod", en: "Upper bout" }, value: { sl: "163 mm", en: "163 mm" } },
+      { label: { sl: "Srednji obod", en: "Middle bout" }, value: { sl: "110 mm", en: "110 mm" } },
+      { label: { sl: "Spodnji obod", en: "Lower bout" }, value: { sl: "203 mm", en: "203 mm" } },
+      { label: { sl: "Zgornja plošča", en: "Top plate" }, value: { sl: "smreka", en: "spruce" } },
+      { label: { sl: "Hrbet", en: "Back" }, value: { sl: "javor, enodelen", en: "maple, one-piece" } },
+      { label: { sl: "Lak", en: "Varnish" }, value: { sl: "jantarni", en: "amber" } },
+      { label: { sl: "Etiketa", en: "Label" }, value: { sl: "Carlo Bergonzi (Anno 1730, Cremona)", en: "Carlo Bergonzi (Anno 1730, Cremona)" } },
+      { label: { sl: "Starost", en: "Age" }, value: { sl: "več kot 150 let", en: "over 150 years" } },
+      { label: { sl: "Izvor", en: "Origin" }, value: { sl: "najverjetneje Mittenwald, Bavarska", en: "most likely Mittenwald, Bavaria" } },
+      { label: { sl: "Stanje", en: "Condition" }, value: { sl: "strokovno sanirana razpoka pod kobilico, stabilen", en: "professionally repaired crack under the bridge, stable" } },
+    ],
+    statusNote: {
+      sl: "Violina je del zbirke Violin Garden Collection in trenutno išče glasbenika, ki bo z njo ustvarjal nove zgodbe.",
+      en: "The violin is part of the Violin Garden Collection and is currently seeking a musician with whom to create new stories.",
+    },
+    ctaParas: {
+      sl: [
+        "Tako kot skrivnostna vrtnica svojega bistva ne razkrije vsakomur, tudi zvok violine Rosa Mystica ima svojo posebno skrivnost.",
+        "Njena pot se nadaljuje skozi nove koncerte, študij, umetniško raziskovanje in iskrene glasbene trenutke. Morda bo spremljala pomembne nastope, sprejemne izpite, tekmovanja ali preprosto vsakodnevno veselje do igranja prav na vaši glasbeni poti.",
+      ],
+      en: [
+        "Just as a mystical rose does not reveal its essence to everyone, so too the sound of the Rosa Mystica violin holds its own special secret.",
+        "Her journey continues through new concerts, study, artistic exploration and sincere musical moments. Perhaps she will accompany important performances, entrance exams, competitions or simply the everyday joy of playing on your own musical path.",
+      ],
+    },
+  },
 ];
 
 export function getViolin(id: string): Violin | undefined {
