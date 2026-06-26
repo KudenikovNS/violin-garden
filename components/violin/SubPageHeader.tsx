@@ -48,7 +48,7 @@ export default function SubPageHeader({
 
         <Link href="/" className={styles.logoLink}>
           <Image
-            src="/images/logo_new.webp"
+            src="/images/logo.webp"
             alt="Violin Garden"
             width={120}
             height={95}
@@ -66,7 +66,7 @@ export default function SubPageHeader({
               ✕
             </button>
             <Image
-              src="/images/logo_new.webp"
+              src="/images/logo.webp"
               alt="Violin Garden"
               width={140}
               height={110}

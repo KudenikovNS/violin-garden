@@ -23,7 +23,7 @@ export default function AuthorSection() {
 
       <div className={styles.imageWrapper}>
         <Image
-          src="/images/avtorica2.webp"
+          src="/images/avtorica.webp"
           alt={t.author.imageAlt}
           fill
           className={styles.image}

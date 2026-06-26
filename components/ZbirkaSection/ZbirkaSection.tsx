@@ -10,7 +10,7 @@ export default function ZbirkaSection() {
     <section className={styles.section}>
       <div className={styles.imageWrapper}>
         <Image
-          src="/images/zbirka_new.webp"
+          src="/images/zbirka.webp"
           alt={t.zbirka.imageAlt}
           fill
           className={styles.image}

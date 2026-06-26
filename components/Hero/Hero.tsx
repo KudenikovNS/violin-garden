@@ -60,7 +60,7 @@ export default function Hero() {
 
       <div className={styles.content}>
         <Image
-          src="/images/logo_new.webp"
+          src="/images/logo.webp"
           alt="Violin Garden logo"
           width={240}
           height={190}
@@ -76,7 +76,7 @@ export default function Hero() {
         </div>
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
           <button className={styles.closeBtn} onClick={() => setMenuOpen(false)} aria-label={t.a11y.closeMenu}>✕</button>
-          <Image src="/images/logo_new.webp" alt="Violin Garden logo" width={120} height={95} className={styles.menuLogo} />
+          <Image src="/images/logo.webp" alt="Violin Garden logo" width={120} height={95} className={styles.menuLogo} />
           <div className={styles.menuDivider}>
             <span className={styles.menuDividerLine} /><span className={styles.menuDividerDot}>✦</span><span className={styles.menuDividerLine} />
           </div>
