@@ -34,9 +34,16 @@
   margin: 0 0 8px;
 }
 
+/* Nemški naslov je daljši; na velikih zaslonih ga z 28px zmanjšamo na 24px.
+   Le za velike zaslone (>1024px) — pod tem že veljata 24px/22px iz prelomnih
+   točk spodaj. Velja le za nemščino. */
+@media (min-width: 1025px) {
+  :global(html[lang="de"]) .heading { font-size: 24px; }
+}
+
 .underline {
   display: block;
-  width: 52px;
+  width: 98%;
   height: 2px;
   background: #c8ab73;
   margin-bottom: 14px;

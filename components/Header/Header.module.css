@@ -1,64 +1,38 @@
-.header {
+/* Glava domače strani. Stili so preneseni iz Hero.module.css (vizualno
+   nespremenjeni); ostanejo le slogi vrstice logotip | naslov | navigacija. */
+
+.content {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 70px;
-  position: relative;
-  z-index: 10;
+  padding: 60px 80px 20px;
+  gap: 24px;
+  box-sizing: border-box;
   background: #fdfaf3;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
+.logo {
+  flex: 0 0 auto;
 }
 
-.logoBox {
-  width: 72px;
-  height: 82px;
-  border: 1.5px solid #c2a063;
-  border-radius: 6px;
-  position: relative;
-  overflow: hidden;
-}
-
-.brandText {
-  line-height: 1.05;
-  white-space: nowrap;
-}
-
-.brandName {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  color: #5a4f3f;
-}
-
-.brandSub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.34em;
-  color: #b6924f;
-  margin-top: 3px;
+.text {
+  flex: 1;
+  text-align: center;
 }
 
 .nav {
+  flex: 0 0 auto;
   display: flex;
-  align-items: center;
-  gap: 38px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: #4a4234;
-  white-space: nowrap;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
 }
 
 .navLink {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   color: #4a4234;
   text-decoration: none;
   transition: color 0.2s;
@@ -68,34 +42,59 @@
   color: #b6924f;
 }
 
-.right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-shrink: 0;
+/* Daljše nemške oznake poravnamo desno in jim dovolimo prelom. Velja le za nemščino. */
+:global(html[lang="de"]) .navLink {
+  text-align: right;
+  letter-spacing: 0.1em;
 }
 
-.socials {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.eyebrow {
+  margin-bottom: 16px;
 }
 
-.socialLink {
-  display: flex;
-  align-items: center;
-  opacity: 0.85;
-  transition: opacity 0.2s;
+.eyebrowText {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #b6924f;
 }
 
-.socialLink:hover {
-  opacity: 1;
+.title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 74px;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: #3c3326;
+  margin: 0 0 12px;
 }
+
+/* Nemški naslov je ena dolga zloženka ("GEIGENGARTEN") in pri 74px ne gre v
+   svojo vrstico. Z fluidno velikostjo (clamp) ga pomanjšamo — eno pravilo
+   pokrije vse širine zaslona, zato prelomnih točk ni treba podvajati.
+   Velja le za nemščino; slovenski in angleški naslov ostaneta nespremenjena. */
+:global(html[lang="de"]) .title {
+  font-size: clamp(1.9rem, 5.2vw, 3.6rem);
+  /* naslov ("GEIGENGARTEN") naj ostane cela beseda — brez deljenja z vezajem */
+  -webkit-hyphens: manual;
+  hyphens: manual;
+  overflow-wrap: normal;
+}
+
+.subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #b6924f;
+  margin: 0;
+}
+
+/* ── Burger ──────────────────────────────── */
 
 .burger {
   display: none;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   gap: 5px;
   width: 36px;
@@ -103,92 +102,189 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 4px;
+  flex-shrink: 0;
 }
 
 .burger span {
   display: block;
-  width: 22px;
   height: 1.5px;
-  background: #5a4f3f;
-  border-radius: 2px;
-  transform-origin: center;
+  background: #4a4234;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.burgerOpen span:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
+.burgerOpen span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burgerOpen span:nth-child(2) { opacity: 0; }
+.burgerOpen span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.closeBtn {
+  display: none;
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #c2a063;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s;
 }
 
-.burgerOpen span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
+.closeBtn:hover { color: #e8d5a3; }
+
+.menuLogo { display: none; }
+
+.menuDivider {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
 }
 
-.burgerOpen span:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
+.menuDividerLine {
+  width: 60px;
+  height: 1px;
+  background: #5a4f3e;
+}
+
+.menuDividerDot {
+  color: #c2a063;
+  font-size: 11px;
+}
+
+.langSwitcher {
+  margin-top: 1.4rem;
+}
+
+/* ── Wide laptop ─────────────────────────── */
+@media (max-width: 1280px) {
+  .content { padding: 50px 50px 20px; }
 }
 
 /* ── Tablet ─────────────────────────────── */
 @media (max-width: 1024px) {
-  .header { padding: 12px 40px; }
-  .nav { gap: 24px; font-size: 13px; }
+  .content { padding: 40px 40px 16px; }
+  .logo { width: 180px; height: 150px; }
+  .nav { right: 40px; font-size: 12px; }
+  .title { font-size: 56px; }
+  .subtitle { font-size: 22px; }
 }
 
 /* ── Mobile ─────────────────────────────── */
 @media (max-width: 768px) {
-  .header {
-    flex-wrap: wrap;
-    padding: 12px 20px;
+  .content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    padding: 16px 24px 20px;
+    gap: 16px 0;
   }
-
+  .logo {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+    width: 100px;
+    height: 84px;
+  }
+  .text {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    text-align: center;
+  }
   .nav {
     display: none;
-    order: 3;
+    position: fixed;
+    inset: 0;
+    background: #2a2318;
     flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 0;
-    padding: 6px 0 12px;
-    margin-top: 6px;
-    border-top: 1px solid #ece1cd;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 100;
+    padding: 60px 40px;
   }
-
-  .navOpen {
-    display: flex;
-  }
-
+  .navOpen { display: flex; }
   .navLink {
-    padding: 12px 2px;
-    font-size: 16px;
-    width: 100%;
-    letter-spacing: 0.1em;
-    border-bottom: 1px solid rgba(210, 190, 160, 0.25);
+    font-size: 20px;
+    letter-spacing: 0.22em;
+    color: #e8d5a3;
+    text-align: center;
   }
-
-  .navLink:last-child {
-    border-bottom: none;
-  }
-
-  .socials {
-    display: none;
-  }
-
+  .navLink:hover { color: #c2a063; }
+  .closeBtn { display: block; }
+  .menuLogo { display: block; }
+  .menuDivider { display: flex; }
   .burger {
     display: flex;
+    grid-column: 3;
+    grid-row: 1;
   }
+  .title { font-size: 44px; }
+  .subtitle { font-size: 18px; }
+}
 
-  .logoBox {
-    width: 56px;
-    height: 64px;
+/* ── Nemščina: zgodnejši preklop glave v meni (burger) ───────────────────────
+   Inline glava (logotip | naslov | navigacija) je za dolge nemške oznake
+   pretesna že pod ~960px: navigacija desno stisne stolpec naslova in
+   "GEIGENGARTEN" se prelomi v tri vrstice. Zato za nemščino navigacijo v tem
+   pasu zložimo v burger — enako kot v mobilni postavitvi —, naslov pa dobi vso
+   širino. Velja LE za nemščino; postavitev v sl/en ostane nespremenjena. */
+@media (max-width: 960px) {
+  :global(html[lang="de"]) .content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 16px 0;
   }
+  :global(html[lang="de"]) .logo {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+  }
+  :global(html[lang="de"]) .text {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    text-align: center;
+  }
+  :global(html[lang="de"]) .nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #2a2318;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 100;
+    padding: 60px 40px;
+  }
+  :global(html[lang="de"]) .navOpen { display: flex; }
+  :global(html[lang="de"]) .navLink {
+    font-size: 20px;
+    letter-spacing: 0.22em;
+    color: #e8d5a3;
+    text-align: center;
+  }
+  :global(html[lang="de"]) .navLink:hover { color: #c2a063; }
+  :global(html[lang="de"]) .closeBtn { display: block; }
+  :global(html[lang="de"]) .menuLogo { display: block; }
+  :global(html[lang="de"]) .menuDivider { display: flex; }
+  :global(html[lang="de"]) .burger {
+    display: flex;
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
 
-  .brandName {
-    font-size: 16px;
-  }
-
-  .brandSub {
-    font-size: 11px;
-    letter-spacing: 0.26em;
-  }
+/* ── Small mobile ────────────────────────── */
+@media (max-width: 480px) {
+  .content { padding: 20px 16px 16px; gap: 0; }
+  .logo { width: 110px; height: 92px; }
+  .title { font-size: 36px; }
+  .eyebrowText { font-size: 13px; }
+  .subtitle { font-size: 16px; }
 }

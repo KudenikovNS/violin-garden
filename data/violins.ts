@@ -30,7 +30,6 @@ export interface Violin {
   description: L; // celotna predstavitev
   status: ViolinStatus; // naprodaj / za izposojo / stalna zbirka
   options: InquiryKind[]; // razpoložljive vrste povpraševanja
-  price?: L;
 
   // ── Bogata predstavitev (neobvezno; prikaže se le, kadar so podatki na voljo) ──
   maker?: L; // izdelovalec / etiketa
@@ -50,80 +49,82 @@ export const violins: Violin[] = [
   {
     id: "rosa-alba",
     name: "Rosa Alba",
-    origin: { sl: "Italijanska violina", en: "Italian violin" },
-    year: { sl: "4/4", en: "4/4" },
+    origin: { sl: "Italijanska violina", en: "Italian violin", de: "Italienische Geige" },
+    year: { sl: "", en: "", de: "" },
     flowerVariant: 0,
     intro: {
       sl: "Eleganten, odprt in nosilen ton z izrazitim značajem.",
       en: "An elegant, open and carrying tone with a distinctive character.",
+      de: "Ein eleganter, offener und tragfähiger Ton mit ausgeprägtem Charakter.",
     },
     description: {
       sl: "Elegantna violina polne velikosti (4/4) z etiketo Natale Carletti »Fu Carlo«, ki združuje privlačno estetsko podobo s krasnimi zvočnimi lastnostmi.",
-      en: "An elegant full-size (4/4) violin labelled Natale Carletti »Fu Carlo«, combining an attractive appearance with beautiful tonal qualities.",
+      en: "An elegant full-size (4/4) violin labelled Natale Carletti “Fu Carlo”, combining an attractive appearance with beautiful tonal qualities.",
+      de: "Eine elegante Geige in ganzer Größe (4/4) mit dem Etikett Natale Carletti »Fu Carlo«, die ein ansprechendes Erscheinungsbild mit wunderschönen klanglichen Eigenschaften verbindet.",
     },
     status: "sale",
     options: ["nakup", "izposoja", "preizkus"],
-    price: { sl: "Na povpraševanje", en: "On request" },
-
-    maker: { sl: "Natale Carletti »Fu Carlo«", en: "Natale Carletti »Fu Carlo«" },
+    maker: { sl: "Natale Carletti »Fu Carlo«", en: "Natale Carletti “Fu Carlo”", de: "Natale Carletti »Fu Carlo«" },
     size: "4/4",
     illustration: "/images/violins/rosa-alba/rosa-alba-ilustracija.webp",
     photos: [
       "/images/violins/rosa-alba/rosa-alba-spredaj.webp",
       "/images/violins/rosa-alba/rosa-alba-zadaj.webp",
     ],
-    lead: {
-      sl: "Tako kot bela vrtnica tudi Rosa Alba očara z eleganco, toplino in plemenitim značajem.",
-      en: "Like a white rose, Rosa Alba enchants with elegance, warmth and a noble character.",
-    },
     descriptionParas: {
       sl: [
-        "Elegantna violina polne velikosti (4/4) nosi etiketo Natale Carletti »Fu Carlo« in združuje privlačno estetsko podobo s krasnimi zvočnimi lastnostmi.",
+        "Ta elegantna violina polne velikosti (4/4) nosi etiketo Natale Carletti »Fu Carlo« in združuje privlačno estetsko podobo s krasnimi zvočnimi lastnostmi.",
         "Inštrument odlikuje dvodelna smrekova zgornja plošča s srednje širokimi do širokimi letnicami ter dvodelen javorjev hrbet z nežnimi, ozkimi plamenicami. Svetlo rjav originalni lak lepo poudari naravno strukturo lesa in daje inštrumentu topel, plemenit videz.",
         "Violina je v dobrem splošnem stanju in ponuja odprt, nosilen ton z lepo projekcijo. Primerna je za naprednejše učence glasbenih šol, konservatorijev in violiniste, ki iščejo kakovosten evropski inštrument z izrazitim značajem.",
       ],
       en: [
-        "This elegant full-size (4/4) violin bears the label Natale Carletti »Fu Carlo« and combines an attractive appearance with beautiful tonal qualities.",
+        "This elegant full-size (4/4) violin bears the label Natale Carletti “Fu Carlo” and combines an attractive appearance with beautiful tonal qualities.",
         "The instrument features a two-piece spruce top with medium to wide grain and a two-piece maple back with fine, narrow flames. The original light-brown varnish beautifully highlights the natural structure of the wood and gives the instrument a warm, noble look.",
         "The violin is in good overall condition and offers an open, carrying tone with fine projection. It suits advanced students of music schools and conservatories, as well as violinists seeking a quality European instrument with a distinctive character.",
       ],
+      de: [
+        "Diese elegante Geige in ganzer Größe (4/4) trägt das Etikett Natale Carletti »Fu Carlo« und verbindet ein ansprechendes Erscheinungsbild mit wunderschönen klanglichen Eigenschaften.",
+        "Das Instrument zeichnet sich durch eine zweiteilige Fichtendecke mit mittleren bis breiten Jahresringen sowie einen zweiteiligen Ahornboden mit feiner, schmaler Flammung aus. Der hellbraune Originallack betont auf schöne Weise die natürliche Struktur des Holzes und verleiht dem Instrument ein warmes, edles Aussehen.",
+        "Die Geige ist in gutem Gesamtzustand und bietet einen offenen, tragfähigen Ton mit schöner Projektion. Sie eignet sich für fortgeschrittene Schülerinnen und Schüler von Musikschulen und Konservatorien sowie für Geigerinnen und Geiger, die ein hochwertiges europäisches Instrument mit ausgeprägtem Charakter suchen.",
+      ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length" }, value: { sl: "360 mm", en: "360 mm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout" }, value: { sl: "167,5 mm", en: "167.5 mm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout" }, value: { sl: "114 mm", en: "114 mm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout" }, value: { sl: "206 mm", en: "206 mm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece" } },
-      { label: { sl: "Hrbet", en: "Back" }, value: { sl: "javor, dvodelen", en: "maple, two-piece" } },
-      { label: { sl: "Stranice", en: "Ribs" }, value: { sl: "javor", en: "maple" } },
-      { label: { sl: "Polž", en: "Scroll" }, value: { sl: "javor", en: "maple" } },
-      { label: { sl: "Lak", en: "Varnish" }, value: { sl: "originalni svetlo rjav", en: "original light brown" } },
+      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
+      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "360 mm", en: "360 mm", de: "360 mm" } },
+      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "167,5 mm", en: "167.5 mm", de: "167,5 mm" } },
+      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "114 mm", en: "114 mm", de: "114 mm" } },
+      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "206 mm", en: "206 mm", de: "206 mm" } },
+      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece", de: "Fichte, zweiteilig" } },
+      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, dvodelen", en: "maple, two-piece", de: "Ahorn, zweiteilig" } },
+      { label: { sl: "Stranice", en: "Ribs", de: "Zargen" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
+      { label: { sl: "Polž", en: "Scroll", de: "Schnecke" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
+      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "originalni svetlo rjav", en: "original light brown", de: "original hellbraun" } },
     ],
     statusNote: {
       sl: "Violina je naprodaj pod ugodnimi pogoji.",
       en: "The violin is for sale on favourable terms.",
+      de: "Die Geige wird zu günstigen Konditionen verkauft.",
     },
   },
   {
     id: "azalea-aurea",
     name: "Azalea Aurea",
-    origin: { sl: "Nemško-bohemska violina", en: "German-Bohemian violin" },
-    year: { sl: "okoli 1900", en: "c. 1900" },
+    origin: { sl: "Nemško-bohemska violina", en: "German-Bohemian violin", de: "Deutsch-böhmische Geige" },
+    year: { sl: "okoli leta 1900", en: "c. 1900", de: "um 1900" },
     flowerVariant: 1,
     intro: {
       sl: "Topel jantarno-rjav ton z dušo in izrazitim karakterjem.",
       en: "A warm amber-brown tone with soul and a distinctive character.",
+      de: "Ein warmer bernsteinbrauner Ton mit Seele und ausgeprägtem Charakter.",
     },
     description: {
       sl: "Zanimiva violina polne velikosti (4/4) iz tradicije nemško-bohemske goslarske šole, ki s svojo naravno patino in toplim videzom izžareva brezčasno eleganco.",
       en: "An intriguing full-size (4/4) violin from the German-Bohemian lutherie tradition, radiating timeless elegance with its natural patina and warm appearance.",
+      de: "Eine reizvolle Geige in ganzer Größe (4/4) aus der Tradition der deutsch-böhmischen Geigenbauschule, die mit ihrer natürlichen Patina und ihrem warmen Erscheinungsbild zeitlose Eleganz ausstrahlt.",
     },
     status: "sale",
     options: ["nakup", "izposoja", "preizkus"],
-    price: { sl: "Na povpraševanje", en: "On request" },
-
-    maker: { sl: "Maurenkirchen – Bohemia šola", en: "Maurenkirchen – Bohemian school" },
+    maker: { sl: "Maurenkirchen – Bohemia šola", en: "Maurenkirchen – Bohemian school", de: "Maurenkirchen – böhmische Schule" },
     size: "4/4",
     illustration: "/images/violins/azalea-aurea/azalea-aurea-ilustracija.webp",
     photos: [
@@ -131,15 +132,16 @@ export const violins: Violin[] = [
       "/images/violins/azalea-aurea/azalea-aurea-zadaj.webp",
     ],
     lead: {
-      sl: "Zlata muza — kakor zlata azaleja tudi ta violina izžareva toplino, milino in plemenitost duha.",
-      en: "A golden muse — like a golden azalea, this violin radiates warmth, gentleness and nobility of spirit.",
+      sl: "Zlata muza",
+      en: "Golden muse",
+      de: "Goldene Muse",
     },
     descriptionParas: {
       sl: [
-        "Zanimiva violina polne velikosti (4/4) prihaja iz tradicije nemško-bohemske goslarske šole, ki je konec 19. in v začetku 20. stoletja ustvarila številne kakovostne koncertne in študijske inštrumente.",
+        "Ta zanimiva violina polne velikosti (4/4) prihaja iz tradicije nemško-bohemske goslarske šole, ki je konec 19. in v začetku 20. stoletja ustvarila številne kakovostne koncertne in študijske inštrumente.",
         "Inštrument nosi sledove bogate glasbene zgodovine in kljub odsotnosti etikete izžareva značaj stare evropske goslarske tradicije. Privlači s svojo naravno patino, toplim videzom in brezčasno eleganco.",
         "Odlikuje jo lepo oblikovan korpus z dvodelno smrekovo zgornjo ploščo ter dvodelnim javorjevim hrbtom, ki ga krasijo nežne vodoravne plamenice. Topel jantarno-rjav originalni lak poudarja naravno lepoto lesa in daje inštrumentu plemenit, zrel značaj.",
-        "Dolgoletna uporaba je violini vtisnila posebno osebnost, ki jo je mogoče začutiti že na prvi pogled. Takšni inštrumenti pogosto skrivajo zgodbe generacij glasbenikov in so zanimiva izbira za violiniste, ki iščejo inštrument z dušo in izrazitim karakterjem.",
+        "Dolgoletna uporaba je violini vtisnila posebno osebnost, ki jo je mogoče začutiti že na prvi pogled. Takšni inštrumenti pogosto skrivajo zgodbe generacij glasbenikov in predstavljajo zanimivo izbiro za violiniste, ki iščejo inštrument z dušo in izrazitim karakterjem.",
       ],
       en: [
         "This intriguing full-size (4/4) violin comes from the German-Bohemian lutherie tradition, which produced many quality concert and study instruments in the late 19th and early 20th centuries.",
@@ -147,42 +149,48 @@ export const violins: Violin[] = [
         "It features a beautifully shaped body with a two-piece spruce top and a two-piece maple back adorned with fine horizontal flames. The warm amber-brown original varnish emphasises the natural beauty of the wood and gives the instrument a noble, mature character.",
         "Years of use have imparted a special personality to the violin, one that can be felt at first sight. Such instruments often hold the stories of generations of musicians and are an appealing choice for violinists seeking an instrument with soul and a distinctive character.",
       ],
+      de: [
+        "Diese reizvolle Geige in ganzer Größe (4/4) stammt aus der Tradition der deutsch-böhmischen Geigenbauschule, die im späten 19. und frühen 20. Jahrhundert zahlreiche hochwertige Konzert- und Studieninstrumente hervorgebracht hat.",
+        "Das Instrument trägt die Spuren einer reichen Musikgeschichte und strahlt trotz fehlenden Etiketts den Charakter der alten europäischen Geigenbautradition aus. Es besticht durch seine natürliche Patina, sein warmes Aussehen und seine zeitlose Eleganz.",
+        "Es zeichnet sich durch einen schön geformten Korpus mit zweiteiliger Fichtendecke und einem zweiteiligen Ahornboden aus, der von feinen waagerechten Flammen geziert wird. Der warme bernsteinbraune Originallack hebt die natürliche Schönheit des Holzes hervor und verleiht dem Instrument einen edlen, reifen Charakter.",
+        "Der langjährige Gebrauch hat der Geige eine besondere Persönlichkeit verliehen, die schon auf den ersten Blick spürbar ist. Solche Instrumente bergen oft die Geschichten ganzer Generationen von Musikern und sind eine reizvolle Wahl für Geigerinnen und Geiger, die ein Instrument mit Seele und ausgeprägtem Charakter suchen.",
+      ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length" }, value: { sl: "362 mm", en: "362 mm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout" }, value: { sl: "166 mm", en: "166 mm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout" }, value: { sl: "112 mm", en: "112 mm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout" }, value: { sl: "206 mm", en: "206 mm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece" } },
-      { label: { sl: "Hrbet", en: "Back" }, value: { sl: "javor, dvodelen", en: "maple, two-piece" } },
-      { label: { sl: "Stranice", en: "Ribs" }, value: { sl: "javor", en: "maple" } },
-      { label: { sl: "Polž", en: "Scroll" }, value: { sl: "javor", en: "maple" } },
-      { label: { sl: "Lak", en: "Varnish" }, value: { sl: "originalni jantarno-rjav", en: "original amber-brown" } },
-      { label: { sl: "Etiketa", en: "Label" }, value: { sl: "brez vidne etikete", en: "no visible label" } },
-      { label: { sl: "Stanje", en: "Condition" }, value: { sl: "dobro splošno stanje, igralen", en: "good overall condition, playable" } },
+      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
+      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "362 mm", en: "362 mm", de: "362 mm" } },
+      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "166 mm", en: "166 mm", de: "166 mm" } },
+      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "112 mm", en: "112 mm", de: "112 mm" } },
+      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "206 mm", en: "206 mm", de: "206 mm" } },
+      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece", de: "Fichte, zweiteilig" } },
+      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, dvodelen", en: "maple, two-piece", de: "Ahorn, zweiteilig" } },
+      { label: { sl: "Stranice", en: "Ribs", de: "Zargen" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
+      { label: { sl: "Polž", en: "Scroll", de: "Schnecke" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
+      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "originalni jantarno-rjav", en: "original amber-brown", de: "original bernsteinbraun" } },
+      { label: { sl: "Etiketa", en: "Label", de: "Etikett" }, value: { sl: "brez vidne etikete", en: "no visible label", de: "kein sichtbares Etikett" } },
+      { label: { sl: "Stanje", en: "Condition", de: "Zustand" }, value: { sl: "dobro splošno stanje, igralen", en: "good overall condition, playable", de: "guter Gesamtzustand, spielbereit" } },
     ],
-    statusNote: { sl: "Violina je naprodaj.", en: "The violin is for sale." },
+    statusNote: { sl: "Violina je naprodaj.", en: "The violin is for sale.", de: "Die Geige steht zum Verkauf." },
   },
   {
     id: "paeonia-regia",
     name: "Paeonia Regia",
-    origin: { sl: "Evropska šola", en: "European school" },
-    year: { sl: "okoli 1900", en: "c. 1900" },
+    origin: { sl: "Evropska šola", en: "European school", de: "Europäische Schule" },
+    year: { sl: "okoli leta 1900", en: "c. 1900", de: "um 1900" },
     flowerVariant: 2,
     intro: {
       sl: "Bogata barva, zrel ton in plemenita prisotnost.",
       en: "Rich colour, a mature tone and a noble presence.",
+      de: "Satte Farbe, ein reifer Ton und eine edle Präsenz.",
     },
     description: {
       sl: "Elegantna violina polne velikosti (4/4) z etiketo Pietro Pallotta, kakovosten evropski inštrument iz obdobja okoli leta 1900, ki se zgleduje po klasičnih italijanskih vzorih.",
       en: "An elegant full-size (4/4) violin bearing a Pietro Pallotta label — a quality European instrument from around 1900, modelled on classic Italian patterns.",
+      de: "Eine elegante Geige in ganzer Größe (4/4) mit einem Pietro-Pallotta-Etikett — ein hochwertiges europäisches Instrument aus der Zeit um 1900, das sich an klassischen italienischen Vorbildern orientiert.",
     },
     status: "sale",
     options: ["nakup", "izposoja", "preizkus"],
-    price: { sl: "Na povpraševanje", en: "On request" },
-
-    maker: { sl: "etiketa Pietro Pallotta", en: "Pietro Pallotta label" },
+    maker: { sl: "etiketa Pietro Pallotta", en: "Pietro Pallotta label", de: "Pietro-Pallotta-Etikett" },
     size: "4/4",
     illustration: "/images/violins/paeonia-regia/paeonia-regia-ilustracija.webp",
     photos: [
@@ -192,6 +200,7 @@ export const violins: Violin[] = [
     lead: {
       sl: "Tako kot kraljevska potonika tudi Paeonia Regia očara s svojo bogato barvo, izrazito osebnostjo in plemenito prisotnostjo.",
       en: "Like a royal peony, Paeonia Regia enchants with its rich colour, distinctive personality and noble presence.",
+      de: "Wie eine königliche Pfingstrose bezaubert auch Paeonia Regia mit ihrer satten Farbe, ihrer ausgeprägten Persönlichkeit und ihrer edlen Präsenz.",
     },
     descriptionParas: {
       sl: [
@@ -204,40 +213,47 @@ export const violins: Violin[] = [
         "The instrument features a two-piece spruce top and a beautifully flamed two-piece maple back. The warm red-brown varnish emphasises the natural beauty of the wood and gives the violin a distinctive, noble character.",
         "The violin carries the echo of a long musical journey, with an elegant look and an attractive appearance. It combines a rich visual presence with a mature, characterful tone, making it an excellent choice for violinists of all generations.",
       ],
+      de: [
+        "Diese elegante Geige in ganzer Größe (4/4) trägt das Etikett Pietro Pallotta fece l'anno 1795 N.26 Perugia. Nach Verarbeitung und verwendeten Materialien handelt es sich um ein hochwertiges europäisches Instrument aus der Zeit um 1900, das sich an der Tradition klassischer italienischer Vorbilder orientiert.",
+        "Das Instrument zeichnet sich durch eine zweiteilige Fichtendecke und einen schön geflammten zweiteiligen Ahornboden aus. Der warme rotbraune Lack hebt die natürliche Schönheit des Holzes hervor und verleiht der Geige einen ausgeprägten, edlen Charakter.",
+        "Die Geige trägt das Echo einer langen musikalischen Reise in sich, mit elegantem Aussehen und ansprechendem Erscheinungsbild. Sie vereint eine reiche visuelle Präsenz mit einem reifen, charaktervollen Ton und ist damit eine ausgezeichnete Wahl für Geigerinnen und Geiger aller Generationen.",
+      ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length" }, value: { sl: "358 mm", en: "358 mm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout" }, value: { sl: "169 mm", en: "169 mm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout" }, value: { sl: "116 mm", en: "116 mm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout" }, value: { sl: "207 mm", en: "207 mm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece" } },
-      { label: { sl: "Hrbet", en: "Back" }, value: { sl: "javor, dvodelen", en: "maple, two-piece" } },
-      { label: { sl: "Stranice", en: "Ribs" }, value: { sl: "javor", en: "maple" } },
-      { label: { sl: "Polž", en: "Scroll" }, value: { sl: "javor", en: "maple" } },
-      { label: { sl: "Lak", en: "Varnish" }, value: { sl: "originalni rdeče-rjav", en: "original red-brown" } },
-      { label: { sl: "Etiketa", en: "Label" }, value: { sl: "Pietro Pallotta", en: "Pietro Pallotta" } },
+      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
+      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "358 mm", en: "358 mm", de: "358 mm" } },
+      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "169 mm", en: "169 mm", de: "169 mm" } },
+      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "116 mm", en: "116 mm", de: "116 mm" } },
+      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "207 mm", en: "207 mm", de: "207 mm" } },
+      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece", de: "Fichte, zweiteilig" } },
+      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, dvodelen", en: "maple, two-piece", de: "Ahorn, zweiteilig" } },
+      { label: { sl: "Stranice", en: "Ribs", de: "Zargen" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
+      { label: { sl: "Polž", en: "Scroll", de: "Schnecke" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
+      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "originalni rdeče-rjav", en: "original red-brown", de: "original rotbraun" } },
+      { label: { sl: "Etiketa", en: "Label", de: "Etikett" }, value: { sl: "Pietro Pallotta", en: "Pietro Pallotta", de: "Pietro Pallotta" } },
     ],
-    statusNote: { sl: "Violina je naprodaj.", en: "The violin is for sale." },
+    statusNote: { sl: "Violina je naprodaj.", en: "The violin is for sale.", de: "Die Geige steht zum Verkauf." },
   },
   {
     id: "amaryllis-regia",
     name: "Amaryllis Regia",
-    origin: { sl: "Švedska mojstrska violina", en: "Swedish master violin" },
-    year: { sl: "1962", en: "1962" },
+    origin: { sl: "Švedska mojstrska violina", en: "Swedish master violin", de: "Schwedische Meistergeige" },
+    year: { sl: "1962", en: "1962", de: "1962" },
     flowerVariant: 3,
     intro: {
       sl: "Odprt, nosilen in zrel ton z močnim koncertnim značajem.",
       en: "An open, carrying and mature tone with a strong concert character.",
+      de: "Ein offener, tragfähiger und reifer Ton mit ausgeprägtem Konzertcharakter.",
     },
     description: {
       sl: "Mojstrska violina polne velikosti (4/4) z etiketo Birger Nilsson, izdelana leta 1962 v švedskem mestu Ystad — kakovostna severnoevropska goslarska tradicija z izjemno odprtim, nosilnim tonom.",
       en: "A full-size (4/4) master violin labelled Birger Nilsson, made in 1962 in Ystad, Sweden — quality Northern European lutherie with an exceptionally open, carrying tone.",
+      de: "Eine Meistergeige in ganzer Größe (4/4) mit dem Etikett Birger Nilsson, gebaut 1962 im schwedischen Ystad — hochwertige nordeuropäische Geigenbautradition mit einem außergewöhnlich offenen, tragfähigen Ton.",
     },
     status: "rent",
     options: ["izposoja", "preizkus"],
 
-    maker: { sl: "Birger Nilsson, Ystad", en: "Birger Nilsson, Ystad" },
+    maker: { sl: "Birger Nilsson, Ystad", en: "Birger Nilsson, Ystad", de: "Birger Nilsson, Ystad" },
     size: "4/4",
     illustration: "/images/violins/amaryllis-regia/amaryllis-regia-ilustracija.webp",
     photos: [
@@ -247,6 +263,7 @@ export const violins: Violin[] = [
     lead: {
       sl: "Tako kot kraljevski amarilis tudi Amaryllis Regia očara z veličastno pojavnostjo, žarečo lepoto in izrazitim značajem.",
       en: "Like a royal amaryllis, Amaryllis Regia enchants with its majestic appearance, radiant beauty and distinctive character.",
+      de: "Wie ein königlicher Amaryllis bezaubert auch Amaryllis Regia mit majestätischer Erscheinung, strahlender Schönheit und ausgeprägtem Charakter.",
     },
     descriptionParas: {
       sl: [
@@ -261,45 +278,71 @@ export const violins: Violin[] = [
         "The violin's model is somewhat wider and more robust, which contributes to a rich sound, excellent projection and balance across all registers. The instrument is distinguished by a clear response, a full tone and a reliable performance both in chamber playing and on the concert stage.",
         "Like the flower of the royal amaryllis, this violin does not go unnoticed. Its sonic presence is distinctive, yet noble and elegant. It suits advanced students of music schools, conservatory and academy students, and violinists seeking a quality European master instrument with a strong concert character.",
       ],
+      de: [
+        "Diese Meistergeige in ganzer Größe (4/4), 1962 im schwedischen Ystad gebaut, trägt das Etikett Birger Nilsson. Das Instrument verbindet die hochwertige nordeuropäische Geigenbautradition mit einem außergewöhnlich offenen, tragfähigen und reifen Ton.",
+        "Die Geige zeichnet sich durch eine zweiteilige Fichtendecke und einen zweiteiligen Ahornboden mit feiner bis mittelstark ausgeprägter Flammung aus. Besondere Aufmerksamkeit erregt ihr lebendiger rot-bernsteinfarbener Originallack, der dem Instrument Wärme, Glanz und einen unverkennbaren künstlerischen Charakter verleiht.",
+        "Das Modell der Geige ist etwas breiter und robuster, was zu einem reichen Klangbild, ausgezeichneter Projektion und einer Ausgewogenheit aller Register beiträgt. Das Instrument besticht durch eine klare Ansprache, einen vollen Ton und ein verlässliches Spiel sowohl im Kammermusikspiel als auch auf der Konzertbühne.",
+        "Wie die Blüte des königlichen Amaryllis bleibt auch diese Geige nicht unbemerkt. Ihre klangliche Präsenz ist ausgeprägt und zugleich edel und elegant. Sie eignet sich für fortgeschrittene Musikschülerinnen und -schüler, Konservatoriums- und Akademiestudierende sowie Geigerinnen und Geiger, die ein hochwertiges europäisches Meisterinstrument mit ausgeprägtem Konzertcharakter suchen.",
+      ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length" }, value: { sl: "359 mm", en: "359 mm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout" }, value: { sl: "169 mm", en: "169 mm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout" }, value: { sl: "115 mm", en: "115 mm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout" }, value: { sl: "208 mm", en: "208 mm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece" } },
-      { label: { sl: "Hrbet", en: "Back" }, value: { sl: "javor, dvodelen", en: "maple, two-piece" } },
-      { label: { sl: "Stranice", en: "Ribs" }, value: { sl: "javor", en: "maple" } },
-      { label: { sl: "Polž", en: "Scroll" }, value: { sl: "javor", en: "maple" } },
-      { label: { sl: "Lak", en: "Varnish" }, value: { sl: "originalni rdeče-jantarni", en: "original red-amber" } },
-      { label: { sl: "Leto izdelave", en: "Year made" }, value: { sl: "1962", en: "1962" } },
-      { label: { sl: "Goslar", en: "Luthier" }, value: { sl: "Birger Nilsson", en: "Birger Nilsson" } },
-      { label: { sl: "Kraj izdelave", en: "Place made" }, value: { sl: "Ystad, Švedska", en: "Ystad, Sweden" } },
+      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
+      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "359 mm", en: "359 mm", de: "359 mm" } },
+      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "169 mm", en: "169 mm", de: "169 mm" } },
+      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "115 mm", en: "115 mm", de: "115 mm" } },
+      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "208 mm", en: "208 mm", de: "208 mm" } },
+      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece", de: "Fichte, zweiteilig" } },
+      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, dvodelen", en: "maple, two-piece", de: "Ahorn, zweiteilig" } },
+      { label: { sl: "Stranice", en: "Ribs", de: "Zargen" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
+      { label: { sl: "Polž", en: "Scroll", de: "Schnecke" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
+      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "originalni rdeče-jantarni", en: "original red-amber", de: "original rot-bernsteinfarben" } },
+      { label: { sl: "Leto izdelave", en: "Year made", de: "Baujahr" }, value: { sl: "1962", en: "1962", de: "1962" } },
+      { label: { sl: "Goslar", en: "Luthier", de: "Geigenbauer" }, value: { sl: "Birger Nilsson", en: "Birger Nilsson", de: "Birger Nilsson" } },
+      { label: { sl: "Kraj izdelave", en: "Place made", de: "Herstellungsort" }, value: { sl: "Ystad, Švedska", en: "Ystad, Sweden", de: "Ystad, Schweden" } },
     ],
     statusNote: {
       sl: "Violina je del zbirke Violin Garden Collection in je na voljo za dolgoročno ali projektno izposojo.",
       en: "The violin is part of the Violin Garden Collection and is available for long-term or project rental.",
+      de: "Die Geige ist Teil der Violin Garden Collection und für eine langfristige Miete oder Projektmiete verfügbar.",
+    },
+    ctaParas: {
+      sl: [
+        "Kot cvet kraljevskega amarilisa, ki za kratek čas zasije v vsej svoji lepoti in nato ponovno počiva do naslednjega cvetenja, tudi ta violina lahko svojo zgodbo deli z glasbeniki, ki jo za določen čas sprejmejo v svoje roke.",
+        "Ko bo njen čas z vami zaključen, se bo vrnila v svoj vrt, bogatejša za novo zgodbo, nove odrske trenutke in nove spomine.",
+        "Za podrobnejši opis ali dogovor za osebni preizkus izpolnite kontaktni obrazec — z veseljem vam bomo inštrument predstavili in odgovorili na vsa vprašanja.",
+      ],
+      en: [
+        "Like the flower of the royal amaryllis, which shines for a short while in all its beauty and then rests again until the next bloom, this violin too can share its story with musicians who take it into their hands for a time.",
+        "When her time with you comes to an end, she will return to her garden, richer for a new story, new moments on stage and new memories.",
+        "For a more detailed description or to arrange a personal trial, fill in the contact form — we will gladly present the instrument and answer all your questions.",
+      ],
+      de: [
+        "Wie die Blüte des königlichen Amaryllis, die für kurze Zeit in ihrer ganzen Schönheit erstrahlt und dann bis zur nächsten Blüte wieder ruht, kann auch diese Geige ihre Geschichte mit Musikern teilen, die sie für eine bestimmte Zeit in ihre Hände nehmen.",
+        "Wenn ihre Zeit mit Ihnen zu Ende geht, kehrt sie in ihren Garten zurück, reicher um eine neue Geschichte, neue Momente auf der Bühne und neue Erinnerungen.",
+        "Für eine ausführlichere Beschreibung oder zur Vereinbarung eines persönlichen Probespiels füllen Sie bitte das Kontaktformular aus — wir stellen Ihnen das Instrument gerne vor und beantworten alle Ihre Fragen.",
+      ],
     },
   },
   {
     id: "rosa-aurea",
     name: "Rosa Aurea",
-    origin: { sl: "Nemška / saška šola", en: "German / Saxon school" },
-    year: { sl: "okoli 1890–1900", en: "c. 1890–1900" },
+    origin: { sl: "Nemška / saška šola", en: "German / Saxon school", de: "Deutsche / sächsische Schule" },
+    year: { sl: "okoli 1890–1900", en: "c. 1890–1900", de: "um 1890–1900" },
     flowerVariant: 4,
     intro: {
       sl: "Bogat, odprt in nosilen solistični zvok.",
       en: "A rich, open and carrying solo sound.",
+      de: "Ein reicher, offener und tragfähiger Solo-Klang.",
     },
     description: {
       sl: "Kakovostna violina polne velikosti (4/4), izdelana okoli leta 1900 v znameniti goslarski pokrajini Markneukirchen–Vogtland, ki predstavlja najboljše značilnosti pozne nemško-saške goslarske tradicije.",
       en: "A quality full-size (4/4) violin made around 1900 in the renowned lutherie region of Markneukirchen–Vogtland, showcasing the best features of the late German-Saxon lutherie tradition.",
+      de: "Eine hochwertige Geige in ganzer Größe (4/4), um 1900 in der berühmten Geigenbauregion Markneukirchen–Vogtland gebaut, die die besten Merkmale der späten deutsch-sächsischen Geigenbautradition vereint.",
     },
     status: "collection",
     options: ["preizkus"],
 
-    maker: { sl: "Markneukirchen – Vogtland", en: "Markneukirchen – Vogtland" },
+    maker: { sl: "Markneukirchen – Vogtland", en: "Markneukirchen – Vogtland", de: "Markneukirchen – Vogtland" },
     size: "4/4",
     illustration: "/images/violins/rosa-aurea/rosa-aurea-ilustracija.webp",
     photos: [
@@ -309,46 +352,78 @@ export const violins: Violin[] = [
     lead: {
       sl: "Tako kot zlata vrtnica tudi Rosa Aurea očara s svojo toplino, plemenitostjo in žarečo prisotnostjo.",
       en: "Like a golden rose, Rosa Aurea enchants with its warmth, nobility and radiant presence.",
+      de: "Wie eine goldene Rose bezaubert auch Rosa Aurea mit ihrer Wärme, ihrer Vornehmheit und ihrer strahlenden Präsenz.",
     },
     descriptionParas: {
       sl: [
         "Zlata vrtnica je plemenit cvet, ki olepšuje najbolj sončen del Violinskega vrta. Njeni zlato obarvani cvetovi simbolizirajo svetlobo, bogastvo duha, dostojanstvo in brezčasno lepoto. Tudi Rosa Aurea izstopa s svojo žlahtno podobo, bogatim tonom in izrazito koncertno prisotnostjo.",
-        "Kakovostna violina polne velikosti (4/4), izdelana okoli leta 1900 v znameniti goslarski pokrajini Markneukirchen–Vogtland, predstavlja najboljše značilnosti pozne nemško-saške goslarske tradicije. Inštrument združuje elegantno izdelavo, bogat zven in izrazito umetniško prepričljivost.",
+        "Kakovostna violina polne velikosti (4/4), izdelana okoli leta 1900 v znameniti goslarski pokrajini Markneukirchen–Vogtland, predstavlja najboljše značilnosti pozne nemške oziroma saške goslarske tradicije. Inštrument združuje elegantno izdelavo, bogat zven in izrazito umetniško prepričljivost.",
         "Violino odlikuje lepo izbran resonančni les ter privlačen zlato-jantarni lak, ki poudarja njeno plemenito podobo. Model je uravnotežen in zrel, z elegantnimi linijami ter izrazito profesionalnim značajem.",
         "Njena največja odlika je ton. Rosa Aurea premore bogat, odprt in izjemno nosilen solistični zvok, ki se z lahkoto prebije skozi koncertni prostor. Ton je poln, plemenit in barvito razgiban, z lepim ravnovesjem med toplino in projekcijo. Inštrument se odziva hitro in zanesljivo ter omogoča širok izrazni razpon.",
         "Gre za violino z izrazitim umetniškim značajem, ki nagrajuje zrelo tehniko in muzikalnost. Primerna je za profesionalne violiniste, študente glasbenih akademij, dijake konservatorijev ter vse, ki iščejo kakovosten evropski inštrument z vrhunskim koncertnim potencialom.",
       ],
       en: [
         "The golden rose is a noble bloom that adorns the sunniest part of the Violin Garden. Its golden flowers symbolise light, richness of spirit, dignity and timeless beauty. Rosa Aurea, too, stands out with its noble appearance, rich tone and distinctive concert presence.",
-        "A quality full-size (4/4) violin made around 1900 in the renowned lutherie region of Markneukirchen–Vogtland, it embodies the best features of the late German-Saxon lutherie tradition. The instrument combines elegant craftsmanship, a rich sound and striking artistic conviction.",
+        "A quality full-size (4/4) violin made around 1900 in the renowned lutherie region of Markneukirchen–Vogtland, it embodies the best features of the late German or Saxon lutherie tradition. The instrument combines elegant craftsmanship, a rich sound and striking artistic conviction.",
         "It is distinguished by beautifully selected tonewood and an attractive golden-amber varnish that emphasises its noble appearance. The model is balanced and mature, with elegant lines and a distinctly professional character.",
         "Its greatest quality is the tone. Rosa Aurea possesses a rich, open and exceptionally carrying solo sound that easily cuts through a concert hall. The tone is full, noble and colourfully varied, with a fine balance between warmth and projection. The instrument responds quickly and reliably, allowing a wide expressive range.",
         "This is a violin with a distinctive artistic character that rewards mature technique and musicianship. It suits professional violinists, students of music academies, conservatory students and anyone seeking a quality European instrument with top concert potential.",
+      ],
+      de: [
+        "Die goldene Rose ist eine edle Blüte, die den sonnigsten Teil des Geigengartens schmückt. Ihre goldfarbenen Blüten symbolisieren Licht, Reichtum des Geistes, Würde und zeitlose Schönheit. Auch Rosa Aurea hebt sich durch ihr edles Erscheinungsbild, ihren reichen Ton und ihre ausgeprägte Konzertpräsenz hervor.",
+        "Eine hochwertige Geige in ganzer Größe (4/4), um 1900 in der berühmten Geigenbauregion Markneukirchen–Vogtland gebaut, verkörpert sie die besten Merkmale der späten deutschen bzw. sächsischen Geigenbautradition. Das Instrument verbindet elegante Verarbeitung, einen reichen Klang und eine eindrucksvolle künstlerische Überzeugungskraft.",
+        "Die Geige zeichnet sich durch schön ausgewähltes Tonholz und einen attraktiven gold-bernsteinfarbenen Lack aus, der ihr edles Erscheinungsbild betont. Das Modell ist ausgewogen und reif, mit eleganten Linien und einem ausgesprochen professionellen Charakter.",
+        "Ihre größte Stärke ist der Ton. Rosa Aurea besitzt einen reichen, offenen und außergewöhnlich tragfähigen Solo-Klang, der sich mühelos durch einen Konzertsaal durchsetzt. Der Ton ist voll, edel und farbenreich, mit einer schönen Balance zwischen Wärme und Projektion. Das Instrument spricht schnell und zuverlässig an und ermöglicht eine breite Ausdrucksspanne.",
+        "Es handelt sich um eine Geige mit ausgeprägtem künstlerischem Charakter, die reife Technik und Musikalität belohnt. Sie eignet sich für professionelle Geigerinnen und Geiger, Studierende von Musikakademien, Konservatoriumsschülerinnen und -schüler sowie alle, die ein hochwertiges europäisches Instrument mit höchstem Konzertpotenzial suchen.",
       ],
     },
     statusNote: {
       sl: "Violina je del stalne zbirke Violin Garden Collection.",
       en: "The violin is part of the permanent Violin Garden Collection.",
+      de: "Die Geige ist Teil der dauerhaften Violin Garden Collection.",
+    },
+    ctaEyebrow: { sl: "GLASBENA POT", en: "A MUSICAL JOURNEY", de: "EIN MUSIKALISCHER WEG" },
+    ctaParas: {
+      sl: [
+        "Tako kot zlata vrtnica, violina Rosa Aurea ne sledi običajnim potem.",
+        "Njen bogat, solistični glas pripada svetu koncertnega odra, umetniškega raziskovanja in glasbene zrelosti. Je del stalne zbirke Violin Garden Collection, kjer vsaka violina nosi svojo zgodbo, svoj značaj in svoj glas.",
+        "Velikokrat je del različnih koncertnih projektov in se njena zgodba skozi glasbo vedno znova nadaljuje. Večino časa ostaja v svojem vrtu, med inštrumenti, ki so skozi desetletja soustvarjali zbirko.",
+        "Le občasno in po posebnem dogovoru lahko za določen čas postane del glasbene poti izbranega violinista.",
+      ],
+      en: [
+        "Like a golden rose, the Rosa Aurea violin does not follow the usual paths.",
+        "Her rich, soloistic voice belongs to the world of the concert stage, artistic exploration and musical maturity. She is part of the permanent Violin Garden Collection, where every violin carries its own story, its own character and its own voice.",
+        "She is often part of various concert projects, and her story continues again and again through music. Most of the time she remains in her garden, among the instruments that have shaped the collection over the decades.",
+        "Only occasionally, and by special arrangement, may she become part of the musical journey of a chosen violinist for a time.",
+      ],
+      de: [
+        "Wie eine goldene Rose folgt die Geige Rosa Aurea nicht den gewöhnlichen Wegen.",
+        "Ihre reiche, solistische Stimme gehört der Welt der Konzertbühne, der künstlerischen Erkundung und der musikalischen Reife an. Sie ist Teil der dauerhaften Violin Garden Collection, in der jede Geige ihre eigene Geschichte, ihren eigenen Charakter und ihre eigene Stimme trägt.",
+        "Oft ist sie Teil verschiedener Konzertprojekte, und ihre Geschichte setzt sich durch die Musik immer wieder fort. Die meiste Zeit bleibt sie in ihrem Garten, unter den Instrumenten, die die Sammlung über die Jahrzehnte mitgestaltet haben.",
+        "Nur gelegentlich und nach besonderer Vereinbarung kann sie für eine bestimmte Zeit Teil des musikalischen Weges einer ausgewählten Geigerin oder eines ausgewählten Geigers werden.",
+      ],
     },
   },
   {
     id: "dahlia-rubra",
     name: "Dahlia Rubra",
-    origin: { sl: "Nemško-avstrijska violina", en: "German-Austrian violin" },
-    year: { sl: "okoli 1900–1930", en: "c. 1900–1930" },
+    origin: { sl: "Nemško-avstrijska violina", en: "German-Austrian violin", de: "Deutsch-österreichische Geige" },
+    year: { sl: "okoli 1900–1930", en: "c. 1900–1930", de: "um 1900–1930" },
     flowerVariant: 5,
     intro: {
       sl: "Topel, sonoren in zaobljen ton z dušo in bogato glasbeno preteklostjo.",
       en: "A warm, sonorous and rounded tone with soul and a rich musical past.",
+      de: "Ein warmer, sonorer und runder Ton mit Seele und einer reichen musikalischen Vergangenheit.",
     },
     description: {
       sl: "Kakovostna violina polne velikosti (4/4) iz tradicije srednjeevropskih goslarskih delavnic nemško-avstrijskega prostora (okoli 1900–1930), katere največja vrednost je v bogastvu njene glasbene preteklosti.",
       en: "A quality full-size (4/4) violin from the tradition of the Central European lutherie workshops of the German-Austrian region (c. 1900–1930), whose greatest value lies in the richness of its musical past.",
+      de: "Eine hochwertige Geige in ganzer Größe (4/4) aus der Tradition der mitteleuropäischen Geigenbauwerkstätten des deutsch-österreichischen Raums (um 1900–1930), deren größter Wert im Reichtum ihrer musikalischen Vergangenheit liegt.",
     },
     status: "collection",
     options: ["izposoja", "preizkus"],
 
-    maker: { sl: "Srednjeevropska goslarska delavnica", en: "Central European lutherie workshop" },
+    maker: { sl: "Srednjeevropska goslarska delavnica", en: "Central European lutherie workshop", de: "Mitteleuropäische Geigenbauwerkstatt" },
     size: "4/4",
     illustration: "/images/violins/dahlia-rubra/dahlia-rubra-ilustracija.webp",
     photos: [
@@ -358,6 +433,7 @@ export const violins: Violin[] = [
     lead: {
       sl: "Tako kot rdeča dalija tudi Dahlia Rubra očara s svojo toplino, zrelostjo in bogato življenjsko zgodbo.",
       en: "Like a red dahlia, Dahlia Rubra enchants with its warmth, maturity and rich life story.",
+      de: "Wie eine rote Dahlie bezaubert auch Dahlia Rubra mit ihrer Wärme, ihrer Reife und ihrer reichen Lebensgeschichte.",
     },
     descriptionParas: {
       sl: [
@@ -380,10 +456,21 @@ export const violins: Violin[] = [
         "Its greatest quality is the tone. Dahlia Rubra possesses a warm, sonorous and pleasantly rounded sound, with fine depth in the middle register and a soft, noble colour that draws the listener in without harshness or aggression. The tone is mature, singing and naturally open. Its voice seeks attention not through power, but through the beauty of its colour, its musicality and a sense of authenticity.",
         "This is a violin with a soul — an instrument that tells its story not through perfection, but through the life it has lived in music.",
       ],
+      de: [
+        "Die rote Dahlie ist eine Blume des Spätsommers, ein Sinnbild für Beharrlichkeit, innere Stärke und eine Schönheit, die mit der Zeit nicht verblasst, sondern sich vertieft. Ihre glühenden Töne von Rubin, Kupfer und Gold erinnern an die Wärme eines Sonnenuntergangs und an die kostbaren Spuren der Zeit, die jedem Ding einen eigenen Charakter verleihen.",
+        "So verhält es sich auch mit dieser Geige — sie hebt sich durch ihre edle Patina, ihre warme und sonore Stimme und eine Geschichte hervor, die das Leben selbst über Jahrzehnte geschrieben hat. Eine hochwertige Geige in ganzer Größe (4/4), gebaut in der Tradition der mitteleuropäischen Geigenbauwerkstätten des deutsch-österreichischen Raums um 1900–1930, ist sie ein Instrument, dessen größter Wert nicht allein in der Verarbeitung liegt, sondern im Reichtum seiner musikalischen Vergangenheit.",
+        "Die Geige zeichnet sich durch einen attraktiven rot-bernsteinfarbenen Lack aus, der in unterschiedlichem Licht zwischen Tönen von Rubin, Kupfer und Gold wechselt. Das Modell ist ausgewogen und elegant, mit schön geformten Linien und einem Charakter, der für hochwertige mitteleuropäische Instrumente der ersten Hälfte des 20. Jahrhunderts typisch ist.",
+        "Ihre größte Besonderheit ist jedoch eine andere. Dahlia Rubra wurde viel gespielt. An ihr sind die Spuren der Zeit sichtbar, kleine Abnutzungen und eine natürliche Patina, die von Jahrzehnten musikalischen Lebens zeugen. Dies ist kein Instrument, das den größten Teil seines Daseins vergessen in einem Schrank oder eingeschlossen in einer Vitrine verbracht hat. Dies ist eine Geige, die ihren Zweck erfüllt hat.",
+        "Sie war eine Begleiterin von Musikern. Ihre Kanten, ihr Lack und ihre Oberfläche erzählen die Geschichte unzähliger Proben, Auftritte, Konzerte und musikalischer Begegnungen. Jede Spur hat ihre Bedeutung, jede Abnutzung ihre eigene Geschichte.",
+        "Genau darin liegt ihr besonderer Wert. Instrumente, die jahrzehntelang durch die Musik gelebt haben, entwickeln oft eine besondere klangliche Persönlichkeit. Über die langen Jahre der Schwingung reift das Holz, und der Ton wird weicher, voller und verbundener. Dahlia Rubra trägt genau diese Erfahrung in sich.",
+        "Ihre größte Stärke ist der Ton. Dahlia Rubra besitzt einen warmen, sonoren und angenehm runden Klang, mit schöner Tiefe im mittleren Register und einer weichen, edlen Farbe, die den Zuhörer ohne Schärfe oder Aggressivität in ihren Bann zieht. Der Ton ist reif, sanglich und natürlich offen. Ihre Stimme sucht die Aufmerksamkeit nicht durch Kraft, sondern durch die Schönheit ihrer Klangfarbe, ihre Musikalität und ein Gefühl von Echtheit.",
+        "Es ist eine Geige mit Seele — ein Instrument, das seine Geschichte nicht durch Vollkommenheit erzählt, sondern durch das Leben, das es in der Musik geführt hat.",
+      ],
     },
     statusNote: {
       sl: "Violina je del stalne zbirke Violin Garden Collection.",
       en: "The violin is part of the permanent Violin Garden Collection.",
+      de: "Die Geige ist Teil der dauerhaften Violin Garden Collection.",
     },
     ctaParas: {
       sl: [
@@ -404,27 +491,36 @@ export const violins: Violin[] = [
         "Perhaps it will be her warm, sonorous voice that inspires a new interpretation, an important performance or a new chapter of an artistic path.",
         "When that chapter comes to a close, she returns where she belongs — to the Violin Garden Collection, richer for a new echo and a new part of her story.",
       ],
+      de: [
+        "So wie die rote Dahlie jedes Jahr aufs Neue erblüht, erwacht auch Dahlia Rubra durch die Musik immer wieder zum Leben.",
+        "Ihre Geschichte begann lange vor ihrer Ankunft im Geigengarten. Jahrzehntelang begleitete sie Musiker, sammelte ihre Erinnerungen und bewahrte in sich die Echos ihrer Interpretationen.",
+        "Heute ist sie Teil der Violin Garden Collection, in der jede Geige ihren eigenen Charakter, ihre eigene Geschichte und ihre eigene Stimme trägt.",
+        "Ihre Geschichte soll nicht mit einer neuen Besitzerin oder einem neuen Besitzer enden, sondern sich durch die Musik immer wieder fortsetzen. Die meiste Zeit bleibt sie in ihrem Garten, unter den Instrumenten, die die Sammlung über die Jahrzehnte mitgestaltet haben.",
+        "Nur gelegentlich und nach vorheriger Vereinbarung kann sie für eine bestimmte Zeit Teil des musikalischen Weges einer ausgewählten Geigerin oder eines ausgewählten Geigers werden. Sie ist zur Miete verfügbar. Dann fließt ihre Geschichte erneut durch neue Interpretationen, Konzertbühnen, bedeutende Projekte und künstlerische Begegnungen.",
+        "Vielleicht wird gerade ihre warme, sonore Stimme eine neue Interpretation, einen bedeutenden Auftritt oder ein neues Kapitel eines künstlerischen Weges inspirieren.",
+        "Wenn dieses Kapitel zu Ende geht, kehrt sie dorthin zurück, wohin sie gehört — in die Violin Garden Collection, reicher um ein neues Echo und einen neuen Teil ihrer Geschichte.",
+      ],
     },
   },
   {
     id: "helianthus-aureus",
     name: "Helianthus Aureus",
-    origin: { sl: "Evropska šola", en: "European school" },
-    year: { sl: "1931", en: "1931" },
+    origin: { sl: "Evropska šola", en: "European school", de: "Europäische Schule" },
+    year: { sl: "1931", en: "1931", de: "1931" },
     flowerVariant: 6,
     intro: {
       sl: "Topel, poln in prijeten ton s sončnim značajem in muzikalnim ravnovesjem skozi vse registre.",
       en: "A warm, full and pleasant tone with a sunny character and musical balance across all registers.",
+      de: "Ein warmer, voller und angenehmer Ton mit sonnigem Charakter und musikalischer Ausgewogenheit über alle Register.",
     },
     description: {
       sl: "Kakovostna violina polne velikosti (4/4) z etiketo Paolo Leonori (Roma 1931) – izrazito sončnega značaja, s čudovitim zlatim sončničnim lakom in toplim, muzikalnim zvenom.",
       en: "A quality full-size (4/4) violin labelled Paolo Leonori (Rome 1931) — markedly sunny in character, with a magnificent golden sunflower varnish and a warm, musical sound.",
+      de: "Eine hochwertige Geige in ganzer Größe (4/4) mit dem Etikett Paolo Leonori (Rom 1931) — von ausgeprägt sonnigem Charakter, mit einem wunderschönen goldenen Sonnenblumenlack und einem warmen, musikalischen Klang.",
     },
     status: "sale",
     options: ["nakup", "preizkus"],
-    price: { sl: "2.500 €", en: "€2,500" },
-
-    maker: { sl: "etiketa Paolo Leonori, Roma 1931", en: "Paolo Leonori label, Rome 1931" },
+    maker: { sl: "etiketa Paolo Leonori, Roma 1931", en: "Paolo Leonori label, Rome 1931", de: "Paolo-Leonori-Etikett, Rom 1931" },
     size: "4/4",
     illustration: "/images/violins/helianthus-aureus/helianthus-aureus-ilustracija.webp",
     photos: [
@@ -434,6 +530,7 @@ export const violins: Violin[] = [
     lead: {
       sl: "Tako kot sončnica tudi Helianthus Aureus sledi svetlobi.",
       en: "Like a sunflower, Helianthus Aureus follows the light.",
+      de: "Wie eine Sonnenblume folgt auch Helianthus Aureus dem Licht.",
     },
     descriptionParas: {
       sl: [
@@ -454,10 +551,20 @@ export const violins: Violin[] = [
         "The instrument also comes with an appraisal certificate from the renowned Viennese luthier Gerlinde Reutterer.",
         "It suits conservatory students, students of music academies and advanced students of music schools seeking a quality European instrument with a warm, pleasant and musical character. With its reliability, balanced response and pleasant tone colour, it is an excellent choice for everyday study, performances and further artistic development.",
       ],
+      de: [
+        "Ihr goldenes Erscheinungsbild, ihr Sonnenblumenlack und ihre warme, angenehme Stimme erzeugen ein Gefühl von Heiterkeit, Wärme und natürlicher Eleganz. Es ist ein Instrument, das nicht nur durch sein Aussehen bezaubert, sondern auch durch seine klangliche Aufrichtigkeit und Musikalität.",
+        "Diese hochwertige Geige in ganzer Größe (4/4) verbindet ein ansprechendes Erscheinungsbild mit einem musikalischen, ausgewogenen Klang. Das Instrument zeichnet sich durch einen ausgeprägt sonnigen Charakter aus, der durch einen wunderschönen goldenen Sonnenblumenlack betont wird, der die Geige sowohl optisch als auch klanglich hervorhebt.",
+        "Schön ausgewähltes Tonholz ermöglicht eine angenehme Ansprache unter dem Bogen und eine natürliche Projektion des Tons. Der Klang ist warm, weich und freundlich, mit genügend Tragkraft für das Solospiel und bleibt zugleich nah und angenehm für die Zuhörenden.",
+        "Ihre größte Stärke ist gerade ihre Klangfarbe. Helianthus Aureus besitzt einen warmen, vollen und angenehmen Klang, der Weichheit, Musikalität und eine schöne klangliche Ausgewogenheit über alle Register verbindet. Das Instrument spricht zuverlässig an und ermöglicht ein entspanntes, natürliches Musizieren.",
+        "Die Geige wurde von einem Geigenbaumeister fachgerecht überprüft, eingestellt und gerichtet und ist sofort spielbereit.",
+        "Das Instrument verfügt zudem über ein Schätzgutachten der renommierten Wiener Geigenbauerin Gerlinde Reutterer.",
+        "Sie eignet sich für Konservatoriumsschülerinnen und -schüler, Studierende von Musikakademien sowie fortgeschrittene Musikschülerinnen und -schüler, die ein hochwertiges europäisches Instrument mit warmem, angenehmem und musikalischem Charakter suchen. Mit ihrer Zuverlässigkeit, ihrer ausgewogenen Ansprache und ihrer angenehmen Klangfarbe ist sie eine ausgezeichnete Wahl für das tägliche Studium, für Auftritte und für die weitere künstlerische Entwicklung.",
+      ],
     },
     statusNote: {
       sl: "Violina je del zbirke Violin Garden Collection in trenutno išče svoj novi dom.",
       en: "The violin is part of the Violin Garden Collection and is currently seeking its new home.",
+      de: "Die Geige ist Teil der Violin Garden Collection und sucht derzeit ihr neues Zuhause.",
     },
     ctaParas: {
       sl: [
@@ -474,26 +581,35 @@ export const violins: Violin[] = [
         "As the sunflower brings light to the garden, so Helianthus Aureus brings warmth to music.",
         "For more detailed information or to arrange a personal trial, fill in the contact form — we will gladly present the instrument and answer all your questions.",
       ],
+      de: [
+        "So wie eine Sonnenblume ihre Blüte jeden Tag aufs Neue der Sonne zuwendet, so wartet auch Helianthus Aureus auf eine Musikerin oder einen Musiker, die in ihr neue Geschichten erwecken.",
+        "Ihr Weg ist nicht mehr allein an die Sammlung gebunden, sondern an künftige Konzerte, Auftritte, Wettbewerbe, an das Studium und an musikalische Momente, die sie gemeinsam mit ihrer neuen Besitzerin oder ihrem neuen Besitzer gestalten wird.",
+        "Vielleicht wird sie erste wichtige Auftritte, Aufnahmeprüfungen, Konzerte oder einfach die alltägliche Freude am Spielen begleiten. Vielleicht ist es gerade ihre warme Stimme, die eine neue Interpretation, einen neuen künstlerischen Schritt oder ein neues Kapitel Ihres musikalischen Weges inspiriert.",
+        "Wie die Sonnenblume Licht in den Garten bringt, so bringt Helianthus Aureus Wärme in die Musik.",
+        "Für nähere Informationen oder zur Vereinbarung eines persönlichen Probespiels füllen Sie bitte das Kontaktformular aus — wir stellen Ihnen das Instrument gerne vor und beantworten alle Ihre Fragen.",
+      ],
     },
   },
   {
     id: "rosa-mystica",
     name: "Rosa Mystica",
-    origin: { sl: "Evropska šola", en: "European school" },
-    year: { sl: "okoli 1850–1880", en: "c. 1850–1880" },
+    origin: { sl: "Evropska šola", en: "European school", de: "Europäische Schule" },
+    year: { sl: "okoli 1850–1880", en: "c. 1850–1880", de: "um 1850–1880" },
     flowerVariant: 7,
     intro: {
       sl: "Globok, topel in temen ton z bogato resonanco in plemenito patino več kot 150 let starega lesa.",
       en: "A deep, warm and dark tone with rich resonance and the noble patina of wood more than 150 years old.",
+      de: "Ein tiefer, warmer und dunkler Ton mit reicher Resonanz und der edlen Patina von über 150 Jahre altem Holz.",
     },
     description: {
       sl: "Star evropski inštrument polne velikosti (4/4), najverjetneje izdelan v Mittenwaldu v drugi polovici 19. stoletja, z globokim, žametnim tonom in izrazitim umetniškim videzom.",
       en: "An old full-size (4/4) European instrument, most likely made in Mittenwald in the second half of the 19th century, with a deep, velvety tone and a striking artistic appearance.",
+      de: "Ein altes europäisches Instrument in ganzer Größe (4/4), höchstwahrscheinlich in der zweiten Hälfte des 19. Jahrhunderts in Mittenwald gebaut, mit einem tiefen, samtigen Ton und einem markanten künstlerischen Erscheinungsbild.",
     },
     status: "rent",
     options: ["izposoja", "preizkus"],
 
-    maker: { sl: "etiketa Carlo Bergonzi (Cremona 1730)", en: "Carlo Bergonzi label (Cremona 1730)" },
+    maker: { sl: "etiketa Carlo Bergonzi (Cremona 1730)", en: "Carlo Bergonzi label (Cremona 1730)", de: "Carlo-Bergonzi-Etikett (Cremona 1730)" },
     size: "4/4",
     illustration: "/images/violins/rosa-mystica/rosa-mystica-ilustracija.webp",
     photos: [
@@ -503,6 +619,7 @@ export const violins: Violin[] = [
     lead: {
       sl: "Tako kot skrivnostna vrtnica tudi Rosa Mystica svojo pravo lepoto razkrije šele tistemu, ki ji prisluhne.",
       en: "Like a mystical rose, Rosa Mystica reveals her true beauty only to those who listen to her.",
+      de: "Wie eine geheimnisvolle Rose offenbart auch Rosa Mystica ihre wahre Schönheit erst dem, der ihr lauscht.",
     },
     descriptionParas: {
       sl: [
@@ -523,25 +640,35 @@ export const violins: Violin[] = [
         "The instrument has been professionally inspected and prepared for further use.",
         "It suits violinists, students of music academies, collectors and all who appreciate old European instruments with a distinctive character. By virtue of its age, aesthetic beauty and tonal maturity, it is an appealing choice both for concert use and for a collection.",
       ],
+      de: [
+        "Ihre reiche bernsteinfarbene Patina, ihr edles Alter und ihre tiefe, warme Stimme erzeugen ein Gefühl von Geheimnis, Eleganz und zeitloser Schönheit. Dies ist ein Instrument mit Charakter, das die Spuren vieler Jahrzehnte des Musizierens trägt und seine eigene Geschichte erzählt.",
+        "Es handelt sich um ein altes europäisches Instrument in ganzer Größe (4/4), höchstwahrscheinlich in der zweiten Hälfte des 19. Jahrhunderts in Mittenwald in Bayern gebaut. Das Instrument beeindruckt durch sein markantes künstlerisches Erscheinungsbild und seinen reifen klanglichen Charakter. Das über anderthalb Jahrhunderte alte Holz hat eine reiche Resonanz entwickelt, durch die die Geige weich, samtig und voll klingt.",
+        "Ihre größte Stärke ist die Tiefe ihres Tons. Rosa Mystica besitzt einen warmen, dunklen und ausdrucksstarken Klang mit schöner Projektion über alle Register. Besonders bezaubert sie in lyrischen Werken, in denen ihre sangliche Qualität und ihre natürliche Musikalität zur Geltung kommen.",
+        "Das Instrument zeichnet sich durch eine schön geformte resonante Fichtendecke, einen einteiligen Ahornboden mit zarter Flammung, einen eleganten bernsteinfarbenen Lack und harmonische Proportionen aus, wie sie für hochwertige mitteleuropäische Geigen des 19. Jahrhunderts typisch sind.",
+        "An der Decke wurde in der Vergangenheit ein Riss unter dem Steg fachgerecht saniert. Das Instrument ist stabil und für das weitere Spiel geeignet.",
+        "Das Instrument wurde fachgerecht überprüft und für die weitere Verwendung vorbereitet.",
+        "Es eignet sich für Geigerinnen und Geiger, Studierende von Musikakademien, Sammler sowie alle, die alte europäische Instrumente mit ausgeprägtem Charakter schätzen. Aufgrund seines Alters, seiner ästhetischen Schönheit und seiner klanglichen Reife ist es eine reizvolle Wahl sowohl für den Konzerteinsatz als auch für eine Sammlung.",
+      ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)" } },
-      { label: { sl: "Celotna dolžina", en: "Overall length" }, value: { sl: "591 mm", en: "591 mm" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length" }, value: { sl: "360 mm", en: "360 mm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout" }, value: { sl: "163 mm", en: "163 mm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout" }, value: { sl: "110 mm", en: "110 mm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout" }, value: { sl: "203 mm", en: "203 mm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate" }, value: { sl: "smreka", en: "spruce" } },
-      { label: { sl: "Hrbet", en: "Back" }, value: { sl: "javor, enodelen", en: "maple, one-piece" } },
-      { label: { sl: "Lak", en: "Varnish" }, value: { sl: "jantarni", en: "amber" } },
-      { label: { sl: "Etiketa", en: "Label" }, value: { sl: "Carlo Bergonzi (Anno 1730, Cremona)", en: "Carlo Bergonzi (Anno 1730, Cremona)" } },
-      { label: { sl: "Starost", en: "Age" }, value: { sl: "več kot 150 let", en: "over 150 years" } },
-      { label: { sl: "Izvor", en: "Origin" }, value: { sl: "najverjetneje Mittenwald, Bavarska", en: "most likely Mittenwald, Bavaria" } },
-      { label: { sl: "Stanje", en: "Condition" }, value: { sl: "strokovno sanirana razpoka pod kobilico, stabilen", en: "professionally repaired crack under the bridge, stable" } },
+      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
+      { label: { sl: "Celotna dolžina", en: "Overall length", de: "Gesamtlänge" }, value: { sl: "591 mm", en: "591 mm", de: "591 mm" } },
+      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "360 mm", en: "360 mm", de: "360 mm" } },
+      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "163 mm", en: "163 mm", de: "163 mm" } },
+      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "110 mm", en: "110 mm", de: "110 mm" } },
+      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "203 mm", en: "203 mm", de: "203 mm" } },
+      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka", en: "spruce", de: "Fichte" } },
+      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, enodelen", en: "maple, one-piece", de: "Ahorn, einteilig" } },
+      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "jantarni", en: "amber", de: "bernsteinfarben" } },
+      { label: { sl: "Etiketa", en: "Label", de: "Etikett" }, value: { sl: "Carlo Bergonzi (Anno 1730, Cremona)", en: "Carlo Bergonzi (Anno 1730, Cremona)", de: "Carlo Bergonzi (Anno 1730, Cremona)" } },
+      { label: { sl: "Starost", en: "Age", de: "Alter" }, value: { sl: "več kot 150 let", en: "over 150 years", de: "über 150 Jahre" } },
+      { label: { sl: "Izvor", en: "Origin", de: "Herkunft" }, value: { sl: "najverjetneje Mittenwald, Bavarska", en: "most likely Mittenwald, Bavaria", de: "höchstwahrscheinlich Mittenwald, Bayern" } },
+      { label: { sl: "Stanje", en: "Condition", de: "Zustand" }, value: { sl: "strokovno sanirana razpoka pod kobilico, stabilen", en: "professionally repaired crack under the bridge, stable", de: "fachgerecht sanierter Riss unter dem Steg, stabil" } },
     ],
     statusNote: {
       sl: "Violina je del zbirke Violin Garden Collection in trenutno išče glasbenika, ki bo z njo ustvarjal nove zgodbe.",
       en: "The violin is part of the Violin Garden Collection and is currently seeking a musician with whom to create new stories.",
+      de: "Die Geige ist Teil der Violin Garden Collection und sucht derzeit eine Musikerin oder einen Musiker, mit der oder dem sie neue Geschichten schaffen kann.",
     },
     ctaParas: {
       sl: [
@@ -552,26 +679,32 @@ export const violins: Violin[] = [
         "Just as a mystical rose does not reveal its essence to everyone, so too the sound of the Rosa Mystica violin holds its own special secret.",
         "Her journey continues through new concerts, study, artistic exploration and sincere musical moments. Perhaps she will accompany important performances, entrance exams, competitions or simply the everyday joy of playing on your own musical path.",
       ],
+      de: [
+        "So wie eine geheimnisvolle Rose ihr Wesen nicht jedem offenbart, so birgt auch der Klang der Geige Rosa Mystica sein eigenes besonderes Geheimnis.",
+        "Ihre Reise setzt sich fort durch neue Konzerte, das Studium, künstlerisches Erkunden und aufrichtige musikalische Momente. Vielleicht wird sie bedeutende Auftritte, Aufnahmeprüfungen, Wettbewerbe oder einfach die alltägliche Freude am Spielen auf Ihrem ganz eigenen musikalischen Weg begleiten.",
+      ],
     },
   },
   {
     id: "rosa-flammea",
     name: "Rosa Flammea",
-    origin: { sl: "Evropska šola", en: "European school" },
-    year: { sl: "začetek 20. stoletja", en: "early 20th century" },
+    origin: { sl: "Evropska šola", en: "European school", de: "Europäische Schule" },
+    year: { sl: "začetek 20. stoletja", en: "early 20th century", de: "Anfang des 20. Jahrhunderts" },
     flowerVariant: 8,
     intro: {
       sl: "Žameten, zelo globok in uravnotežen ton z žarečim rdečim lakom kakor plamen.",
       en: "A velvety, very deep and balanced tone with a glowing red varnish like a flame.",
+      de: "Ein samtiger, sehr tiefer und ausgewogener Ton mit einem glühenden roten Lack wie eine Flamme.",
     },
     description: {
       sl: "Kakovosten evropski inštrument polne velikosti (4/4) z začetka 20. stoletja, izdelan po modelu torinskega mojstra Giovannija Francesca Pressende, z žametnim globokim tonom in žarečim rdečim lakom.",
       en: "A quality full-size (4/4) European instrument from the early 20th century, made after the model of the Turin master Giovanni Francesco Pressenda, with a velvety, deep tone and a glowing red varnish.",
+      de: "Ein hochwertiges europäisches Instrument in ganzer Größe (4/4) vom Anfang des 20. Jahrhunderts, gebaut nach dem Modell des Turiner Meisters Giovanni Francesco Pressenda, mit einem samtigen, tiefen Ton und einem glühenden roten Lack.",
     },
     status: "collection",
     options: [],
 
-    maker: { sl: "po modelu G. F. Pressenda (Torino)", en: "after the model of G. F. Pressenda (Turin)" },
+    maker: { sl: "po modelu G. F. Pressenda (Torino)", en: "after the model of G. F. Pressenda (Turin)", de: "nach dem Modell von G. F. Pressenda (Turin)" },
     size: "4/4",
     illustration: "/images/violins/rosa-flammea/rosa-flammea-ilustracija.webp",
     photos: [
@@ -581,6 +714,7 @@ export const violins: Violin[] = [
     lead: {
       sl: "Tako kot ognjena vrtnica tudi Rosa Flammea združuje eleganco, moč in brezčasno lepoto.",
       en: "Like a fiery rose, Rosa Flammea unites elegance, strength and timeless beauty.",
+      de: "Wie eine feurige Rose vereint auch Rosa Flammea Eleganz, Kraft und zeitlose Schönheit.",
     },
     descriptionParas: {
       sl: [
@@ -597,26 +731,34 @@ export const violins: Violin[] = [
         "The original red oil varnish with gentle shading creates the impression of a flame that shifts from a bright, glowing red to deep ruby shades. It is precisely this exceptional play of colour that inspired the name Rosa Flammea.",
         "The instrument was professionally inspected by the renowned Viennese luthier Gerlinde Reutterer.",
       ],
+      de: [
+        "Ihre glühende rote Farbe, ihre verfeinerte Verarbeitung und ihre offene, warme Stimme erschaffen ein Instrument mit ausgeprägtem Charakter. Ihre Inspiration schöpft sie aus dem Modell des berühmten Turiner Meisters Giovanni Francesco Pressenda, dessen Geigen für ihren edlen Ton, ihre Musikalität und ihre hervorragende Spielbarkeit bekannt sind.",
+        "Es handelt sich um ein hochwertiges europäisches Instrument in ganzer Größe (4/4), gebaut zu Beginn des 20. Jahrhunderts. Die zweiteilige Fichtendecke mit feinen bis mittelbreiten Jahresringen ermöglicht eine reiche Resonanz und eine schnelle Ansprache unter dem Bogen. Der zweiteilige, leicht geflammte Ahornboden bildet zusammen mit den einteiligen Ahornzargen und dem dazu passenden Ahornkopf ein harmonisches und elegantes Ganzes.",
+        "Ihre größte Stärke ist ein besonderer samtiger, sehr tiefer und ausgewogener Ton mit schöner Projektion über alle Register. Das Instrument spricht zuverlässig an und ermöglicht einen reichen musikalischen Ausdruck sowohl bei lyrischen als auch bei virtuosen Werken.",
+        "Der originale rote Öllack mit zarten Schattierungen erzeugt den Eindruck einer Flamme, die von einem hellen, glühenden Rot zu tiefen Rubintönen übergeht. Gerade dieses außergewöhnliche Farbspiel hat den Namen Rosa Flammea inspiriert.",
+        "Das Instrument wurde von der renommierten Wiener Geigenbauerin Gerlinde Reutterer fachgerecht überprüft.",
+      ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length" }, value: { sl: "35,7 cm", en: "35.7 cm" } },
-      { label: { sl: "Celotna dolžina", en: "Overall length" }, value: { sl: "58,4 cm", en: "58.4 cm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout" }, value: { sl: "16,9 cm", en: "16.9 cm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout" }, value: { sl: "11,1 cm", en: "11.1 cm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout" }, value: { sl: "20,7 cm", en: "20.7 cm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece" } },
-      { label: { sl: "Hrbet", en: "Back" }, value: { sl: "javor, dvodelen, rahlo plamenast", en: "maple, two-piece, slightly flamed" } },
-      { label: { sl: "Stranice", en: "Ribs" }, value: { sl: "javor, enodelne", en: "maple, one-piece" } },
-      { label: { sl: "Polž", en: "Scroll" }, value: { sl: "javor", en: "maple" } },
-      { label: { sl: "Lak", en: "Varnish" }, value: { sl: "originalni rdeči oljni", en: "original red oil" } },
-      { label: { sl: "Etiketa", en: "Label" }, value: { sl: "faksimile G. F. Pressenda (Torino 1836)", en: "facsimile G. F. Pressenda (Turin 1836)" } },
+      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
+      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "35,7 cm", en: "35.7 cm", de: "35,7 cm" } },
+      { label: { sl: "Celotna dolžina", en: "Overall length", de: "Gesamtlänge" }, value: { sl: "58,4 cm", en: "58.4 cm", de: "58,4 cm" } },
+      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "16,9 cm", en: "16.9 cm", de: "16,9 cm" } },
+      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "11,1 cm", en: "11.1 cm", de: "11,1 cm" } },
+      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "20,7 cm", en: "20.7 cm", de: "20,7 cm" } },
+      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece", de: "Fichte, zweiteilig" } },
+      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, dvodelen, rahlo plamenast", en: "maple, two-piece, slightly flamed", de: "Ahorn, zweiteilig, leicht geflammt" } },
+      { label: { sl: "Stranice", en: "Ribs", de: "Zargen" }, value: { sl: "javor, enodelne", en: "maple, one-piece", de: "Ahorn, einteilig" } },
+      { label: { sl: "Polž", en: "Scroll", de: "Schnecke" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
+      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "originalni rdeči oljni", en: "original red oil", de: "originaler roter Öllack" } },
+      { label: { sl: "Etiketa", en: "Label", de: "Etikett" }, value: { sl: "faksimile G. F. Pressenda (Torino 1836)", en: "facsimile G. F. Pressenda (Turin 1836)", de: "Faksimile G. F. Pressenda (Turin 1836)" } },
     ],
     statusNote: {
       sl: "Ta violina je del zasebne zbirke Violin Garden Collection in trenutno ni na voljo za prodajo ali izposojo. Predstavlja pomemben del zbirke ter ohranja svojo zgodbo kot del Violinskega vrta.",
       en: "This violin is part of the private Violin Garden Collection and is currently not available for sale or rental. It represents an important part of the collection and preserves its story as part of the Violin Garden.",
+      de: "Diese Geige ist Teil der privaten Violin Garden Collection und steht derzeit weder zum Verkauf noch zur Miete zur Verfügung. Sie bildet einen wichtigen Teil der Sammlung und bewahrt ihre Geschichte als Teil des Geigengartens.",
     },
-    ctaEyebrow: { sl: "GLASBENA ZGODBA", en: "A MUSICAL STORY" },
+    ctaEyebrow: { sl: "GLASBENA ZGODBA", en: "A MUSICAL STORY", de: "EINE MUSIKALISCHE GESCHICHTE" },
     ctaParas: {
       sl: [
         "Tako kot vrtnica vsako leto znova zacveti z novo močjo, tudi Rosa Flammea nosi v sebi glas številnih generacij glasbenikov.",
@@ -627,6 +769,11 @@ export const violins: Violin[] = [
         "Just as a rose blooms anew with fresh strength each year, so too does Rosa Flammea carry within her the voice of many generations of musicians.",
         "Her story continues as part of the Violin Garden Collection, where she preserves the rich European violin heritage and inspires new generations of violinists.",
         "Every instrument in the Violin Garden carries its own story. Rosa Flammea tells a story of fire, nobility and timeless music.",
+      ],
+      de: [
+        "So wie eine Rose jedes Jahr aufs Neue mit frischer Kraft erblüht, so trägt auch Rosa Flammea die Stimme vieler Generationen von Musikern in sich.",
+        "Ihre Geschichte setzt sich als Teil der Violin Garden Collection fort, in der sie das reiche europäische Geigenerbe bewahrt und neue Generationen von Geigerinnen und Geigern inspiriert.",
+        "Jedes Instrument im Geigengarten trägt seine eigene Geschichte. Rosa Flammea erzählt eine Geschichte von Feuer, Vornehmheit und zeitloser Musik.",
       ],
     },
   },
@@ -653,7 +800,6 @@ export interface LocalViolin {
   description: string;
   status: ViolinStatus;
   options: InquiryKind[];
-  price?: string;
   maker?: string;
   size?: string;
   illustration?: string;
@@ -677,7 +823,6 @@ export function localizeViolin(v: Violin, lang: Lang): LocalViolin {
     description: v.description[lang],
     status: v.status,
     options: v.options,
-    price: v.price?.[lang],
     maker: v.maker?.[lang],
     size: v.size,
     illustration: v.illustration,

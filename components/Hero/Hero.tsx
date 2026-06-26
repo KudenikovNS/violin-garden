@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEntered } from "../SplashGate/SplashGate";
 import { useT } from "@/lib/i18n/useT";
-import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -13,7 +12,6 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(true);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const entered = useEntered();
 
@@ -57,46 +55,6 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-
-      <div className={styles.content}>
-        <Image
-          src="/images/logo.webp"
-          alt="Violin Garden logo"
-          width={240}
-          height={190}
-          className={styles.logo}
-          priority
-        />
-        <div className={styles.text}>
-          <div className={styles.eyebrow}>
-            <span className={styles.eyebrowText}>{t.hero.eyebrow}</span>
-          </div>
-          <h1 className={styles.title}>{t.hero.title}</h1>
-          <p className={styles.subtitle}>{t.hero.subtitle}</p>
-        </div>
-        <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
-          <button className={styles.closeBtn} onClick={() => setMenuOpen(false)} aria-label={t.a11y.closeMenu}>✕</button>
-          <Image src="/images/logo.webp" alt="Violin Garden logo" width={120} height={95} className={styles.menuLogo} />
-          <div className={styles.menuDivider}>
-            <span className={styles.menuDividerLine} /><span className={styles.menuDividerDot}>✦</span><span className={styles.menuDividerLine} />
-          </div>
-          <Link href="/" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.home}</Link>
-          <Link href="/violinski-vrt" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.collection}</Link>
-          <Link href="/violine-za-nove-zgodbe" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.forSale}</Link>
-          <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.projects}</a>
-          <LanguageSwitcher className={styles.langSwitcher} />
-        </nav>
-
-        <button
-          className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
-          onClick={() => setMenuOpen(o => !o)}
-          aria-label={t.a11y.menu}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-      </div>
 
       <div className={styles.videoWrapper}>
         {videoError ? (

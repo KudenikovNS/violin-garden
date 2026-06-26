@@ -35,3 +35,22 @@ a {
   background: #fdfaf3;
   overflow: hidden;
 }
+
+/* ── Dolžinska varovalka za daljše jezike (zlasti nemščino) ────────────────
+   Te lastnosti se dedujejo skozi vse (tudi CSS-module) razrede. Pri kratkih
+   besedah (sl/en) so neopazne — prelom se sproži šele, kadar beseda res ne bi
+   šla v svoj okvir, zato vizualne podobe v slovenščini in angleščini ne
+   spremenijo. */
+body {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* Nemščina ima zelo dolge zloženke; vklopimo deljenje besed po nemških
+   pravilih. <html lang> nastavi LanguageProvider ob menjavi jezika. */
+html[lang="de"] body {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  /* zelo dolge zloženke smemo po potrebi prelomiti kjer koli */
+  overflow-wrap: anywhere;
+}

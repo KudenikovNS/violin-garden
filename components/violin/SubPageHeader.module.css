@@ -66,6 +66,13 @@
   transition: color 0.2s;
 }
 
+/* Nemške navigacijske oznake so daljše ("GEIGEN FÜR NEUE GESCHICHTEN"); dovolimo
+   prelom v več vrstic, da ne uidejo iz stolpca. Velja le za nemščino. */
+:global(html[lang="de"]) .menuLink {
+  white-space: normal;
+  letter-spacing: 0.1em;
+}
+
 .menuLink:hover {
   color: #b6924f;
 }

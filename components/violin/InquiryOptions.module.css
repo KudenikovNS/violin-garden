@@ -71,8 +71,23 @@
   .grid {
     flex-direction: column;
   }
+  /* Kompaktni gumbi (pregledna stran »Violine za nove zgodbe«) naj ostanejo v
+     vrsti tudi pod 768px — prostora je dovolj, sicer se po nepotrebnem
+     raztegnejo čez vso širino. Polni gumbi (stran inštrumenta) se še naprej
+     zložijo v stolpec. */
+  .compact.grid {
+    flex-direction: row;
+  }
 }
 
 .compact.grid {
   gap: 8px;
+}
+
+/* Na zelo ozkih zaslonih (≤470px) je za tri gumbe v vrsti premalo prostora —
+   takrat tudi kompaktne zložimo v stolpec. */
+@media (max-width: 470px) {
+  .compact.grid {
+    flex-direction: column;
+  }
 }

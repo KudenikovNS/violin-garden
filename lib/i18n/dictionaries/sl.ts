@@ -42,8 +42,8 @@ const sl = {
     p1: "Violinski vrt je osebna zbirka violin akademske violinistke Inge Ulokine, mag. art.",
     p2: "Zbirka nastaja že več kot dvajset let in trenutno obsega petnajst violin različnih obdobij, goslarskih šol in značajev.",
     p3: "Vsaka nosi svojo zgodbo, svoj glas in svojo edinstveno lepoto.",
-    quoteLine1: "Dobrodošli v svetu, kjer les postane glasba",
-    quoteLine2: "in kjer vsaka violina še naprej pripoveduje svojo zgodbo.",
+    quote:
+      "Dobrodošli v svetu, kjer les postane glasba in kjer vsaka violina še naprej pripoveduje svojo zgodbo.",
     link: "VEČ O ZBIRKI",
     imageAlt: "Violina in vrtnica na notah — zbirka",
   },

@@ -62,8 +62,8 @@ export default function ForSaleView() {
                   <Link href={`/violinski-vrt/${v.id}?from=prodaja`}>{v.name}</Link>
                 </h2>
                 <p className={styles.meta}>
-                  {v.maker ?? v.origin} · {v.year}
-                  {v.price ? ` · ${v.price}` : ""}
+                  {v.maker ?? v.origin}
+                  {v.year ? ` · ${v.year}` : ""}
                 </p>
                 <p className={styles.description}>{v.description}</p>
 

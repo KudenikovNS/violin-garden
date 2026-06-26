@@ -44,8 +44,8 @@ const en: Dict = {
     p1: "The Violin Garden is the personal violin collection of academic violinist Inga Ulokina, M.A.",
     p2: "The collection has been growing for more than twenty years and currently comprises fifteen violins of different periods, lutherie schools and characters.",
     p3: "Each carries its own story, its own voice and its own unique beauty.",
-    quoteLine1: "Welcome to a world where wood becomes music",
-    quoteLine2: "and where every violin keeps telling its story.",
+    quote:
+      "Welcome to a world where wood becomes music and where every violin keeps telling its story.",
     link: "MORE ABOUT THE COLLECTION",
     imageAlt: "A violin and a rose on sheet music — the collection",
   },

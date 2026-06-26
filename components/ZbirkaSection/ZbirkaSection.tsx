@@ -24,10 +24,7 @@ export default function ZbirkaSection() {
         <p className={styles.paragraph}>{t.zbirka.p1}</p>
         <p className={styles.paragraph}>{t.zbirka.p2}</p>
         <p className={styles.paragraph}>{t.zbirka.p3}</p>
-        <p className={styles.quote}>
-          {t.zbirka.quoteLine1}<br />
-          {t.zbirka.quoteLine2}
-        </p>
+        <p className={styles.quote}>{t.zbirka.quote}</p>
         <a href="#" className={styles.link}>
           {t.zbirka.link} <span>→</span>
         </a>
