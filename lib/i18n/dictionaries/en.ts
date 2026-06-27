@@ -140,6 +140,27 @@ const en: Dict = {
     izposoja: { title: "RENTAL", action: "Rental inquiry" },
     preizkus: { title: "TRIAL", action: "Arrange a viewing & trial" },
   },
+
+  inquiryForm: {
+    heading: "Inquiry",
+    intro: "Fill in the form and we will gladly reply and present the instrument.",
+    subjectPrefix: "Inquiry",
+    nameLabel: "Full name",
+    namePlaceholder: "Your name",
+    emailLabel: "Email",
+    emailPlaceholder: "you@email.com",
+    phoneLabel: "Phone (optional)",
+    phonePlaceholder: "+386 …",
+    messageLabel: "Message",
+    messagePlaceholder: "Your question or message …",
+    submit: "Send inquiry",
+    sending: "Sending …",
+    successTitle: "Thank you for your message!",
+    successText: "We have received your inquiry and will get back to you soon.",
+    errorText: "The message could not be sent. Please try again or email us at",
+    close: "Close",
+    privacyNote: "We use your details solely to respond to your inquiry.",
+  },
 };
 
 export default en;

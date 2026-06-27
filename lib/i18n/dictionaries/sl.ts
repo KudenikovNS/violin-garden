@@ -138,6 +138,27 @@ const sl = {
     izposoja: { title: "IZPOSOJA", action: "Povpraševanje o izposoji" },
     preizkus: { title: "PREIZKUS", action: "Dogovor za ogled in preizkus" },
   },
+
+  inquiryForm: {
+    heading: "Povpraševanje",
+    intro: "Izpolnite obrazec in z veseljem vam odgovorimo ter inštrument predstavimo.",
+    subjectPrefix: "Povpraševanje",
+    nameLabel: "Ime in priimek",
+    namePlaceholder: "Vaše ime",
+    emailLabel: "E-pošta",
+    emailPlaceholder: "vas@email.com",
+    phoneLabel: "Telefon (neobvezno)",
+    phonePlaceholder: "+386 …",
+    messageLabel: "Sporočilo",
+    messagePlaceholder: "Vaše vprašanje ali sporočilo …",
+    submit: "Pošlji povpraševanje",
+    sending: "Pošiljanje …",
+    successTitle: "Hvala za vaše sporočilo!",
+    successText: "Vaše povpraševanje smo prejeli in vam bomo kmalu odgovorili.",
+    errorText: "Sporočila ni bilo mogoče poslati. Poskusite znova ali nam pišite na",
+    close: "Zapri",
+    privacyNote: "Vaše podatke uporabimo izključno za odgovor na vaše povpraševanje.",
+  },
 };
 
 export default sl;
