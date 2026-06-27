@@ -8,12 +8,12 @@ export const SITE_URL = (
 
 /**
  * Absolute URL for a route, given the locale and a locale-less path
- * (leading slash, or "" / "/" for the home page). Trailing-slash-free to match
- * the static export's emitted file names.
+ * (leading slash, or "" / "/" for the home page). Trailing-slashed to match the
+ * static export (`trailingSlash: true` → every route is served at <path>/).
  */
 export function localeUrl(lang: string, path = ""): string {
   const clean = path === "/" ? "" : path;
-  return `${SITE_URL}/${lang}${clean}`;
+  return `${SITE_URL}/${lang}${clean}/`;
 }
 
 /**
