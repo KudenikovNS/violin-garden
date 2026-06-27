@@ -1,54 +1,57 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  type ReactNode,
-} from "react";
-import { DEFAULT_LANG, isLang, type Lang } from "./config";
+import { createContext, useContext, useEffect, type ReactNode } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { type Lang } from "./config";
 
-// The site is statically exported, so there is no server-side locale routing.
-// Instead the chosen language lives in global client state (this Context) and is
-// remembered in localStorage. The first render — on the server prerender and on
-// the client's initial paint — always uses DEFAULT_LANG to avoid a hydration
-// mismatch; we switch to the stored preference right after mount.
+// Language is part of the URL: every route lives under /[lang] (/sl, /en, /de),
+// statically exported as its own HTML with the correct <html lang>. The route's
+// locale is the single source of truth — this provider just exposes it to the
+// (client) components below and switches language by navigating to the same path
+// under another locale. localStorage only remembers the preference so the root
+// "/" redirect can restore it on a later visit.
 const STORAGE_KEY = "vg_lang";
 
 interface LanguageContextValue {
   lang: Lang;
   setLang: (lang: Lang) => void;
-  toggle: () => void;
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(DEFAULT_LANG);
+export function LanguageProvider({
+  lang,
+  children,
+}: {
+  lang: Lang;
+  children: ReactNode;
+}) {
+  const router = useRouter();
+  const pathname = usePathname();
 
-  // Restore the saved preference after hydration.
+  // Persist the current locale so the root redirect can honor it next time.
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (isLang(stored)) setLangState(stored);
-  }, []);
-
-  // Keep <html lang> in sync for accessibility and SEO of the rendered page.
-  useEffect(() => {
-    document.documentElement.lang = lang;
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+    } catch {
+      /* ignore (private mode / disabled storage) */
+    }
   }, [lang]);
 
   function setLang(next: Lang) {
-    setLangState(next);
-    localStorage.setItem(STORAGE_KEY, next);
-  }
-
-  function toggle() {
-    setLang(lang === "sl" ? "en" : "sl");
+    if (next === lang) return;
+    try {
+      localStorage.setItem(STORAGE_KEY, next);
+    } catch {
+      /* ignore */
+    }
+    // Swap the first path segment (the locale) and keep the rest of the path.
+    const rest = (pathname ?? `/${lang}`).replace(/^\/[^/]+/, "");
+    router.push(`/${next}${rest}`);
   }
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, toggle }}>
+    <LanguageContext.Provider value={{ lang, setLang }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="sl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <!-- No-JS fallback: the site targets the Slovenian market. -->
+    <meta http-equiv="refresh" content="0; url=/sl" />
+    <link rel="canonical" href="/sl" />
+    <title>Violinski vrt</title>
+    <script>
+      // Send visitors to their remembered language, then browser preference,
+      // then the Slovenian default. Kept in sync with lib/i18n/config.ts.
+      (function () {
+        var SUPPORTED = ["sl", "en", "de"];
+        var DEFAULT = "sl";
+        function pick() {
+          try {
+            var saved = localStorage.getItem("vg_lang");
+            if (SUPPORTED.indexOf(saved) !== -1) return saved;
+          } catch (e) {}
+          var nav = (navigator.languages || [navigator.language || ""]);
+          for (var i = 0; i < nav.length; i++) {
+            var code = String(nav[i]).slice(0, 2).toLowerCase();
+            if (SUPPORTED.indexOf(code) !== -1) return code;
+          }
+          return DEFAULT;
+        }
+        location.replace("/" + pick());
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Preusmerjanje … / Redirecting … <a href="/sl">Violinski vrt</a></p>
+  </body>
+</html>

@@ -10,6 +10,25 @@ const en: Dict = {
     projects: "PROJECTS",
   },
 
+  meta: {
+    siteName: "The Violin Garden",
+    home: {
+      title: "The Violin Garden — violin collection of Inga Ulokina",
+      description:
+        "The Violin Garden is the personal violin collection of academic violinist Inga Ulokina, MA. A collection of violins with music, stories and artistic projects.",
+    },
+    collection: {
+      title: "The Violin Garden — violin collection",
+      description:
+        "Discover the violins of the Violin Garden. Each violin has its own voice, character and story.",
+    },
+    forSale: {
+      title: "Violins for new stories — for sale",
+      description:
+        "Selected violins from the Violin Garden, ready to continue their story with a new musician.",
+    },
+  },
+
   a11y: {
     openMenu: "Open menu",
     closeMenu: "Close menu",

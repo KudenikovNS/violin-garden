@@ -8,6 +8,27 @@ const sl = {
     projects: "PROJEKTI",
   },
 
+  // Naslovi in opisi za SEO (<title> / <meta description>). Imena violin in
+  // njihovi opisi za podstrani prihajajo iz `data/violins.ts`.
+  meta: {
+    siteName: "Violinski vrt",
+    home: {
+      title: "Violinski vrt — zbirka violin Inge Ulokine",
+      description:
+        "Violinski vrt je osebna zbirka violin akademske violinistke Inge Ulokine, mag. art. Zbirka violin z glasbo, zgodbami in umetniškimi projekti.",
+    },
+    collection: {
+      title: "Violinski vrt — zbirka violin",
+      description:
+        "Spoznajte zbirko violin Violinskega vrta. Vsaka violina ima svoj glas, značaj in zgodbo.",
+    },
+    forSale: {
+      title: "Violine za nove zgodbe — naprodaj",
+      description:
+        "Izbrane violine iz Violinskega vrta, pripravljene nadaljevati svojo zgodbo z novim glasbenikom.",
+    },
+  },
+
   a11y: {
     openMenu: "Odpri meni",
     closeMenu: "Zapri meni",

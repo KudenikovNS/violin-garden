@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import LocaleLink from "../LocaleLink";
 import { useT } from "@/lib/i18n/useT";
 import type { Dict } from "@/lib/i18n/dictionaries";
 import styles from "./CardsSection.module.css";
@@ -55,9 +55,9 @@ export default function CardsSection() {
                 <span className={styles.title}>{c.title}</span>
               </div>
               <p className={styles.text}>{c.text}</p>
-              <Link href={card.href} className={styles.link}>
+              <LocaleLink href={card.href} className={styles.link}>
                 {c.link} <span>→</span>
-              </Link>
+              </LocaleLink>
             </div>
           </div>
         );

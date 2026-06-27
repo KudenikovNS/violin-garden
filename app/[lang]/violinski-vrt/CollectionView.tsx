@@ -1,35 +1,34 @@
 "use client";
 
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import Image from "next/image";
-import { availableViolins, localizeViolin } from "@/data/violins";
+import { violins, localizeViolin } from "@/data/violins";
 import { useLang } from "@/lib/i18n/LanguageProvider";
 import { useT } from "@/lib/i18n/useT";
 import Flower from "@/components/violin/Flower";
 import SubPageHeader from "@/components/violin/SubPageHeader";
-import InquiryOptions from "@/components/violin/InquiryOptions";
 import styles from "./page.module.css";
 
-export default function ForSaleView() {
+export default function CollectionView() {
   const t = useT();
   const { lang } = useLang();
 
   return (
     <main className={styles.page}>
       <SubPageHeader
-        eyebrow={t.forSalePage.eyebrow}
-        title={t.forSalePage.title}
-        subtitle={t.forSalePage.subtitle}
+        eyebrow={t.collectionPage.eyebrow}
+        title={t.collectionPage.title}
+        subtitle={t.collectionPage.subtitle}
       />
 
-      <section className={styles.list}>
-        {availableViolins.map((raw, cardIndex) => {
+      <section className={styles.grid}>
+        {violins.map((raw, cardIndex) => {
           const v = localizeViolin(raw, lang);
           // Cvet → sprednja stran → hrbet: do tri sličice za brezkončni preliv.
           const slides = [v.illustration, ...(v.photos ?? [])].filter(Boolean) as string[];
           return (
-            <article key={v.id} className={styles.row}>
-              <Link href={`/violinski-vrt/${v.id}?from=prodaja`} className={styles.visual}>
+            <LocaleLink key={v.id} href={`/violinski-vrt/${v.id}`} className={styles.card}>
+              <div className={styles.flowerWrap}>
                 {slides.length > 1 ? (
                   <div className={styles.slideshow}>
                     {slides.slice(0, 3).map((src, i) => (
@@ -38,7 +37,7 @@ export default function ForSaleView() {
                         src={src}
                         alt={t.a11y.floralIllustration(v.name)}
                         fill
-                        sizes="(max-width: 768px) 280px, 240px"
+                        sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 360px"
                         className={styles.slide}
                         priority={cardIndex === 0 && i === 0}
                       />
@@ -48,43 +47,31 @@ export default function ForSaleView() {
                   <Image
                     src={slides[0]}
                     alt={t.a11y.floralIllustration(v.name)}
-                    width={280}
-                    height={350}
+                    width={360}
+                    height={450}
                     className={styles.illustration}
                   />
                 ) : (
                   <Flower variant={v.flowerVariant} size={150} />
                 )}
-              </Link>
-
-              <div className={styles.info}>
-                <h2 className={styles.name}>
-                  <Link href={`/violinski-vrt/${v.id}?from=prodaja`}>{v.name}</Link>
-                </h2>
-                <p className={styles.meta}>
-                  {v.maker ?? v.origin}
-                  {v.year ? ` · ${v.year}` : ""}
-                </p>
-                <p className={styles.description}>{v.description}</p>
-
-                <Link href={`/violinski-vrt/${v.id}?from=prodaja`} className={styles.link}>
-                  {t.forSalePage.fullPresentation} <span>→</span>
-                </Link>
-
-                <div className={styles.inquiry}>
-                  <InquiryOptions options={v.options} violinName={v.name} compact />
-                </div>
+                {v.status !== "collection" && (
+                  <span className={styles.badge}>{t.collectionPage.badge[v.status]}</span>
+                )}
               </div>
-            </article>
+              <div className={styles.body}>
+                <h2 className={styles.name}>{v.name}</h2>
+                <p className={styles.meta}>
+                  {v.origin} · {v.year}
+                </p>
+                <p className={styles.intro}>{v.intro}</p>
+                <span className={styles.link}>
+                  {t.collectionPage.fullPresentation} <span>→</span>
+                </span>
+              </div>
+            </LocaleLink>
           );
         })}
       </section>
-
-      <div className={styles.backRow}>
-        <Link href="/violinski-vrt" className={styles.backLink}>
-          {t.forSalePage.backToCollection}
-        </Link>
-      </div>
     </main>
   );
 }

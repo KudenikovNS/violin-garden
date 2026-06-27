@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import LocaleLink from "../LocaleLink";
 import { useT } from "@/lib/i18n/useT";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./Header.module.css";
@@ -36,9 +36,9 @@ export default function Header() {
         <div className={styles.menuDivider}>
           <span className={styles.menuDividerLine} /><span className={styles.menuDividerDot}>✦</span><span className={styles.menuDividerLine} />
         </div>
-        <Link href="/" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.home}</Link>
-        <Link href="/violinski-vrt" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.collection}</Link>
-        <Link href="/violine-za-nove-zgodbe" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.forSale}</Link>
+        <LocaleLink href="/" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.home}</LocaleLink>
+        <LocaleLink href="/violinski-vrt" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.collection}</LocaleLink>
+        <LocaleLink href="/violine-za-nove-zgodbe" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.forSale}</LocaleLink>
         <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.projects}</a>
         <LanguageSwitcher className={styles.langSwitcher} />
       </nav>

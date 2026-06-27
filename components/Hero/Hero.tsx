@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import LocaleLink from "../LocaleLink";
 import { useEntered } from "../SplashGate/SplashGate";
 import { useT } from "@/lib/i18n/useT";
 import styles from "./Hero.module.css";
@@ -119,16 +119,16 @@ export default function Hero() {
         <p className={styles.tagline}>{t.hero.tagline}</p>
 
         <div className={styles.buttons}>
-          <Link href="/violinski-vrt" className={`${styles.btn} ${styles.btnGreen}`}>
+          <LocaleLink href="/violinski-vrt" className={`${styles.btn} ${styles.btnGreen}`}>
             <Image src="/images/btn1.webp" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>{t.hero.enterGarden}</span>
             <span className={styles.arrow}>→</span>
-          </Link>
-          <Link href="/violine-za-nove-zgodbe" className={`${styles.btn} ${styles.btnRose}`}>
+          </LocaleLink>
+          <LocaleLink href="/violine-za-nove-zgodbe" className={`${styles.btn} ${styles.btnRose}`}>
             <Image src="/images/btn2.webp" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>{t.hero.forNewStories}</span>
             <span className={styles.arrow}>→</span>
-          </Link>
+          </LocaleLink>
           <a href="#" className={`${styles.btn} ${styles.btnGold}`}>
             <Image src="/images/btn3.webp" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>{t.hero.discoverProjects}</span>

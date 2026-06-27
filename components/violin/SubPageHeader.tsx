@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import LocaleLink from "../LocaleLink";
 import { useT } from "@/lib/i18n/useT";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./SubPageHeader.module.css";
@@ -42,11 +42,11 @@ export default function SubPageHeader({
   return (
     <header className={styles.header}>
       <div className={styles.bar}>
-        <Link href={backHref} className={styles.back} aria-label={t.subHeader.back}>
+        <LocaleLink href={backHref} className={styles.back} aria-label={t.subHeader.back}>
           <span className={styles.backArrow}>←</span> {t.subHeader.back}
-        </Link>
+        </LocaleLink>
 
-        <Link href="/" className={styles.logoLink}>
+        <LocaleLink href="/" className={styles.logoLink}>
           <Image
             src="/images/logo.webp"
             alt="Violin Garden"
@@ -54,7 +54,7 @@ export default function SubPageHeader({
             height={95}
             className={styles.logo}
           />
-        </Link>
+        </LocaleLink>
 
         <div className={styles.barRight}>
           <nav className={`${styles.menu} ${menuOpen ? styles.menuOpen : ""}`}>
@@ -78,14 +78,14 @@ export default function SubPageHeader({
               <span className={styles.menuDividerLine} />
             </div>
             {menuLinks.map((l) => (
-              <Link
+              <LocaleLink
                 key={l.href}
                 href={l.href}
                 className={styles.menuLink}
                 onClick={() => setMenuOpen(false)}
               >
                 {l.label}
-              </Link>
+              </LocaleLink>
             ))}
             <LanguageSwitcher className={styles.langSwitcher} />
           </nav>

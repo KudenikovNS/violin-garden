@@ -9,28 +9,35 @@ TypeScript strict). Ниже — найденные недочёты, сгруп
 
 ## 🔴 P0 — Критично (сломано / бьёт по бизнесу)
 
-- [ ] **1. Кнопки запроса не работают — нет конверсии.**
-  В `components/violin/InquiryOptions.tsx` кнопки «nakup / izposoja / preizkus»
-  (купить / арендовать / попробовать) — это `<button>` с `data-*` атрибутами и
-  **без `onClick`, формы или `mailto`**. Это главное целевое действие сайта продажи
-  инструментов, и оно мертво. Текст в `data/violins.ts` прямо обещает «izpolnite
-  kontaktni obrazec» (заполните контактную форму), которой нет нигде.
-  → Нужна контактная форма или хотя бы `mailto:` с предзаполненной темой/телом.
+- [x] **1. Кнопки запроса не работают — нет конверсии.** ✅ Решено (коммит `548778c`).
+  Кнопки «nakup / izposoja / preizkus» теперь открывают модальную контактную форму
+  (`components/violin/InquiryModal.tsx`) с отправкой через Web3Forms. Проверено:
+  `onClick` на кнопках, полная форма (имя/email/телефон/сообщение), ключ
+  `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` задан локально (`.env.local`) и в CI
+  (`deploy.yml` → `secrets.WEB3FORMS_KEY`), переводы формы есть в en/sl/de,
+  honeypot + focus-trap + Escape + fallback `mailto:` при ошибке, `tsc` чисто.
+  Остаётся вручную отправить тестовую заявку, чтобы подтвердить активность ключа
+  и доставку письма на `inga.ulokina@gmail.com`.
 
-- [ ] **2. Мусор и архив уходят в продакшн.**
-  В `out/` лежит `out/Архив.zip` (~3.3 МБ) и множество `.DS_Store`. Деплой
-  (`.github/workflows/deploy.yml`) делает `rsync -avz --delete ./out/` → всё это
-  копируется на сервер.
-  → Добавить `--exclude='.DS_Store' --exclude='*.zip'` в rsync и удалить архив из `out/`.
+- [x] **2. Мусор и архив уходят в продакшн.** ✅ Решено.
+  `out/Архив.zip` уже удалён (в `out/` отсутствует, в git не закоммичен).
+  В `deploy.yml` добавлены `--exclude='.DS_Store'` и `--exclude='*.zip'` в rsync.
+  Локальные `.DS_Store` в `out/` подчищены. Примечание: CI собирает на Ubuntu, где
+  `.DS_Store` не возникает, так что через GitHub Actions мусор и так не уходил —
+  excludes защищают на случай ручного rsync с macOS. `/out/` и `.DS_Store` в `.gitignore`.
 
-- [ ] **3. SEO: сайт проиндексируется только на английском.**
-  Контент рендерится клиентски (`"use client"` везде), поэтому в пререндеренном HTML —
-  только английский (`out/index.html` содержит `lang="en"`, словенского текста нет).
-  Для словенского рынка родной язык в HTML отсутствует. Также **нет** `sitemap.xml`,
-  `robots.txt`, Open Graph тегов, структурированных данных (Product schema для
-  продаваемых скрипок).
-  → Либо пер-локальные статические маршруты (`/sl`, `/en`), либо рендер контента в HTML
-  обоих языков; добавить sitemap/robots/OG/`metadataBase`.
+- [x] **3. SEO: сайт проиндексируется только на английском.** ✅ Решено (Путь A).
+  Маршруты вынесены под `app/[lang]/` → статически генерируются `/sl`, `/en`, `/de`,
+  каждый со своим `<html lang>` и **родным текстом в HTML** (проверено: `out/sl.html`
+  `lang="sl"` + словенский, `out/en.html` `lang="en"` + английский, `out/de.html` `lang="de"`).
+  Корень `/` редиректит на `/sl` (`public/index.html`, учитывает сохранённый/браузерный язык).
+  Добавлено: `metadataBase`, пер-языковые `<title>`/`description`, `canonical` + hreflang
+  (`sl`/`en`/`de` + `x-default`→`sl`), Open Graph + Twitter Card, `app/sitemap.ts`
+  (12 маршрутов × hreflang) → `out/sitemap.xml`, `app/robots.ts` → `out/robots.txt`,
+  JSON-LD (`WebSite` + `Person` на главной, `Product`+`Brand` на страницах скрипок).
+  `DEFAULT_LANG` теперь `sl`. Домен в `NEXT_PUBLIC_SITE_URL` (`.env.local` + `deploy.yml`).
+  Переключатель языка навигирует между URL; внутренние ссылки — через `LocaleLink`.
+  `tsc` чисто, сборка зелёная (39 статических страниц).
 
 ---
 

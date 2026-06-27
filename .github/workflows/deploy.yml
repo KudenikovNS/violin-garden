@@ -24,6 +24,7 @@ jobs:
       - run: npm run build
         env:
           NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_KEY }}
+          NEXT_PUBLIC_SITE_URL: https://violingardencollection.com
 
       - name: Setup SSH
         run: |
@@ -37,6 +38,8 @@ jobs:
           rsync -avz --delete \
             --exclude='.htaccess' \
             --exclude='cgi-bin/' \
+            --exclude='.DS_Store' \
+            --exclude='*.zip' \
             -e "ssh -p ${{ secrets.SSH_PORT }} -i ~/.ssh/deploy_key" \
             ./out/ \
             "${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_TARGET }}"

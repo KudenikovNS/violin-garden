@@ -10,6 +10,25 @@ const de: Dict = {
     projects: "PROJEKTE",
   },
 
+  meta: {
+    siteName: "Der Geigengarten",
+    home: {
+      title: "Der Geigengarten — Geigensammlung von Inga Ulokina",
+      description:
+        "Der Geigengarten ist die persönliche Geigensammlung der akademischen Geigerin Inga Ulokina, M.A. Eine Sammlung von Geigen mit Musik, Geschichten und künstlerischen Projekten.",
+    },
+    collection: {
+      title: "Der Geigengarten — Geigensammlung",
+      description:
+        "Entdecken Sie die Geigen des Geigengartens. Jede Geige hat ihre eigene Stimme, ihren Charakter und ihre Geschichte.",
+    },
+    forSale: {
+      title: "Geigen für neue Geschichten — zu verkaufen",
+      description:
+        "Ausgewählte Geigen aus dem Geigengarten, bereit, ihre Geschichte mit einem neuen Musiker fortzusetzen.",
+    },
+  },
+
   a11y: {
     openMenu: "Menü öffnen",
     closeMenu: "Menü schließen",
