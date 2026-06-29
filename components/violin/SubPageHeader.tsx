@@ -1,17 +1,15 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import LocaleLink from "../LocaleLink";
 import { useT } from "@/lib/i18n/useT";
-import { useDialog } from "@/lib/useDialog";
-import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import MobileMenu, { type NavLink } from "../MobileMenu/MobileMenu";
 import styles from "./SubPageHeader.module.css";
 
 const HOME_BACK = "/";
 const VRT_BACK = "/violinski-vrt";
 const PRODAJA_BACK = "/violine-za-nove-zgodbe";
-const MENU_ID = "subpage-menu";
 
 export default function SubPageHeader({
   eyebrow,
@@ -25,16 +23,11 @@ export default function SubPageHeader({
   detailBack?: boolean;
 }) {
   const t = useT();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
   // Na strani posamezne violine je gumb nazaj odvisen od izvora obiska
   // (Violinski vrt ali Violine za nove zgodbe) — preberemo iz ?from=.
   const [backHref, setBackHref] = useState(detailBack ? VRT_BACK : HOME_BACK);
 
-  // Mobile menu a11y (inactive on desktop, where the burger is hidden).
-  useDialog(menuOpen, navRef, () => setMenuOpen(false));
-
-  const menuLinks = [
+  const menuLinks: NavLink[] = [
     { href: "/violinski-vrt", label: t.nav.collection },
     { href: "/violine-za-nove-zgodbe", label: t.nav.forSale },
   ];
@@ -63,55 +56,7 @@ export default function SubPageHeader({
         </LocaleLink>
 
         <div className={styles.barRight}>
-          <nav
-            ref={navRef}
-            id={MENU_ID}
-            aria-label={t.a11y.menu}
-            className={`${styles.menu} ${menuOpen ? styles.menuOpen : ""}`}
-          >
-            <button
-              className={styles.closeBtn}
-              onClick={() => setMenuOpen(false)}
-              aria-label={t.a11y.closeMenu}
-            >
-              ✕
-            </button>
-            <Image
-              src="/images/logo.webp"
-              alt="Violin Garden"
-              width={140}
-              height={110}
-              className={styles.menuLogo}
-            />
-            <div className={styles.menuDivider}>
-              <span className={styles.menuDividerLine} />
-              <span className={styles.menuDividerDot}>✦</span>
-              <span className={styles.menuDividerLine} />
-            </div>
-            {menuLinks.map((l) => (
-              <LocaleLink
-                key={l.href}
-                href={l.href}
-                className={styles.menuLink}
-                onClick={() => setMenuOpen(false)}
-              >
-                {l.label}
-              </LocaleLink>
-            ))}
-            <LanguageSwitcher className={styles.langSwitcher} />
-          </nav>
-
-          <button
-            className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
-            onClick={() => setMenuOpen((o) => !o)}
-            aria-label={t.a11y.menu}
-            aria-controls={MENU_ID}
-            aria-expanded={menuOpen}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+          <MobileMenu links={menuLinks} id="subpage-menu" />
         </div>
       </div>
 

@@ -1,11 +1,10 @@
 "use client";
 
 import LocaleLink from "@/components/LocaleLink";
-import Image from "next/image";
 import { violins, localizeViolin } from "@/data/violins";
 import { useLang } from "@/lib/i18n/LanguageProvider";
 import { useT } from "@/lib/i18n/useT";
-import Flower from "@/components/violin/Flower";
+import ViolinSlideshow from "@/components/violin/ViolinSlideshow";
 import SubPageHeader from "@/components/violin/SubPageHeader";
 import styles from "./page.module.css";
 
@@ -24,36 +23,18 @@ export default function CollectionView() {
       <section className={styles.grid}>
         {violins.map((raw, cardIndex) => {
           const v = localizeViolin(raw, lang);
-          // Cvet → sprednja stran → hrbet: do tri sličice za brezkončni preliv.
-          const slides = [v.illustration, ...(v.photos ?? [])].filter(Boolean) as string[];
           return (
             <LocaleLink key={v.id} href={`/violinski-vrt/${v.id}`} className={styles.card}>
               <div className={styles.flowerWrap}>
-                {slides.length > 1 ? (
-                  <div className={styles.slideshow}>
-                    {slides.slice(0, 3).map((src, i) => (
-                      <Image
-                        key={src}
-                        src={src}
-                        alt={t.a11y.floralIllustration(v.name)}
-                        fill
-                        sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 360px"
-                        className={styles.slide}
-                        priority={cardIndex === 0 && i === 0}
-                      />
-                    ))}
-                  </div>
-                ) : slides.length === 1 ? (
-                  <Image
-                    src={slides[0]}
-                    alt={t.a11y.floralIllustration(v.name)}
-                    width={360}
-                    height={450}
-                    className={styles.illustration}
-                  />
-                ) : (
-                  <Flower variant={v.flowerVariant} size={150} />
-                )}
+                <ViolinSlideshow
+                  illustration={v.illustration}
+                  photos={v.photos}
+                  flowerVariant={v.flowerVariant}
+                  name={v.name}
+                  sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 360px"
+                  single={{ width: 360, height: 450 }}
+                  priority={cardIndex === 0}
+                />
                 {v.status !== "collection" && (
                   <span className={styles.badge}>{t.collectionPage.badge[v.status]}</span>
                 )}

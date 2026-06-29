@@ -44,7 +44,8 @@ export interface Violin {
   ctaParas?: LList; // lastno besedilo razdelka »Nova glasbena pot« (nadomesti privzeti vabilni stavek)
 }
 
-// Začasni (placeholder) podatki — nadomestimo z resničnimi, ko jih prejmemo od Inge.
+// Podatki zbirke violin. Vsa besedilna polja so večjezična (Record<Lang, string>);
+// za prikaz jih lokalizira `localizeViolin`. Nove vnose dodajamo, ko so pripravljeni.
 export const violins: Violin[] = [
   {
     id: "rosa-alba",

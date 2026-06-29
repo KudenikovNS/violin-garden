@@ -1,0 +1,160 @@
+/* Shared navigation menu for the home Header and the SubPageHeader.
+   Desktop: inline vertical list (right-aligned). Mobile (≤768, and ≤960 for the
+   German home layout via .earlyGerman): full-screen overlay opened by the burger. */
+
+.nav {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.navLink {
+  font-family: var(--font-cormorant), serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #4a4234;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: #b6924f;
+}
+
+/* Daljše nemške oznake poravnamo desno in jim dovolimo prelom. */
+:global(html[lang="de"]) .navLink {
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+/* ── Burger ──────────────────────────────── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.burger span {
+  display: block;
+  height: 1.5px;
+  background: #4a4234;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burgerOpen span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burgerOpen span:nth-child(2) { opacity: 0; }
+.burgerOpen span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.closeBtn {
+  display: none;
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #c2a063;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.closeBtn:hover { color: #e8d5a3; }
+
+.menuLogo { display: none; }
+
+.menuDivider {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.menuDividerLine {
+  width: 60px;
+  height: 1px;
+  background: #5a4f3e;
+}
+
+.menuDividerDot {
+  color: #c2a063;
+  font-size: 11px;
+}
+
+.langSwitcher {
+  margin-top: 1.4rem;
+}
+
+@media (max-width: 1024px) {
+  .nav { font-size: 12px; }
+}
+
+/* ── Mobile overlay (≤768) ───────────────── */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #2a2318;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 100;
+    padding: 60px 40px;
+  }
+  .navOpen { display: flex; }
+  .navLink {
+    font-size: 20px;
+    letter-spacing: 0.22em;
+    color: #e8d5a3;
+    text-align: center;
+  }
+  .navLink:hover { color: #c2a063; }
+  .closeBtn { display: block; }
+  .menuLogo { display: block; }
+  .menuDivider { display: flex; }
+  .burger { display: flex; }
+}
+
+/* ── German, home only: switch to burger earlier (≤960) ──────────────────────
+   The inline home header is too tight for long German labels below ~960px, so
+   the opted-in instance (.earlyGerman) collapses to the burger there too. The
+   home header's own grid reflow lives in Header.module.css. */
+@media (max-width: 960px) {
+  :global(html[lang="de"]) .nav.earlyGerman {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #2a2318;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 100;
+    padding: 60px 40px;
+  }
+  :global(html[lang="de"]) .nav.earlyGerman.navOpen { display: flex; }
+  :global(html[lang="de"]) .nav.earlyGerman .navLink {
+    font-size: 20px;
+    letter-spacing: 0.22em;
+    color: #e8d5a3;
+    text-align: center;
+  }
+  :global(html[lang="de"]) .nav.earlyGerman .closeBtn { display: block; }
+  :global(html[lang="de"]) .nav.earlyGerman .menuLogo { display: block; }
+  :global(html[lang="de"]) .nav.earlyGerman .menuDivider { display: flex; }
+  :global(html[lang="de"]) .burger.earlyGerman { display: flex; }
+}

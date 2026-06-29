@@ -48,107 +48,7 @@
   align-items: center;
 }
 
-/* ── Navigacija na namizju (stolpec ob desni) ──── */
-.menu {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.menuLink {
-  font-family: var(--font-cormorant), serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  color: #4a4234;
-  white-space: nowrap;
-  transition: color 0.2s;
-}
-
-/* Nemške navigacijske oznake so daljše ("GEIGEN FÜR NEUE GESCHICHTEN"); dovolimo
-   prelom v več vrstic, da ne uidejo iz stolpca. Velja le za nemščino. */
-:global(html[lang="de"]) .menuLink {
-  white-space: normal;
-  letter-spacing: 0.1em;
-}
-
-.menuLink:hover {
-  color: #b6924f;
-}
-
-/* Burger in pribor menija (logotip, ločilo, gumb za zapiranje) — le ≤768px. */
-.burger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 36px;
-  height: 36px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  z-index: 110;
-}
-
-.burger span {
-  display: block;
-  height: 1.5px;
-  background: #4a4234;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.burgerOpen span:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
-}
-.burgerOpen span:nth-child(2) {
-  opacity: 0;
-}
-.burgerOpen span:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
-}
-
-.closeBtn {
-  display: none;
-  position: absolute;
-  top: 24px;
-  right: 28px;
-  background: none;
-  border: none;
-  color: #c2a063;
-  font-size: 28px;
-  line-height: 1;
-  cursor: pointer;
-  padding: 4px;
-  transition: color 0.2s;
-}
-
-.closeBtn:hover {
-  color: #e8d5a3;
-}
-
-.menuLogo {
-  display: none;
-}
-
-.menuDivider {
-  display: none;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 4px;
-}
-
-.menuDividerLine {
-  width: 60px;
-  height: 1px;
-  background: #5a4f3e;
-}
-
-.menuDividerDot {
-  color: #c2a063;
-  font-size: 11px;
-}
+/* Navigacija/meni/burger so v components/MobileMenu. */
 
 /* ── Naslovni blok ─────────────────────────────── */
 .titleBlock {
@@ -212,7 +112,7 @@
   }
 }
 
-/* ── Mobilno: navigacija se skrije za burger ────── */
+/* ── Mobilno: navigacija se skrije za burger (slog v MobileMenu) ────── */
 @media (max-width: 768px) {
   .bar {
     padding: 0 24px;
@@ -223,52 +123,6 @@
   .subtitle {
     font-size: 18px;
   }
-
-  .burger {
-    display: flex;
-  }
-
-  /* Meni postane polnozaslonski prekrivni sloj (slog kot na domači strani). */
-  .menu {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: #2a2318;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    z-index: 100;
-    padding: 60px 40px;
-  }
-
-  .menuOpen {
-    display: flex;
-  }
-
-  .menuLink {
-    font-size: 24px;
-    letter-spacing: 0.2em;
-    color: #e8d5a3;
-    text-align: center;
-    white-space: normal;
-  }
-
-  .menuLink:hover {
-    color: #c2a063;
-  }
-
-  .closeBtn {
-    display: block;
-  }
-
-  .menuLogo {
-    display: block;
-  }
-
-  .menuDivider {
-    display: flex;
-  }
 }
 
 @media (max-width: 480px) {
@@ -278,8 +132,4 @@
   .title {
     font-size: 30px;
   }
-}
-
-.langSwitcher {
-  margin-top: 1.4rem;
 }
