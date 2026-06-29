@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { useT } from "@/lib/i18n/useT";
+import { useDialog } from "@/lib/useDialog";
 import styles from "./Gallery.module.css";
 
 export default function Gallery({
@@ -16,6 +17,7 @@ export default function Gallery({
   const [index, setIndex] = useState<number | null>(null);
   const open = index !== null;
   const count = photos.length;
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   const close = useCallback(() => setIndex(null), []);
   const next = useCallback(
@@ -27,20 +29,19 @@ export default function Gallery({
     [count]
   );
 
+  // Scroll-lock, focus-trap, Escape and focus return are handled by useDialog;
+  // here we only add the gallery's left/right photo navigation.
+  useDialog(open, overlayRef, close);
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
-      else if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowRight") next();
       else if (e.key === "ArrowLeft") prev();
     };
     document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [open, close, next, prev]);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open, next, prev]);
 
   return (
     <>
@@ -66,10 +67,12 @@ export default function Gallery({
 
       {open && (
         <div
+          ref={overlayRef}
           className={styles.overlay}
           onClick={close}
           role="dialog"
           aria-modal="true"
+          aria-label={alt}
         >
           <button className={styles.close} onClick={close} aria-label={t.a11y.close}>
             ✕

@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import { InquiryKind } from "@/data/violins";
 import { useLang } from "@/lib/i18n/LanguageProvider";
 import { useT } from "@/lib/i18n/useT";
+import { useDialog } from "@/lib/useDialog";
 import styles from "./InquiryModal.module.css";
 
 // Web3Forms is a backend-less form-to-email service — perfect for our static
@@ -35,51 +36,9 @@ export default function InquiryModal({
     ? `${violinName} — ${t.inquiry[kind].action}`
     : t.inquiry[kind].action;
 
-  // Accessible modal behaviour: scroll-lock, initial focus, focus-trap,
-  // Escape-to-close, and focus restoration to the trigger on unmount.
-  useEffect(() => {
-    const previouslyFocused = document.activeElement as HTMLElement | null;
-    const { body } = document;
-    const prevOverflow = body.style.overflow;
-    body.style.overflow = "hidden";
-
-    const focusables = () =>
-      Array.from(
-        panelRef.current?.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
-        ) ?? [],
-      );
-
-    focusables()[0]?.focus();
-
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        e.preventDefault();
-        onClose();
-        return;
-      }
-      if (e.key === "Tab") {
-        const items = focusables();
-        if (items.length === 0) return;
-        const first = items[0];
-        const last = items[items.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    }
-
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      body.style.overflow = prevOverflow;
-      previouslyFocused?.focus();
-    };
-  }, [onClose]);
+  // Accessible modal behaviour (scroll-lock, focus-trap, Escape, focus return).
+  // The modal is mounted only while open, so it is always active here.
+  useDialog(true, panelRef, onClose);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();

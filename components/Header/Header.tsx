@@ -1,17 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import LocaleLink from "../LocaleLink";
 import { useT } from "@/lib/i18n/useT";
+import { useDialog } from "@/lib/useDialog";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./Header.module.css";
+
+const MENU_ID = "home-menu";
 
 // Glava domače strani (logotip + naslov + navigacija). Izvlečena iz Hero, da
 // stran dobi semantični <header> (za SEO/dostopnost). Vizualno enaka kot prej.
 export default function Header() {
   const t = useT();
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+
+  // Only active on mobile (the burger is hidden on desktop, so menuOpen stays
+  // false): scroll-lock, focus-trap, Escape, and focus return to the burger.
+  useDialog(menuOpen, navRef, () => setMenuOpen(false));
 
   return (
     <header className={styles.content}>
@@ -30,7 +38,12 @@ export default function Header() {
         <h1 className={styles.title}>{t.hero.title}</h1>
         <p className={styles.subtitle}>{t.hero.subtitle}</p>
       </div>
-      <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
+      <nav
+        ref={navRef}
+        id={MENU_ID}
+        aria-label={t.a11y.menu}
+        className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}
+      >
         <button className={styles.closeBtn} onClick={() => setMenuOpen(false)} aria-label={t.a11y.closeMenu}>✕</button>
         <Image src="/images/logo.webp" alt="Violin Garden logo" width={120} height={95} className={styles.menuLogo} />
         <div className={styles.menuDivider}>
@@ -58,6 +71,7 @@ export default function Header() {
         className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
         onClick={() => setMenuOpen(o => !o)}
         aria-label={t.a11y.menu}
+        aria-controls={MENU_ID}
         aria-expanded={menuOpen}
       >
         <span />

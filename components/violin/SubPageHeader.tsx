@@ -1,15 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import LocaleLink from "../LocaleLink";
 import { useT } from "@/lib/i18n/useT";
+import { useDialog } from "@/lib/useDialog";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./SubPageHeader.module.css";
 
 const HOME_BACK = "/";
 const VRT_BACK = "/violinski-vrt";
 const PRODAJA_BACK = "/violine-za-nove-zgodbe";
+const MENU_ID = "subpage-menu";
 
 export default function SubPageHeader({
   eyebrow,
@@ -24,9 +26,13 @@ export default function SubPageHeader({
 }) {
   const t = useT();
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
   // Na strani posamezne violine je gumb nazaj odvisen od izvora obiska
   // (Violinski vrt ali Violine za nove zgodbe) — preberemo iz ?from=.
   const [backHref, setBackHref] = useState(detailBack ? VRT_BACK : HOME_BACK);
+
+  // Mobile menu a11y (inactive on desktop, where the burger is hidden).
+  useDialog(menuOpen, navRef, () => setMenuOpen(false));
 
   const menuLinks = [
     { href: "/violinski-vrt", label: t.nav.collection },
@@ -57,7 +63,12 @@ export default function SubPageHeader({
         </LocaleLink>
 
         <div className={styles.barRight}>
-          <nav className={`${styles.menu} ${menuOpen ? styles.menuOpen : ""}`}>
+          <nav
+            ref={navRef}
+            id={MENU_ID}
+            aria-label={t.a11y.menu}
+            className={`${styles.menu} ${menuOpen ? styles.menuOpen : ""}`}
+          >
             <button
               className={styles.closeBtn}
               onClick={() => setMenuOpen(false)}
@@ -94,6 +105,7 @@ export default function SubPageHeader({
             className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
             onClick={() => setMenuOpen((o) => !o)}
             aria-label={t.a11y.menu}
+            aria-controls={MENU_ID}
             aria-expanded={menuOpen}
           >
             <span />
