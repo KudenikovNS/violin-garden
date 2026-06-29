@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import LocaleLink from "../LocaleLink";
 import { useT } from "@/lib/i18n/useT";
 import styles from "./ZbirkaSection.module.css";
 
@@ -25,9 +26,9 @@ export default function ZbirkaSection() {
         <p className={styles.paragraph}>{t.zbirka.p2}</p>
         <p className={styles.paragraph}>{t.zbirka.p3}</p>
         <p className={styles.quote}>{t.zbirka.quote}</p>
-        <a href="#" className={styles.link}>
+        <LocaleLink href="/violinski-vrt" className={styles.link}>
           {t.zbirka.link} <span>→</span>
-        </a>
+        </LocaleLink>
       </div>
     </section>
   );

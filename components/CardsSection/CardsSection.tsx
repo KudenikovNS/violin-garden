@@ -26,6 +26,7 @@ const cards: {
     key: "forSale",
   },
   {
+    // TODO: point to the projects page when its content is ready.
     id: "card3",
     image: "/images/card3.webp",
     href: "#",
@@ -55,7 +56,14 @@ export default function CardsSection() {
                 <span className={styles.title}>{c.title}</span>
               </div>
               <p className={styles.text}>{c.text}</p>
-              <LocaleLink href={card.href} className={styles.link}>
+              <LocaleLink
+                href={card.href}
+                className={styles.link}
+                aria-disabled={card.href === "#" || undefined}
+                onClick={
+                  card.href === "#" ? (e) => e.preventDefault() : undefined
+                }
+              >
                 {c.link} <span>→</span>
               </LocaleLink>
             </div>

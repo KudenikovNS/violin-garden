@@ -37,7 +37,13 @@ export default function AuthorSection() {
           <strong className={styles.name}>{t.author.name}</strong>{t.author.p1After}
         </p>
         <p className={styles.paragraph}>{t.author.p2}</p>
-        <a href="#" className={styles.btn}>
+        {/* TODO: link to the artist page when its content is ready. */}
+        <a
+          href="#"
+          className={styles.btn}
+          aria-disabled="true"
+          onClick={(e) => e.preventDefault()}
+        >
           {t.author.link} <span>→</span>
         </a>
       </div>

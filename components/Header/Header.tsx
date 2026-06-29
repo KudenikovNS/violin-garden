@@ -39,7 +39,18 @@ export default function Header() {
         <LocaleLink href="/" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.home}</LocaleLink>
         <LocaleLink href="/violinski-vrt" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.collection}</LocaleLink>
         <LocaleLink href="/violine-za-nove-zgodbe" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.forSale}</LocaleLink>
-        <a href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>{t.nav.projects}</a>
+        {/* TODO: PROJEKTI — placeholder until the projects page/content is ready. */}
+        <a
+          href="#"
+          className={styles.navLink}
+          aria-disabled="true"
+          onClick={(e) => {
+            e.preventDefault();
+            setMenuOpen(false);
+          }}
+        >
+          {t.nav.projects}
+        </a>
         <LanguageSwitcher className={styles.langSwitcher} />
       </nav>
 

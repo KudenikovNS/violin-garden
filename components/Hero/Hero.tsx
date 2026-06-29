@@ -129,7 +129,13 @@ export default function Hero() {
             <span>{t.hero.forNewStories}</span>
             <span className={styles.arrow}>→</span>
           </LocaleLink>
-          <a href="#" className={`${styles.btn} ${styles.btnGold}`}>
+          {/* TODO: discoverProjects — placeholder until the projects page/content is ready. */}
+          <a
+            href="#"
+            className={`${styles.btn} ${styles.btnGold}`}
+            aria-disabled="true"
+            onClick={(e) => e.preventDefault()}
+          >
             <Image src="/images/btn3.webp" alt="" width={40} height={40} className={styles.btnIcon} />
             <span>{t.hero.discoverProjects}</span>
             <span className={styles.arrow}>→</span>
