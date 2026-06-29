@@ -6,8 +6,12 @@
   align-items: center;
   justify-content: center;
   padding: 40px 24px;
-  background:
-    radial-gradient(120% 90% at 50% 30%, #fdfaf3 0%, #efe7d7 55%, #e4d8c1 100%);
+  background: radial-gradient(
+    120% 90% at 50% 30%,
+    #fdfaf3 0%,
+    #efe7d7 55%,
+    #e4d8c1 100%
+  );
   opacity: 1;
   transition: opacity 0.7s ease;
 }
@@ -27,8 +31,14 @@
 }
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .logo {
@@ -82,17 +92,23 @@
 
 /* ── Tablet ─────────────────────────────── */
 @media (max-width: 1024px) {
-  .enterBtn { font-size: 23px; }
+  .enterBtn {
+    font-size: 23px;
+  }
 }
 
 /* ── Mobile ─────────────────────────────── */
 @media (max-width: 768px) {
-  .enterBtn { font-size: 21px; }
+  .enterBtn {
+    font-size: 21px;
+  }
 }
 
 /* ── Small mobile ────────────────────────── */
 @media (max-width: 480px) {
-  .enterBtn { font-size: 19px; }
+  .enterBtn {
+    font-size: 19px;
+  }
 }
 
 .langSwitcher {

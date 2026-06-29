@@ -12,10 +12,18 @@ export default function LanguageSwitcher({
   const { lang, setLang } = useLang();
 
   return (
-    <div className={`${styles.switcher} ${className}`} role="group" aria-label="Language">
+    <div
+      className={`${styles.switcher} ${className}`}
+      role="group"
+      aria-label="Language"
+    >
       {LANGS.map((l, i) => (
         <span key={l} className={styles.group}>
-          {i > 0 && <span className={styles.sep} aria-hidden="true">/</span>}
+          {i > 0 && (
+            <span className={styles.sep} aria-hidden="true">
+              /
+            </span>
+          )}
           <button
             type="button"
             className={`${styles.lang} ${l === lang ? styles.active : ""}`}

@@ -47,9 +47,17 @@
 }
 
 @keyframes cardCycle {
-  0%, 25% { opacity: 1; }
-  33.34%, 91.66% { opacity: 0; }
-  100% { opacity: 1; }
+  0%,
+  25% {
+    opacity: 1;
+  }
+  33.34%,
+  91.66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Spoštujemo nastavitev za zmanjšano gibanje: pokažemo le prvo sličico. */

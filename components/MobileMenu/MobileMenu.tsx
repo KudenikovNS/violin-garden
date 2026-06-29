@@ -70,7 +70,6 @@ export default function MobileMenu({
 
         {links.map((l) =>
           l.placeholder ? (
-            // eslint-disable-next-line jsx-a11y/anchor-is-valid
             <a
               key={l.label}
               href="#"

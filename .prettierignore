@@ -1,0 +1,15 @@
+# Build output & deps
+.next
+out
+build
+node_modules
+package-lock.json
+
+# Hand-maintained docs & local working dirs
+*.md
+docs
+scripts
+image-originals-backup
+
+# Static assets (incl. the hand-written root redirect)
+public

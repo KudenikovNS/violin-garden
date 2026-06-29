@@ -97,7 +97,10 @@
   line-height: 1;
   cursor: pointer;
   backdrop-filter: blur(4px);
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .nav:hover {

@@ -34,14 +34,20 @@ export default function SubPageHeader({
 
   useEffect(() => {
     if (!detailBack) return;
+    // Reads the ?from= query (browser-only, absent during SSR) once on mount.
     const from = new URLSearchParams(window.location.search).get("from");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setBackHref(from === "prodaja" ? PRODAJA_BACK : VRT_BACK);
   }, [detailBack]);
 
   return (
     <header className={styles.header}>
       <div className={styles.bar}>
-        <LocaleLink href={backHref} className={styles.back} aria-label={t.subHeader.back}>
+        <LocaleLink
+          href={backHref}
+          className={styles.back}
+          aria-label={t.subHeader.back}
+        >
           <span className={styles.backArrow}>←</span> {t.subHeader.back}
         </LocaleLink>
 

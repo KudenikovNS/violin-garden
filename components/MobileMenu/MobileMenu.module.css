@@ -49,12 +49,20 @@
   display: block;
   height: 1.5px;
   background: #4a4234;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
-.burgerOpen span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.burgerOpen span:nth-child(2) { opacity: 0; }
-.burgerOpen span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.burgerOpen span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+}
+.burgerOpen span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
 
 .closeBtn {
   display: none;
@@ -71,9 +79,13 @@
   transition: color 0.2s;
 }
 
-.closeBtn:hover { color: #e8d5a3; }
+.closeBtn:hover {
+  color: #e8d5a3;
+}
 
-.menuLogo { display: none; }
+.menuLogo {
+  display: none;
+}
 
 .menuDivider {
   display: none;
@@ -98,7 +110,9 @@
 }
 
 @media (max-width: 1024px) {
-  .nav { font-size: 12px; }
+  .nav {
+    font-size: 12px;
+  }
 }
 
 /* ── Mobile overlay (≤768) ───────────────── */
@@ -115,18 +129,30 @@
     z-index: 100;
     padding: 60px 40px;
   }
-  .navOpen { display: flex; }
+  .navOpen {
+    display: flex;
+  }
   .navLink {
     font-size: 20px;
     letter-spacing: 0.22em;
     color: #e8d5a3;
     text-align: center;
   }
-  .navLink:hover { color: #c2a063; }
-  .closeBtn { display: block; }
-  .menuLogo { display: block; }
-  .menuDivider { display: flex; }
-  .burger { display: flex; }
+  .navLink:hover {
+    color: #c2a063;
+  }
+  .closeBtn {
+    display: block;
+  }
+  .menuLogo {
+    display: block;
+  }
+  .menuDivider {
+    display: flex;
+  }
+  .burger {
+    display: flex;
+  }
 }
 
 /* ── German, home only: switch to burger earlier (≤960) ──────────────────────
@@ -146,15 +172,25 @@
     z-index: 100;
     padding: 60px 40px;
   }
-  :global(html[lang="de"]) .nav.earlyGerman.navOpen { display: flex; }
+  :global(html[lang="de"]) .nav.earlyGerman.navOpen {
+    display: flex;
+  }
   :global(html[lang="de"]) .nav.earlyGerman .navLink {
     font-size: 20px;
     letter-spacing: 0.22em;
     color: #e8d5a3;
     text-align: center;
   }
-  :global(html[lang="de"]) .nav.earlyGerman .closeBtn { display: block; }
-  :global(html[lang="de"]) .nav.earlyGerman .menuLogo { display: block; }
-  :global(html[lang="de"]) .nav.earlyGerman .menuDivider { display: flex; }
-  :global(html[lang="de"]) .burger.earlyGerman { display: flex; }
+  :global(html[lang="de"]) .nav.earlyGerman .closeBtn {
+    display: block;
+  }
+  :global(html[lang="de"]) .nav.earlyGerman .menuLogo {
+    display: block;
+  }
+  :global(html[lang="de"]) .nav.earlyGerman .menuDivider {
+    display: flex;
+  }
+  :global(html[lang="de"]) .burger.earlyGerman {
+    display: flex;
+  }
 }

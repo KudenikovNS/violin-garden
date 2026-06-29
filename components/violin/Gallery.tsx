@@ -22,11 +22,11 @@ export default function Gallery({
   const close = useCallback(() => setIndex(null), []);
   const next = useCallback(
     () => setIndex((i) => (i === null ? i : (i + 1) % count)),
-    [count]
+    [count],
   );
   const prev = useCallback(
     () => setIndex((i) => (i === null ? i : (i - 1 + count) % count)),
-    [count]
+    [count],
   );
 
   // Scroll-lock, focus-trap, Escape and focus return are handled by useDialog;
@@ -74,7 +74,11 @@ export default function Gallery({
           aria-modal="true"
           aria-label={alt}
         >
-          <button className={styles.close} onClick={close} aria-label={t.a11y.close}>
+          <button
+            className={styles.close}
+            onClick={close}
+            aria-label={t.a11y.close}
+          >
             ✕
           </button>
 
@@ -91,10 +95,7 @@ export default function Gallery({
             </button>
           )}
 
-          <div
-            className={styles.figure}
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className={styles.figure} onClick={(e) => e.stopPropagation()}>
             <Image
               src={photos[index]}
               alt={`${alt} — fotografija ${index + 1}`}

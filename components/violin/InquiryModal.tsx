@@ -167,7 +167,9 @@ export default function InquiryModal({
               </label>
 
               <label className={styles.field}>
-                <span className={styles.label}>{t.inquiryForm.messageLabel}</span>
+                <span className={styles.label}>
+                  {t.inquiryForm.messageLabel}
+                </span>
                 <textarea
                   className={styles.textarea}
                   name="message"

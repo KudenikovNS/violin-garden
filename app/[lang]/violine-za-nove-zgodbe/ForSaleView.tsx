@@ -26,7 +26,10 @@ export default function ForSaleView() {
           const v = localizeViolin(raw, lang);
           return (
             <article key={v.id} className={styles.row}>
-              <LocaleLink href={`/violinski-vrt/${v.id}?from=prodaja`} className={styles.visual}>
+              <LocaleLink
+                href={`/violinski-vrt/${v.id}?from=prodaja`}
+                className={styles.visual}
+              >
                 <ViolinSlideshow
                   illustration={v.illustration}
                   photos={v.photos}
@@ -41,7 +44,9 @@ export default function ForSaleView() {
 
               <div className={styles.info}>
                 <h2 className={styles.name}>
-                  <LocaleLink href={`/violinski-vrt/${v.id}?from=prodaja`}>{v.name}</LocaleLink>
+                  <LocaleLink href={`/violinski-vrt/${v.id}?from=prodaja`}>
+                    {v.name}
+                  </LocaleLink>
                 </h2>
                 <p className={styles.meta}>
                   {v.maker ?? v.origin}
@@ -49,12 +54,19 @@ export default function ForSaleView() {
                 </p>
                 <p className={styles.description}>{v.description}</p>
 
-                <LocaleLink href={`/violinski-vrt/${v.id}?from=prodaja`} className={styles.link}>
+                <LocaleLink
+                  href={`/violinski-vrt/${v.id}?from=prodaja`}
+                  className={styles.link}
+                >
                   {t.forSalePage.fullPresentation} <span>→</span>
                 </LocaleLink>
 
                 <div className={styles.inquiry}>
-                  <InquiryOptions options={v.options} violinName={v.name} compact />
+                  <InquiryOptions
+                    options={v.options}
+                    violinName={v.name}
+                    compact
+                  />
                 </div>
               </div>
             </article>

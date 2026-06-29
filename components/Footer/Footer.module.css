@@ -79,7 +79,10 @@
   border: 1px solid #ead9b8;
   color: inherit;
   text-decoration: none;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .contact:hover {
@@ -90,11 +93,17 @@
 
 /* ── Mobile ─────────────────────────────── */
 @media (max-width: 640px) {
-  .footer { padding: 40px 20px 28px; }
+  .footer {
+    padding: 40px 20px 28px;
+  }
 
-  .quote { font-size: 19px; }
+  .quote {
+    font-size: 19px;
+  }
 
-  .welcome { font-size: 18px; }
+  .welcome {
+    font-size: 18px;
+  }
 
   .contacts {
     flex-direction: row;

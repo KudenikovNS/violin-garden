@@ -39,7 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local working files — intentionally not versioned. `docs/` holds the violin
+# source drafts and `scripts/` the dev tooling; the live content already lives in
+# data/violins.ts and the i18n dictionaries, so these stay local by choice.
 docs
+scripts
+
 # image backup (originals, not deployed)
 /image-originals-backup/
-scripts

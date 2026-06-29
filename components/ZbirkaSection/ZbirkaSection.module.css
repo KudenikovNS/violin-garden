@@ -38,7 +38,9 @@
    Le za velike zaslone (>1024px) — pod tem že veljata 24px/22px iz prelomnih
    točk spodaj. Velja le za nemščino. */
 @media (min-width: 1025px) {
-  :global(html[lang="de"]) .heading { font-size: 24px; }
+  :global(html[lang="de"]) .heading {
+    font-size: 24px;
+  }
 }
 
 .underline {
@@ -84,11 +86,18 @@
 
 /* ── Tablet ─────────────────────────────── */
 @media (max-width: 1024px) {
-  .section { padding: 50px 40px 44px; gap: 40px; }
+  .section {
+    padding: 50px 40px 44px;
+    gap: 40px;
+  }
 
-  .imageWrapper { flex: 0 0 340px; }
+  .imageWrapper {
+    flex: 0 0 340px;
+  }
 
-  .heading { font-size: 24px; }
+  .heading {
+    font-size: 24px;
+  }
 }
 
 /* ── Mobile ─────────────────────────────── */
@@ -106,9 +115,15 @@
     height: 220px;
   }
 
-  .heading { font-size: 22px; }
+  .heading {
+    font-size: 22px;
+  }
 
-  .paragraph { font-size: 15px; }
+  .paragraph {
+    font-size: 15px;
+  }
 
-  .quote { font-size: 16px; }
+  .quote {
+    font-size: 16px;
+  }
 }

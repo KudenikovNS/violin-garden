@@ -24,7 +24,11 @@ export default function CollectionView() {
         {violins.map((raw, cardIndex) => {
           const v = localizeViolin(raw, lang);
           return (
-            <LocaleLink key={v.id} href={`/violinski-vrt/${v.id}`} className={styles.card}>
+            <LocaleLink
+              key={v.id}
+              href={`/violinski-vrt/${v.id}`}
+              className={styles.card}
+            >
               <div className={styles.flowerWrap}>
                 <ViolinSlideshow
                   illustration={v.illustration}
@@ -36,7 +40,9 @@ export default function CollectionView() {
                   priority={cardIndex === 0}
                 />
                 {v.status !== "collection" && (
-                  <span className={styles.badge}>{t.collectionPage.badge[v.status]}</span>
+                  <span className={styles.badge}>
+                    {t.collectionPage.badge[v.status]}
+                  </span>
                 )}
               </div>
               <div className={styles.body}>

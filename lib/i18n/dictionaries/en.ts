@@ -162,7 +162,8 @@ const en: Dict = {
 
   inquiryForm: {
     heading: "Inquiry",
-    intro: "Fill in the form and we will gladly reply and present the instrument.",
+    intro:
+      "Fill in the form and we will gladly reply and present the instrument.",
     subjectPrefix: "Inquiry",
     nameLabel: "Full name",
     namePlaceholder: "Your name",

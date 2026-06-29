@@ -157,12 +157,16 @@ const de: Dict = {
   inquiry: {
     nakup: { title: "EINE NEUE GESCHICHTE", action: "Kaufanfrage" },
     izposoja: { title: "MIETE", action: "Mietanfrage" },
-    preizkus: { title: "PROBESPIEL", action: "Besichtigung & Probespiel vereinbaren" },
+    preizkus: {
+      title: "PROBESPIEL",
+      action: "Besichtigung & Probespiel vereinbaren",
+    },
   },
 
   inquiryForm: {
     heading: "Anfrage",
-    intro: "Füllen Sie das Formular aus — wir antworten Ihnen gerne und stellen Ihnen das Instrument vor.",
+    intro:
+      "Füllen Sie das Formular aus — wir antworten Ihnen gerne und stellen Ihnen das Instrument vor.",
     subjectPrefix: "Anfrage",
     nameLabel: "Vor- und Nachname",
     namePlaceholder: "Ihr Name",
@@ -175,10 +179,13 @@ const de: Dict = {
     submit: "Anfrage senden",
     sending: "Senden …",
     successTitle: "Vielen Dank für Ihre Nachricht!",
-    successText: "Wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen.",
-    errorText: "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns an",
+    successText:
+      "Wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen.",
+    errorText:
+      "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns an",
     close: "Schließen",
-    privacyNote: "Wir verwenden Ihre Daten ausschließlich zur Beantwortung Ihrer Anfrage.",
+    privacyNote:
+      "Wir verwenden Ihre Daten ausschließlich zur Beantwortung Ihrer Anfrage.",
   },
 };
 

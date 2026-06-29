@@ -151,34 +151,86 @@
 
 /* ── Wide laptop ─────────────────────────── */
 @media (max-width: 1280px) {
-  .below { padding: 24px 50px 0; }
-  .btn { font-size: 16px; padding: 16px 18px; gap: 10px; white-space: normal; }
-  .btnIcon { width: 32px; height: 32px; }
+  .below {
+    padding: 24px 50px 0;
+  }
+  .btn {
+    font-size: 16px;
+    padding: 16px 18px;
+    gap: 10px;
+    white-space: normal;
+  }
+  .btnIcon {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 /* ── Tablet ─────────────────────────────── */
 @media (max-width: 1024px) {
-  .video { height: 460px; }
-  .below { padding: 24px 40px 0; }
-  .tagline { font-size: 22px; }
-  .btn { font-size: 15px; padding: 14px 14px; gap: 8px; white-space: normal; }
-  .btnIcon { width: 28px; height: 28px; }
+  .video {
+    height: 460px;
+  }
+  .below {
+    padding: 24px 40px 0;
+  }
+  .tagline {
+    font-size: 22px;
+  }
+  .btn {
+    font-size: 15px;
+    padding: 14px 14px;
+    gap: 8px;
+    white-space: normal;
+  }
+  .btnIcon {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 /* ── Mobile ─────────────────────────────── */
 @media (max-width: 768px) {
-  .tagline { font-size: 18px; }
-  .video { height: 340px; }
-  .below { padding: 24px 24px 0; }
-  .buttons { flex-direction: column; gap: 10px; }
-  .btn { flex: none; width: 100%; white-space: normal; font-size: 15px; gap: 12px; padding: 16px 20px; }
-  .btnIcon { width: 36px; height: 36px; }
+  .tagline {
+    font-size: 18px;
+  }
+  .video {
+    height: 340px;
+  }
+  .below {
+    padding: 24px 24px 0;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn {
+    flex: none;
+    width: 100%;
+    white-space: normal;
+    font-size: 15px;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+  .btnIcon {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 /* ── Small mobile ────────────────────────── */
 @media (max-width: 480px) {
-  .tagline { font-size: 16px; }
-  .video { height: 260px; }
-  .below { padding: 20px 16px 0; }
-  .btn { padding: 14px 16px; font-size: 13px; }
+  .tagline {
+    font-size: 16px;
+  }
+  .video {
+    height: 260px;
+  }
+  .below {
+    padding: 20px 16px 0;
+  }
+  .btn {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
 }

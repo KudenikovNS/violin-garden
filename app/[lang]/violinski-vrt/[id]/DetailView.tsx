@@ -67,11 +67,17 @@ export default function DetailView({ violin }: { violin: Violin }) {
             ))}
 
             <div className={styles.statusBlock}>
-              <span className={styles.statusEyebrow}>{t.detail.statusEyebrow}</span>
+              <span className={styles.statusEyebrow}>
+                {t.detail.statusEyebrow}
+              </span>
               <div className={styles.statusRow}>
-                <span className={styles.statusMark}>{STATUS_MARK[v.status]}</span>
+                <span className={styles.statusMark}>
+                  {STATUS_MARK[v.status]}
+                </span>
                 <div>
-                  <p className={styles.statusName}>{t.detail.status[v.status].label}</p>
+                  <p className={styles.statusName}>
+                    {t.detail.status[v.status].label}
+                  </p>
                   <p className={styles.statusText}>
                     {v.statusNote ?? t.detail.status[v.status].text}
                   </p>
@@ -86,7 +92,9 @@ export default function DetailView({ violin }: { violin: Violin }) {
           <section className={styles.details}>
             {v.specs && (
               <div className={styles.panel}>
-                <h2 className={styles.panelTitle}>{t.detail.technicalDetails}</h2>
+                <h2 className={styles.panelTitle}>
+                  {t.detail.technicalDetails}
+                </h2>
                 <dl className={styles.specs}>
                   {v.specs.map((s) => (
                     <div key={s.label} className={styles.specRow}>
@@ -110,9 +118,13 @@ export default function DetailView({ violin }: { violin: Violin }) {
         {/* ── Nova glasbena pot ──────────────────────── */}
         {(v.options.length > 0 || v.ctaParas) && (
           <section className={styles.cta}>
-            <span className={styles.ctaEyebrow}>{v.ctaEyebrow ?? t.detail.ctaEyebrow}</span>
+            <span className={styles.ctaEyebrow}>
+              {v.ctaEyebrow ?? t.detail.ctaEyebrow}
+            </span>
             <h2 className={styles.ctaTitle}>
-              {v.status === "collection" ? t.detail.ctaTitleCollection : t.detail.ctaTitle}
+              {v.status === "collection"
+                ? t.detail.ctaTitleCollection
+                : t.detail.ctaTitle}
             </h2>
             {v.ctaParas ? (
               v.ctaParas.map((p, i) => (

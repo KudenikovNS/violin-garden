@@ -34,7 +34,8 @@ export default function AuthorSection() {
       <div className={styles.text}>
         <h2 className={styles.heading}>{t.author.heading}</h2>
         <p className={styles.paragraph}>
-          <strong className={styles.name}>{t.author.name}</strong>{t.author.p1After}
+          <strong className={styles.name}>{t.author.name}</strong>
+          {t.author.p1After}
         </p>
         <p className={styles.paragraph}>{t.author.p2}</p>
         {/* TODO: link to the artist page when its content is ready. */}

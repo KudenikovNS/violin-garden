@@ -69,7 +69,9 @@ export async function generateMetadata({
       description: t.meta.home.description,
       url: alternatesFor(lang).canonical,
       locale: lang,
-      images: [{ url: "/icon.png", width: 512, height: 512, alt: t.meta.siteName }],
+      images: [
+        { url: "/icon.png", width: 512, height: 512, alt: t.meta.siteName },
+      ],
     },
     twitter: {
       card: "summary",

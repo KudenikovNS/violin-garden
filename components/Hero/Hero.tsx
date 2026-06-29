@@ -33,8 +33,13 @@ export default function Hero() {
   function togglePlay() {
     const v = videoRef.current;
     if (!v) return;
-    if (v.paused) { v.play(); setPlaying(true); }
-    else { v.pause(); setPlaying(false); }
+    if (v.paused) {
+      v.play();
+      setPlaying(true);
+    } else {
+      v.pause();
+      setPlaying(false);
+    }
   }
 
   function toggleMute() {
@@ -44,7 +49,10 @@ export default function Hero() {
     setMuted(v.muted);
   }
 
-  // Pick the source after mount, where device width and user preferences are known.
+  // Pick the source after mount, where device width and user preferences are
+  // known. One-time client init from browser-only APIs (matchMedia / navigator)
+  // that are unavailable during SSR, so setting state in the effect is intended.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
@@ -60,6 +68,7 @@ export default function Hero() {
     const transform = isMobile ? MOBILE_TRANSFORM : DESKTOP_TRANSFORM;
     setVideoSrc(CLOUDINARY_VIDEO.replace("{t}", transform));
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Begin playback once the chosen source is attached (autoPlay may not refire
   // when the src is set from state after mount).
@@ -82,7 +91,6 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-
       <div className={styles.videoWrapper}>
         {videoError || posterOnly ? (
           <Image
@@ -108,34 +116,66 @@ export default function Hero() {
           />
         )}
         {!videoError && !posterOnly && (
-        <div className={styles.videoControls}>
-          <button onClick={togglePlay} className={styles.controlBtn} aria-label={playing ? t.a11y.pause : t.a11y.play}>
-            {playing ? (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <rect x="5" y="4" width="4" height="16" rx="1" />
-                <rect x="15" y="4" width="4" height="16" rx="1" />
-              </svg>
-            ) : (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M6 4l14 8-14 8V4z" />
-              </svg>
-            )}
-          </button>
-          <button onClick={toggleMute} className={styles.controlBtn} aria-label={muted ? t.a11y.unmute : t.a11y.mute}>
-            {muted ? (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <path d="M11 5L6 9H3v6h3l5 4V5z" />
-                <line x1="17" y1="9" x2="23" y2="15" />
-                <line x1="23" y1="9" x2="17" y2="15" />
-              </svg>
-            ) : (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <path d="M11 5L6 9H3v6h3l5 4V5z" />
-                <path d="M15.5 8.5a5 5 0 010 7M19 6a9 9 0 010 12" />
-              </svg>
-            )}
-          </button>
-        </div>
+          <div className={styles.videoControls}>
+            <button
+              onClick={togglePlay}
+              className={styles.controlBtn}
+              aria-label={playing ? t.a11y.pause : t.a11y.play}
+            >
+              {playing ? (
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <rect x="5" y="4" width="4" height="16" rx="1" />
+                  <rect x="15" y="4" width="4" height="16" rx="1" />
+                </svg>
+              ) : (
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M6 4l14 8-14 8V4z" />
+                </svg>
+              )}
+            </button>
+            <button
+              onClick={toggleMute}
+              className={styles.controlBtn}
+              aria-label={muted ? t.a11y.unmute : t.a11y.mute}
+            >
+              {muted ? (
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                >
+                  <path d="M11 5L6 9H3v6h3l5 4V5z" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                </svg>
+              ) : (
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                >
+                  <path d="M11 5L6 9H3v6h3l5 4V5z" />
+                  <path d="M15.5 8.5a5 5 0 010 7M19 6a9 9 0 010 12" />
+                </svg>
+              )}
+            </button>
+          </div>
         )}
       </div>
 
@@ -148,13 +188,31 @@ export default function Hero() {
         <p className={styles.tagline}>{t.hero.tagline}</p>
 
         <div className={styles.buttons}>
-          <LocaleLink href="/violinski-vrt" className={`${styles.btn} ${styles.btnGreen}`}>
-            <Image src="/images/btn1.webp" alt="" width={40} height={40} className={styles.btnIcon} />
+          <LocaleLink
+            href="/violinski-vrt"
+            className={`${styles.btn} ${styles.btnGreen}`}
+          >
+            <Image
+              src="/images/btn1.webp"
+              alt=""
+              width={40}
+              height={40}
+              className={styles.btnIcon}
+            />
             <span>{t.hero.enterGarden}</span>
             <span className={styles.arrow}>→</span>
           </LocaleLink>
-          <LocaleLink href="/violine-za-nove-zgodbe" className={`${styles.btn} ${styles.btnRose}`}>
-            <Image src="/images/btn2.webp" alt="" width={40} height={40} className={styles.btnIcon} />
+          <LocaleLink
+            href="/violine-za-nove-zgodbe"
+            className={`${styles.btn} ${styles.btnRose}`}
+          >
+            <Image
+              src="/images/btn2.webp"
+              alt=""
+              width={40}
+              height={40}
+              className={styles.btnIcon}
+            />
             <span>{t.hero.forNewStories}</span>
             <span className={styles.arrow}>→</span>
           </LocaleLink>
@@ -165,13 +223,18 @@ export default function Hero() {
             aria-disabled="true"
             onClick={(e) => e.preventDefault()}
           >
-            <Image src="/images/btn3.webp" alt="" width={40} height={40} className={styles.btnIcon} />
+            <Image
+              src="/images/btn3.webp"
+              alt=""
+              width={40}
+              height={40}
+              className={styles.btnIcon}
+            />
             <span>{t.hero.discoverProjects}</span>
             <span className={styles.arrow}>→</span>
           </a>
         </div>
       </div>
-
     </section>
   );
 }

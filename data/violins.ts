@@ -50,7 +50,11 @@ export const violins: Violin[] = [
   {
     id: "rosa-alba",
     name: "Rosa Alba",
-    origin: { sl: "Italijanska violina", en: "Italian violin", de: "Italienische Geige" },
+    origin: {
+      sl: "Italijanska violina",
+      en: "Italian violin",
+      de: "Italienische Geige",
+    },
     year: { sl: "", en: "", de: "" },
     flowerVariant: 0,
     intro: {
@@ -65,7 +69,11 @@ export const violins: Violin[] = [
     },
     status: "sale",
     options: ["nakup", "izposoja", "preizkus"],
-    maker: { sl: "Natale Carletti »Fu Carlo«", en: "Natale Carletti “Fu Carlo”", de: "Natale Carletti »Fu Carlo«" },
+    maker: {
+      sl: "Natale Carletti »Fu Carlo«",
+      en: "Natale Carletti “Fu Carlo”",
+      de: "Natale Carletti »Fu Carlo«",
+    },
     size: "4/4",
     illustration: "/images/violins/rosa-alba/rosa-alba-ilustracija.webp",
     photos: [
@@ -90,16 +98,62 @@ export const violins: Violin[] = [
       ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "360 mm", en: "360 mm", de: "360 mm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "167,5 mm", en: "167.5 mm", de: "167,5 mm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "114 mm", en: "114 mm", de: "114 mm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "206 mm", en: "206 mm", de: "206 mm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece", de: "Fichte, zweiteilig" } },
-      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, dvodelen", en: "maple, two-piece", de: "Ahorn, zweiteilig" } },
-      { label: { sl: "Stranice", en: "Ribs", de: "Zargen" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
-      { label: { sl: "Polž", en: "Scroll", de: "Schnecke" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
-      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "originalni svetlo rjav", en: "original light brown", de: "original hellbraun" } },
+      {
+        label: { sl: "Velikost", en: "Size", de: "Größe" },
+        value: {
+          sl: "4/4 (polna velikost)",
+          en: "4/4 (full size)",
+          de: "4/4 (ganze Größe)",
+        },
+      },
+      {
+        label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" },
+        value: { sl: "360 mm", en: "360 mm", de: "360 mm" },
+      },
+      {
+        label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" },
+        value: { sl: "167,5 mm", en: "167.5 mm", de: "167,5 mm" },
+      },
+      {
+        label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" },
+        value: { sl: "114 mm", en: "114 mm", de: "114 mm" },
+      },
+      {
+        label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" },
+        value: { sl: "206 mm", en: "206 mm", de: "206 mm" },
+      },
+      {
+        label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" },
+        value: {
+          sl: "smreka, dvodelna",
+          en: "spruce, two-piece",
+          de: "Fichte, zweiteilig",
+        },
+      },
+      {
+        label: { sl: "Hrbet", en: "Back", de: "Boden" },
+        value: {
+          sl: "javor, dvodelen",
+          en: "maple, two-piece",
+          de: "Ahorn, zweiteilig",
+        },
+      },
+      {
+        label: { sl: "Stranice", en: "Ribs", de: "Zargen" },
+        value: { sl: "javor", en: "maple", de: "Ahorn" },
+      },
+      {
+        label: { sl: "Polž", en: "Scroll", de: "Schnecke" },
+        value: { sl: "javor", en: "maple", de: "Ahorn" },
+      },
+      {
+        label: { sl: "Lak", en: "Varnish", de: "Lack" },
+        value: {
+          sl: "originalni svetlo rjav",
+          en: "original light brown",
+          de: "original hellbraun",
+        },
+      },
     ],
     statusNote: {
       sl: "Violina je naprodaj pod ugodnimi pogoji.",
@@ -110,7 +164,11 @@ export const violins: Violin[] = [
   {
     id: "azalea-aurea",
     name: "Azalea Aurea",
-    origin: { sl: "Nemško-bohemska violina", en: "German-Bohemian violin", de: "Deutsch-böhmische Geige" },
+    origin: {
+      sl: "Nemško-bohemska violina",
+      en: "German-Bohemian violin",
+      de: "Deutsch-böhmische Geige",
+    },
     year: { sl: "okoli leta 1900", en: "c. 1900", de: "um 1900" },
     flowerVariant: 1,
     intro: {
@@ -125,7 +183,11 @@ export const violins: Violin[] = [
     },
     status: "sale",
     options: ["nakup", "izposoja", "preizkus"],
-    maker: { sl: "Maurenkirchen – Bohemia šola", en: "Maurenkirchen – Bohemian school", de: "Maurenkirchen – böhmische Schule" },
+    maker: {
+      sl: "Maurenkirchen – Bohemia šola",
+      en: "Maurenkirchen – Bohemian school",
+      de: "Maurenkirchen – böhmische Schule",
+    },
     size: "4/4",
     illustration: "/images/violins/azalea-aurea/azalea-aurea-ilustracija.webp",
     photos: [
@@ -158,25 +220,93 @@ export const violins: Violin[] = [
       ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "362 mm", en: "362 mm", de: "362 mm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "166 mm", en: "166 mm", de: "166 mm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "112 mm", en: "112 mm", de: "112 mm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "206 mm", en: "206 mm", de: "206 mm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece", de: "Fichte, zweiteilig" } },
-      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, dvodelen", en: "maple, two-piece", de: "Ahorn, zweiteilig" } },
-      { label: { sl: "Stranice", en: "Ribs", de: "Zargen" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
-      { label: { sl: "Polž", en: "Scroll", de: "Schnecke" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
-      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "originalni jantarno-rjav", en: "original amber-brown", de: "original bernsteinbraun" } },
-      { label: { sl: "Etiketa", en: "Label", de: "Etikett" }, value: { sl: "brez vidne etikete", en: "no visible label", de: "kein sichtbares Etikett" } },
-      { label: { sl: "Stanje", en: "Condition", de: "Zustand" }, value: { sl: "dobro splošno stanje, igralen", en: "good overall condition, playable", de: "guter Gesamtzustand, spielbereit" } },
+      {
+        label: { sl: "Velikost", en: "Size", de: "Größe" },
+        value: {
+          sl: "4/4 (polna velikost)",
+          en: "4/4 (full size)",
+          de: "4/4 (ganze Größe)",
+        },
+      },
+      {
+        label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" },
+        value: { sl: "362 mm", en: "362 mm", de: "362 mm" },
+      },
+      {
+        label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" },
+        value: { sl: "166 mm", en: "166 mm", de: "166 mm" },
+      },
+      {
+        label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" },
+        value: { sl: "112 mm", en: "112 mm", de: "112 mm" },
+      },
+      {
+        label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" },
+        value: { sl: "206 mm", en: "206 mm", de: "206 mm" },
+      },
+      {
+        label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" },
+        value: {
+          sl: "smreka, dvodelna",
+          en: "spruce, two-piece",
+          de: "Fichte, zweiteilig",
+        },
+      },
+      {
+        label: { sl: "Hrbet", en: "Back", de: "Boden" },
+        value: {
+          sl: "javor, dvodelen",
+          en: "maple, two-piece",
+          de: "Ahorn, zweiteilig",
+        },
+      },
+      {
+        label: { sl: "Stranice", en: "Ribs", de: "Zargen" },
+        value: { sl: "javor", en: "maple", de: "Ahorn" },
+      },
+      {
+        label: { sl: "Polž", en: "Scroll", de: "Schnecke" },
+        value: { sl: "javor", en: "maple", de: "Ahorn" },
+      },
+      {
+        label: { sl: "Lak", en: "Varnish", de: "Lack" },
+        value: {
+          sl: "originalni jantarno-rjav",
+          en: "original amber-brown",
+          de: "original bernsteinbraun",
+        },
+      },
+      {
+        label: { sl: "Etiketa", en: "Label", de: "Etikett" },
+        value: {
+          sl: "brez vidne etikete",
+          en: "no visible label",
+          de: "kein sichtbares Etikett",
+        },
+      },
+      {
+        label: { sl: "Stanje", en: "Condition", de: "Zustand" },
+        value: {
+          sl: "dobro splošno stanje, igralen",
+          en: "good overall condition, playable",
+          de: "guter Gesamtzustand, spielbereit",
+        },
+      },
     ],
-    statusNote: { sl: "Violina je naprodaj.", en: "The violin is for sale.", de: "Die Geige steht zum Verkauf." },
+    statusNote: {
+      sl: "Violina je naprodaj.",
+      en: "The violin is for sale.",
+      de: "Die Geige steht zum Verkauf.",
+    },
   },
   {
     id: "paeonia-regia",
     name: "Paeonia Regia",
-    origin: { sl: "Evropska šola", en: "European school", de: "Europäische Schule" },
+    origin: {
+      sl: "Evropska šola",
+      en: "European school",
+      de: "Europäische Schule",
+    },
     year: { sl: "okoli leta 1900", en: "c. 1900", de: "um 1900" },
     flowerVariant: 2,
     intro: {
@@ -191,9 +321,14 @@ export const violins: Violin[] = [
     },
     status: "sale",
     options: ["nakup", "izposoja", "preizkus"],
-    maker: { sl: "etiketa Pietro Pallotta", en: "Pietro Pallotta label", de: "Pietro-Pallotta-Etikett" },
+    maker: {
+      sl: "etiketa Pietro Pallotta",
+      en: "Pietro Pallotta label",
+      de: "Pietro-Pallotta-Etikett",
+    },
     size: "4/4",
-    illustration: "/images/violins/paeonia-regia/paeonia-regia-ilustracija.webp",
+    illustration:
+      "/images/violins/paeonia-regia/paeonia-regia-ilustracija.webp",
     photos: [
       "/images/violins/paeonia-regia/paeonia-regia-spredaj.webp",
       "/images/violins/paeonia-regia/paeonia-regia-zadaj.webp",
@@ -221,24 +356,85 @@ export const violins: Violin[] = [
       ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "358 mm", en: "358 mm", de: "358 mm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "169 mm", en: "169 mm", de: "169 mm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "116 mm", en: "116 mm", de: "116 mm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "207 mm", en: "207 mm", de: "207 mm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece", de: "Fichte, zweiteilig" } },
-      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, dvodelen", en: "maple, two-piece", de: "Ahorn, zweiteilig" } },
-      { label: { sl: "Stranice", en: "Ribs", de: "Zargen" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
-      { label: { sl: "Polž", en: "Scroll", de: "Schnecke" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
-      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "originalni rdeče-rjav", en: "original red-brown", de: "original rotbraun" } },
-      { label: { sl: "Etiketa", en: "Label", de: "Etikett" }, value: { sl: "Pietro Pallotta", en: "Pietro Pallotta", de: "Pietro Pallotta" } },
+      {
+        label: { sl: "Velikost", en: "Size", de: "Größe" },
+        value: {
+          sl: "4/4 (polna velikost)",
+          en: "4/4 (full size)",
+          de: "4/4 (ganze Größe)",
+        },
+      },
+      {
+        label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" },
+        value: { sl: "358 mm", en: "358 mm", de: "358 mm" },
+      },
+      {
+        label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" },
+        value: { sl: "169 mm", en: "169 mm", de: "169 mm" },
+      },
+      {
+        label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" },
+        value: { sl: "116 mm", en: "116 mm", de: "116 mm" },
+      },
+      {
+        label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" },
+        value: { sl: "207 mm", en: "207 mm", de: "207 mm" },
+      },
+      {
+        label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" },
+        value: {
+          sl: "smreka, dvodelna",
+          en: "spruce, two-piece",
+          de: "Fichte, zweiteilig",
+        },
+      },
+      {
+        label: { sl: "Hrbet", en: "Back", de: "Boden" },
+        value: {
+          sl: "javor, dvodelen",
+          en: "maple, two-piece",
+          de: "Ahorn, zweiteilig",
+        },
+      },
+      {
+        label: { sl: "Stranice", en: "Ribs", de: "Zargen" },
+        value: { sl: "javor", en: "maple", de: "Ahorn" },
+      },
+      {
+        label: { sl: "Polž", en: "Scroll", de: "Schnecke" },
+        value: { sl: "javor", en: "maple", de: "Ahorn" },
+      },
+      {
+        label: { sl: "Lak", en: "Varnish", de: "Lack" },
+        value: {
+          sl: "originalni rdeče-rjav",
+          en: "original red-brown",
+          de: "original rotbraun",
+        },
+      },
+      {
+        label: { sl: "Etiketa", en: "Label", de: "Etikett" },
+        value: {
+          sl: "Pietro Pallotta",
+          en: "Pietro Pallotta",
+          de: "Pietro Pallotta",
+        },
+      },
     ],
-    statusNote: { sl: "Violina je naprodaj.", en: "The violin is for sale.", de: "Die Geige steht zum Verkauf." },
+    statusNote: {
+      sl: "Violina je naprodaj.",
+      en: "The violin is for sale.",
+      de: "Die Geige steht zum Verkauf.",
+    },
   },
   {
     id: "amaryllis-regia",
     name: "Amaryllis Regia",
-    origin: { sl: "Švedska mojstrska violina", en: "Swedish master violin", de: "Schwedische Meistergeige" },
+    origin: {
+      sl: "Švedska mojstrska violina",
+      en: "Swedish master violin",
+      de: "Schwedische Meistergeige",
+    },
     year: { sl: "1962", en: "1962", de: "1962" },
     flowerVariant: 3,
     intro: {
@@ -254,9 +450,14 @@ export const violins: Violin[] = [
     status: "rent",
     options: ["izposoja", "preizkus"],
 
-    maker: { sl: "Birger Nilsson, Ystad", en: "Birger Nilsson, Ystad", de: "Birger Nilsson, Ystad" },
+    maker: {
+      sl: "Birger Nilsson, Ystad",
+      en: "Birger Nilsson, Ystad",
+      de: "Birger Nilsson, Ystad",
+    },
     size: "4/4",
-    illustration: "/images/violins/amaryllis-regia/amaryllis-regia-ilustracija.webp",
+    illustration:
+      "/images/violins/amaryllis-regia/amaryllis-regia-ilustracija.webp",
     photos: [
       "/images/violins/amaryllis-regia/amaryllis-regia-spredaj.webp",
       "/images/violins/amaryllis-regia/amaryllis-regia-zadaj.webp",
@@ -287,19 +488,82 @@ export const violins: Violin[] = [
       ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "359 mm", en: "359 mm", de: "359 mm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "169 mm", en: "169 mm", de: "169 mm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "115 mm", en: "115 mm", de: "115 mm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "208 mm", en: "208 mm", de: "208 mm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece", de: "Fichte, zweiteilig" } },
-      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, dvodelen", en: "maple, two-piece", de: "Ahorn, zweiteilig" } },
-      { label: { sl: "Stranice", en: "Ribs", de: "Zargen" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
-      { label: { sl: "Polž", en: "Scroll", de: "Schnecke" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
-      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "originalni rdeče-jantarni", en: "original red-amber", de: "original rot-bernsteinfarben" } },
-      { label: { sl: "Leto izdelave", en: "Year made", de: "Baujahr" }, value: { sl: "1962", en: "1962", de: "1962" } },
-      { label: { sl: "Goslar", en: "Luthier", de: "Geigenbauer" }, value: { sl: "Birger Nilsson", en: "Birger Nilsson", de: "Birger Nilsson" } },
-      { label: { sl: "Kraj izdelave", en: "Place made", de: "Herstellungsort" }, value: { sl: "Ystad, Švedska", en: "Ystad, Sweden", de: "Ystad, Schweden" } },
+      {
+        label: { sl: "Velikost", en: "Size", de: "Größe" },
+        value: {
+          sl: "4/4 (polna velikost)",
+          en: "4/4 (full size)",
+          de: "4/4 (ganze Größe)",
+        },
+      },
+      {
+        label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" },
+        value: { sl: "359 mm", en: "359 mm", de: "359 mm" },
+      },
+      {
+        label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" },
+        value: { sl: "169 mm", en: "169 mm", de: "169 mm" },
+      },
+      {
+        label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" },
+        value: { sl: "115 mm", en: "115 mm", de: "115 mm" },
+      },
+      {
+        label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" },
+        value: { sl: "208 mm", en: "208 mm", de: "208 mm" },
+      },
+      {
+        label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" },
+        value: {
+          sl: "smreka, dvodelna",
+          en: "spruce, two-piece",
+          de: "Fichte, zweiteilig",
+        },
+      },
+      {
+        label: { sl: "Hrbet", en: "Back", de: "Boden" },
+        value: {
+          sl: "javor, dvodelen",
+          en: "maple, two-piece",
+          de: "Ahorn, zweiteilig",
+        },
+      },
+      {
+        label: { sl: "Stranice", en: "Ribs", de: "Zargen" },
+        value: { sl: "javor", en: "maple", de: "Ahorn" },
+      },
+      {
+        label: { sl: "Polž", en: "Scroll", de: "Schnecke" },
+        value: { sl: "javor", en: "maple", de: "Ahorn" },
+      },
+      {
+        label: { sl: "Lak", en: "Varnish", de: "Lack" },
+        value: {
+          sl: "originalni rdeče-jantarni",
+          en: "original red-amber",
+          de: "original rot-bernsteinfarben",
+        },
+      },
+      {
+        label: { sl: "Leto izdelave", en: "Year made", de: "Baujahr" },
+        value: { sl: "1962", en: "1962", de: "1962" },
+      },
+      {
+        label: { sl: "Goslar", en: "Luthier", de: "Geigenbauer" },
+        value: {
+          sl: "Birger Nilsson",
+          en: "Birger Nilsson",
+          de: "Birger Nilsson",
+        },
+      },
+      {
+        label: { sl: "Kraj izdelave", en: "Place made", de: "Herstellungsort" },
+        value: {
+          sl: "Ystad, Švedska",
+          en: "Ystad, Sweden",
+          de: "Ystad, Schweden",
+        },
+      },
     ],
     statusNote: {
       sl: "Violina je del zbirke Violin Garden Collection in je na voljo za dolgoročno ali projektno izposojo.",
@@ -327,7 +591,11 @@ export const violins: Violin[] = [
   {
     id: "rosa-aurea",
     name: "Rosa Aurea",
-    origin: { sl: "Nemška / saška šola", en: "German / Saxon school", de: "Deutsche / sächsische Schule" },
+    origin: {
+      sl: "Nemška / saška šola",
+      en: "German / Saxon school",
+      de: "Deutsche / sächsische Schule",
+    },
     year: { sl: "okoli 1890–1900", en: "c. 1890–1900", de: "um 1890–1900" },
     flowerVariant: 4,
     intro: {
@@ -343,7 +611,11 @@ export const violins: Violin[] = [
     status: "collection",
     options: ["preizkus"],
 
-    maker: { sl: "Markneukirchen – Vogtland", en: "Markneukirchen – Vogtland", de: "Markneukirchen – Vogtland" },
+    maker: {
+      sl: "Markneukirchen – Vogtland",
+      en: "Markneukirchen – Vogtland",
+      de: "Markneukirchen – Vogtland",
+    },
     size: "4/4",
     illustration: "/images/violins/rosa-aurea/rosa-aurea-ilustracija.webp",
     photos: [
@@ -383,7 +655,11 @@ export const violins: Violin[] = [
       en: "The violin is part of the permanent Violin Garden Collection.",
       de: "Die Geige ist Teil der dauerhaften Violin Garden Collection.",
     },
-    ctaEyebrow: { sl: "GLASBENA POT", en: "A MUSICAL JOURNEY", de: "EIN MUSIKALISCHER WEG" },
+    ctaEyebrow: {
+      sl: "GLASBENA POT",
+      en: "A MUSICAL JOURNEY",
+      de: "EIN MUSIKALISCHER WEG",
+    },
     ctaParas: {
       sl: [
         "Tako kot zlata vrtnica, violina Rosa Aurea ne sledi običajnim potem.",
@@ -408,7 +684,11 @@ export const violins: Violin[] = [
   {
     id: "dahlia-rubra",
     name: "Dahlia Rubra",
-    origin: { sl: "Nemško-avstrijska violina", en: "German-Austrian violin", de: "Deutsch-österreichische Geige" },
+    origin: {
+      sl: "Nemško-avstrijska violina",
+      en: "German-Austrian violin",
+      de: "Deutsch-österreichische Geige",
+    },
     year: { sl: "okoli 1900–1930", en: "c. 1900–1930", de: "um 1900–1930" },
     flowerVariant: 5,
     intro: {
@@ -424,7 +704,11 @@ export const violins: Violin[] = [
     status: "collection",
     options: ["izposoja", "preizkus"],
 
-    maker: { sl: "Srednjeevropska goslarska delavnica", en: "Central European lutherie workshop", de: "Mitteleuropäische Geigenbauwerkstatt" },
+    maker: {
+      sl: "Srednjeevropska goslarska delavnica",
+      en: "Central European lutherie workshop",
+      de: "Mitteleuropäische Geigenbauwerkstatt",
+    },
     size: "4/4",
     illustration: "/images/violins/dahlia-rubra/dahlia-rubra-ilustracija.webp",
     photos: [
@@ -506,7 +790,11 @@ export const violins: Violin[] = [
   {
     id: "helianthus-aureus",
     name: "Helianthus Aureus",
-    origin: { sl: "Evropska šola", en: "European school", de: "Europäische Schule" },
+    origin: {
+      sl: "Evropska šola",
+      en: "European school",
+      de: "Europäische Schule",
+    },
     year: { sl: "1931", en: "1931", de: "1931" },
     flowerVariant: 6,
     intro: {
@@ -521,9 +809,14 @@ export const violins: Violin[] = [
     },
     status: "sale",
     options: ["nakup", "preizkus"],
-    maker: { sl: "etiketa Paolo Leonori, Roma 1931", en: "Paolo Leonori label, Rome 1931", de: "Paolo-Leonori-Etikett, Rom 1931" },
+    maker: {
+      sl: "etiketa Paolo Leonori, Roma 1931",
+      en: "Paolo Leonori label, Rome 1931",
+      de: "Paolo-Leonori-Etikett, Rom 1931",
+    },
     size: "4/4",
-    illustration: "/images/violins/helianthus-aureus/helianthus-aureus-ilustracija.webp",
+    illustration:
+      "/images/violins/helianthus-aureus/helianthus-aureus-ilustracija.webp",
     photos: [
       "/images/violins/helianthus-aureus/helianthus-aureus-spredaj.webp",
       "/images/violins/helianthus-aureus/helianthus-aureus-zadaj.webp",
@@ -594,7 +887,11 @@ export const violins: Violin[] = [
   {
     id: "rosa-mystica",
     name: "Rosa Mystica",
-    origin: { sl: "Evropska šola", en: "European school", de: "Europäische Schule" },
+    origin: {
+      sl: "Evropska šola",
+      en: "European school",
+      de: "Europäische Schule",
+    },
     year: { sl: "okoli 1850–1880", en: "c. 1850–1880", de: "um 1850–1880" },
     flowerVariant: 7,
     intro: {
@@ -610,7 +907,11 @@ export const violins: Violin[] = [
     status: "rent",
     options: ["izposoja", "preizkus"],
 
-    maker: { sl: "etiketa Carlo Bergonzi (Cremona 1730)", en: "Carlo Bergonzi label (Cremona 1730)", de: "Carlo-Bergonzi-Etikett (Cremona 1730)" },
+    maker: {
+      sl: "etiketa Carlo Bergonzi (Cremona 1730)",
+      en: "Carlo Bergonzi label (Cremona 1730)",
+      de: "Carlo-Bergonzi-Etikett (Cremona 1730)",
+    },
     size: "4/4",
     illustration: "/images/violins/rosa-mystica/rosa-mystica-ilustracija.webp",
     photos: [
@@ -652,19 +953,86 @@ export const violins: Violin[] = [
       ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
-      { label: { sl: "Celotna dolžina", en: "Overall length", de: "Gesamtlänge" }, value: { sl: "591 mm", en: "591 mm", de: "591 mm" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "360 mm", en: "360 mm", de: "360 mm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "163 mm", en: "163 mm", de: "163 mm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "110 mm", en: "110 mm", de: "110 mm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "203 mm", en: "203 mm", de: "203 mm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka", en: "spruce", de: "Fichte" } },
-      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, enodelen", en: "maple, one-piece", de: "Ahorn, einteilig" } },
-      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "jantarni", en: "amber", de: "bernsteinfarben" } },
-      { label: { sl: "Etiketa", en: "Label", de: "Etikett" }, value: { sl: "Carlo Bergonzi (Anno 1730, Cremona)", en: "Carlo Bergonzi (Anno 1730, Cremona)", de: "Carlo Bergonzi (Anno 1730, Cremona)" } },
-      { label: { sl: "Starost", en: "Age", de: "Alter" }, value: { sl: "več kot 150 let", en: "over 150 years", de: "über 150 Jahre" } },
-      { label: { sl: "Izvor", en: "Origin", de: "Herkunft" }, value: { sl: "najverjetneje Mittenwald, Bavarska", en: "most likely Mittenwald, Bavaria", de: "höchstwahrscheinlich Mittenwald, Bayern" } },
-      { label: { sl: "Stanje", en: "Condition", de: "Zustand" }, value: { sl: "strokovno sanirana razpoka pod kobilico, stabilen", en: "professionally repaired crack under the bridge, stable", de: "fachgerecht sanierter Riss unter dem Steg, stabil" } },
+      {
+        label: { sl: "Velikost", en: "Size", de: "Größe" },
+        value: {
+          sl: "4/4 (polna velikost)",
+          en: "4/4 (full size)",
+          de: "4/4 (ganze Größe)",
+        },
+      },
+      {
+        label: {
+          sl: "Celotna dolžina",
+          en: "Overall length",
+          de: "Gesamtlänge",
+        },
+        value: { sl: "591 mm", en: "591 mm", de: "591 mm" },
+      },
+      {
+        label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" },
+        value: { sl: "360 mm", en: "360 mm", de: "360 mm" },
+      },
+      {
+        label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" },
+        value: { sl: "163 mm", en: "163 mm", de: "163 mm" },
+      },
+      {
+        label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" },
+        value: { sl: "110 mm", en: "110 mm", de: "110 mm" },
+      },
+      {
+        label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" },
+        value: { sl: "203 mm", en: "203 mm", de: "203 mm" },
+      },
+      {
+        label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" },
+        value: { sl: "smreka", en: "spruce", de: "Fichte" },
+      },
+      {
+        label: { sl: "Hrbet", en: "Back", de: "Boden" },
+        value: {
+          sl: "javor, enodelen",
+          en: "maple, one-piece",
+          de: "Ahorn, einteilig",
+        },
+      },
+      {
+        label: { sl: "Lak", en: "Varnish", de: "Lack" },
+        value: { sl: "jantarni", en: "amber", de: "bernsteinfarben" },
+      },
+      {
+        label: { sl: "Etiketa", en: "Label", de: "Etikett" },
+        value: {
+          sl: "Carlo Bergonzi (Anno 1730, Cremona)",
+          en: "Carlo Bergonzi (Anno 1730, Cremona)",
+          de: "Carlo Bergonzi (Anno 1730, Cremona)",
+        },
+      },
+      {
+        label: { sl: "Starost", en: "Age", de: "Alter" },
+        value: {
+          sl: "več kot 150 let",
+          en: "over 150 years",
+          de: "über 150 Jahre",
+        },
+      },
+      {
+        label: { sl: "Izvor", en: "Origin", de: "Herkunft" },
+        value: {
+          sl: "najverjetneje Mittenwald, Bavarska",
+          en: "most likely Mittenwald, Bavaria",
+          de: "höchstwahrscheinlich Mittenwald, Bayern",
+        },
+      },
+      {
+        label: { sl: "Stanje", en: "Condition", de: "Zustand" },
+        value: {
+          sl: "strokovno sanirana razpoka pod kobilico, stabilen",
+          en: "professionally repaired crack under the bridge, stable",
+          de: "fachgerecht sanierter Riss unter dem Steg, stabil",
+        },
+      },
     ],
     statusNote: {
       sl: "Violina je del zbirke Violin Garden Collection in trenutno išče glasbenika, ki bo z njo ustvarjal nove zgodbe.",
@@ -689,8 +1057,16 @@ export const violins: Violin[] = [
   {
     id: "rosa-flammea",
     name: "Rosa Flammea",
-    origin: { sl: "Evropska šola", en: "European school", de: "Europäische Schule" },
-    year: { sl: "začetek 20. stoletja", en: "early 20th century", de: "Anfang des 20. Jahrhunderts" },
+    origin: {
+      sl: "Evropska šola",
+      en: "European school",
+      de: "Europäische Schule",
+    },
+    year: {
+      sl: "začetek 20. stoletja",
+      en: "early 20th century",
+      de: "Anfang des 20. Jahrhunderts",
+    },
     flowerVariant: 8,
     intro: {
       sl: "Žameten, zelo globok in uravnotežen ton z žarečim rdečim lakom kakor plamen.",
@@ -705,7 +1081,11 @@ export const violins: Violin[] = [
     status: "collection",
     options: [],
 
-    maker: { sl: "po modelu G. F. Pressenda (Torino)", en: "after the model of G. F. Pressenda (Turin)", de: "nach dem Modell von G. F. Pressenda (Turin)" },
+    maker: {
+      sl: "po modelu G. F. Pressenda (Torino)",
+      en: "after the model of G. F. Pressenda (Turin)",
+      de: "nach dem Modell von G. F. Pressenda (Turin)",
+    },
     size: "4/4",
     illustration: "/images/violins/rosa-flammea/rosa-flammea-ilustracija.webp",
     photos: [
@@ -741,25 +1121,93 @@ export const violins: Violin[] = [
       ],
     },
     specs: [
-      { label: { sl: "Velikost", en: "Size", de: "Größe" }, value: { sl: "4/4 (polna velikost)", en: "4/4 (full size)", de: "4/4 (ganze Größe)" } },
-      { label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" }, value: { sl: "35,7 cm", en: "35.7 cm", de: "35,7 cm" } },
-      { label: { sl: "Celotna dolžina", en: "Overall length", de: "Gesamtlänge" }, value: { sl: "58,4 cm", en: "58.4 cm", de: "58,4 cm" } },
-      { label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" }, value: { sl: "16,9 cm", en: "16.9 cm", de: "16,9 cm" } },
-      { label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" }, value: { sl: "11,1 cm", en: "11.1 cm", de: "11,1 cm" } },
-      { label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" }, value: { sl: "20,7 cm", en: "20.7 cm", de: "20,7 cm" } },
-      { label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" }, value: { sl: "smreka, dvodelna", en: "spruce, two-piece", de: "Fichte, zweiteilig" } },
-      { label: { sl: "Hrbet", en: "Back", de: "Boden" }, value: { sl: "javor, dvodelen, rahlo plamenast", en: "maple, two-piece, slightly flamed", de: "Ahorn, zweiteilig, leicht geflammt" } },
-      { label: { sl: "Stranice", en: "Ribs", de: "Zargen" }, value: { sl: "javor, enodelne", en: "maple, one-piece", de: "Ahorn, einteilig" } },
-      { label: { sl: "Polž", en: "Scroll", de: "Schnecke" }, value: { sl: "javor", en: "maple", de: "Ahorn" } },
-      { label: { sl: "Lak", en: "Varnish", de: "Lack" }, value: { sl: "originalni rdeči oljni", en: "original red oil", de: "originaler roter Öllack" } },
-      { label: { sl: "Etiketa", en: "Label", de: "Etikett" }, value: { sl: "faksimile G. F. Pressenda (Torino 1836)", en: "facsimile G. F. Pressenda (Turin 1836)", de: "Faksimile G. F. Pressenda (Turin 1836)" } },
+      {
+        label: { sl: "Velikost", en: "Size", de: "Größe" },
+        value: {
+          sl: "4/4 (polna velikost)",
+          en: "4/4 (full size)",
+          de: "4/4 (ganze Größe)",
+        },
+      },
+      {
+        label: { sl: "Dolžina korpusa", en: "Body length", de: "Korpuslänge" },
+        value: { sl: "35,7 cm", en: "35.7 cm", de: "35,7 cm" },
+      },
+      {
+        label: {
+          sl: "Celotna dolžina",
+          en: "Overall length",
+          de: "Gesamtlänge",
+        },
+        value: { sl: "58,4 cm", en: "58.4 cm", de: "58,4 cm" },
+      },
+      {
+        label: { sl: "Zgornji obod", en: "Upper bout", de: "Oberbug" },
+        value: { sl: "16,9 cm", en: "16.9 cm", de: "16,9 cm" },
+      },
+      {
+        label: { sl: "Srednji obod", en: "Middle bout", de: "Mittelbug" },
+        value: { sl: "11,1 cm", en: "11.1 cm", de: "11,1 cm" },
+      },
+      {
+        label: { sl: "Spodnji obod", en: "Lower bout", de: "Unterbug" },
+        value: { sl: "20,7 cm", en: "20.7 cm", de: "20,7 cm" },
+      },
+      {
+        label: { sl: "Zgornja plošča", en: "Top plate", de: "Decke" },
+        value: {
+          sl: "smreka, dvodelna",
+          en: "spruce, two-piece",
+          de: "Fichte, zweiteilig",
+        },
+      },
+      {
+        label: { sl: "Hrbet", en: "Back", de: "Boden" },
+        value: {
+          sl: "javor, dvodelen, rahlo plamenast",
+          en: "maple, two-piece, slightly flamed",
+          de: "Ahorn, zweiteilig, leicht geflammt",
+        },
+      },
+      {
+        label: { sl: "Stranice", en: "Ribs", de: "Zargen" },
+        value: {
+          sl: "javor, enodelne",
+          en: "maple, one-piece",
+          de: "Ahorn, einteilig",
+        },
+      },
+      {
+        label: { sl: "Polž", en: "Scroll", de: "Schnecke" },
+        value: { sl: "javor", en: "maple", de: "Ahorn" },
+      },
+      {
+        label: { sl: "Lak", en: "Varnish", de: "Lack" },
+        value: {
+          sl: "originalni rdeči oljni",
+          en: "original red oil",
+          de: "originaler roter Öllack",
+        },
+      },
+      {
+        label: { sl: "Etiketa", en: "Label", de: "Etikett" },
+        value: {
+          sl: "faksimile G. F. Pressenda (Torino 1836)",
+          en: "facsimile G. F. Pressenda (Turin 1836)",
+          de: "Faksimile G. F. Pressenda (Turin 1836)",
+        },
+      },
     ],
     statusNote: {
       sl: "Ta violina je del zasebne zbirke Violin Garden Collection in trenutno ni na voljo za prodajo ali izposojo. Predstavlja pomemben del zbirke ter ohranja svojo zgodbo kot del Violinskega vrta.",
       en: "This violin is part of the private Violin Garden Collection and is currently not available for sale or rental. It represents an important part of the collection and preserves its story as part of the Violin Garden.",
       de: "Diese Geige ist Teil der privaten Violin Garden Collection und steht derzeit weder zum Verkauf noch zur Miete zur Verfügung. Sie bildet einen wichtigen Teil der Sammlung und bewahrt ihre Geschichte als Teil des Geigengartens.",
     },
-    ctaEyebrow: { sl: "GLASBENA ZGODBA", en: "A MUSICAL STORY", de: "EINE MUSIKALISCHE GESCHICHTE" },
+    ctaEyebrow: {
+      sl: "GLASBENA ZGODBA",
+      en: "A MUSICAL STORY",
+      de: "EINE MUSIKALISCHE GESCHICHTE",
+    },
     ctaParas: {
       sl: [
         "Tako kot vrtnica vsako leto znova zacveti z novo močjo, tudi Rosa Flammea nosi v sebi glas številnih generacij glasbenikov.",
@@ -786,7 +1234,9 @@ export function getViolin(id: string): Violin | undefined {
 
 // Violine, ki iščejo novega glasbenika (naprodaj ali za izposojo) — prikazane
 // na strani »Violine za nove zgodbe«. Stalna zbirka je izključena.
-export const availableViolins = violins.filter((v) => v.status !== "collection");
+export const availableViolins = violins.filter(
+  (v) => v.status !== "collection",
+);
 
 // ── Localization helper ──────────────────────────────────────────────────────
 // Flattens a Violin's per-language fields down to plain strings for one language,
@@ -830,7 +1280,10 @@ export function localizeViolin(v: Violin, lang: Lang): LocalViolin {
     photos: v.photos,
     lead: v.lead?.[lang],
     descriptionParas: v.descriptionParas?.[lang],
-    specs: v.specs?.map((s) => ({ label: s.label[lang], value: s.value[lang] })),
+    specs: v.specs?.map((s) => ({
+      label: s.label[lang],
+      value: s.value[lang],
+    })),
     statusNote: v.statusNote?.[lang],
     ctaEyebrow: v.ctaEyebrow?.[lang],
     ctaParas: v.ctaParas?.[lang],

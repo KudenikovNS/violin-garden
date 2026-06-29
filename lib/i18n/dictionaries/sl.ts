@@ -162,7 +162,8 @@ const sl = {
 
   inquiryForm: {
     heading: "Povpraševanje",
-    intro: "Izpolnite obrazec in z veseljem vam odgovorimo ter inštrument predstavimo.",
+    intro:
+      "Izpolnite obrazec in z veseljem vam odgovorimo ter inštrument predstavimo.",
     subjectPrefix: "Povpraševanje",
     nameLabel: "Ime in priimek",
     namePlaceholder: "Vaše ime",
@@ -176,9 +177,11 @@ const sl = {
     sending: "Pošiljanje …",
     successTitle: "Hvala za vaše sporočilo!",
     successText: "Vaše povpraševanje smo prejeli in vam bomo kmalu odgovorili.",
-    errorText: "Sporočila ni bilo mogoče poslati. Poskusite znova ali nam pišite na",
+    errorText:
+      "Sporočila ni bilo mogoče poslati. Poskusite znova ali nam pišite na",
     close: "Zapri",
-    privacyNote: "Vaše podatke uporabimo izključno za odgovor na vaše povpraševanje.",
+    privacyNote:
+      "Vaše podatke uporabimo izključno za odgovor na vaše povpraševanje.",
   },
 };
 

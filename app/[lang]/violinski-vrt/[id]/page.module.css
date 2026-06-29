@@ -32,7 +32,7 @@
 /* ── Predstavitev ─────────────────────────────── */
 .hero {
   display: grid;
-  grid-template-columns: .85fr 1.25fr;
+  grid-template-columns: 0.85fr 1.25fr;
   gap: 56px;
   align-items: start;
 }

@@ -71,15 +71,26 @@
 
 /* ── Wide laptop ─────────────────────────── */
 @media (max-width: 1280px) {
-  .content { padding: 50px 50px 20px; }
+  .content {
+    padding: 50px 50px 20px;
+  }
 }
 
 /* ── Tablet ─────────────────────────────── */
 @media (max-width: 1024px) {
-  .content { padding: 40px 40px 16px; }
-  .logo { width: 180px; height: 150px; }
-  .title { font-size: 56px; }
-  .subtitle { font-size: 22px; }
+  .content {
+    padding: 40px 40px 16px;
+  }
+  .logo {
+    width: 180px;
+    height: 150px;
+  }
+  .title {
+    font-size: 56px;
+  }
+  .subtitle {
+    font-size: 22px;
+  }
 }
 
 /* ── Mobile ─────────────────────────────── */
@@ -104,8 +115,12 @@
     grid-row: 2;
     text-align: center;
   }
-  .title { font-size: 44px; }
-  .subtitle { font-size: 18px; }
+  .title {
+    font-size: 44px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
 }
 
 /* ── Nemščina: zgodnejši preklop glave v meni (burger) ───────────────────────
@@ -137,9 +152,21 @@
 
 /* ── Small mobile ────────────────────────── */
 @media (max-width: 480px) {
-  .content { padding: 20px 16px 16px; gap: 0; }
-  .logo { width: 110px; height: 92px; }
-  .title { font-size: 36px; }
-  .eyebrowText { font-size: 13px; }
-  .subtitle { font-size: 16px; }
+  .content {
+    padding: 20px 16px 16px;
+    gap: 0;
+  }
+  .logo {
+    width: 110px;
+    height: 92px;
+  }
+  .title {
+    font-size: 36px;
+  }
+  .eyebrowText {
+    font-size: 13px;
+  }
+  .subtitle {
+    font-size: 16px;
+  }
 }

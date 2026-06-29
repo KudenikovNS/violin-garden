@@ -17,7 +17,12 @@ export default function Footer() {
         <circle cx="60" cy="140" r="34" />
         <circle cx="40" cy="120" r="20" />
         <circle cx="110" cy="160" r="22" />
-        <path d="M60 140c-10-20-30-26-50-20" stroke="#cdb27c" strokeWidth="1.5" fill="none" />
+        <path
+          d="M60 140c-10-20-30-26-50-20"
+          stroke="#cdb27c"
+          strokeWidth="1.5"
+          fill="none"
+        />
       </svg>
       <svg
         width="220"
@@ -29,11 +34,17 @@ export default function Footer() {
         <circle cx="140" cy="140" r="34" />
         <circle cx="160" cy="120" r="20" />
         <circle cx="90" cy="160" r="22" />
-        <path d="M140 140c10-20 30-26 50-20" stroke="#cdb27c" strokeWidth="1.5" fill="none" />
+        <path
+          d="M140 140c10-20 30-26 50-20"
+          stroke="#cdb27c"
+          strokeWidth="1.5"
+          fill="none"
+        />
       </svg>
 
       <p className={styles.quote}>
-        {t.footer.quoteLine1}<br />
+        {t.footer.quoteLine1}
+        <br />
         {t.footer.quoteLine2}
       </p>
 
@@ -46,8 +57,19 @@ export default function Footer() {
       <p className={styles.welcome}>{t.footer.welcome}</p>
 
       <div className={styles.contacts}>
-        <a className={styles.contact} href="mailto:inga.ulokina@gmail.com" aria-label="Email">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b6924f" strokeWidth="1.5">
+        <a
+          className={styles.contact}
+          href="mailto:inga.ulokina@gmail.com"
+          aria-label="Email"
+        >
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#b6924f"
+            strokeWidth="1.5"
+          >
             <rect x="3" y="5" width="18" height="14" rx="2" />
             <path d="M3 7l9 6 9-6" />
           </svg>
@@ -59,7 +81,14 @@ export default function Footer() {
           rel="noopener noreferrer"
           aria-label="Instagram"
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b6924f" strokeWidth="1.6">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#b6924f"
+            strokeWidth="1.6"
+          >
             <rect x="3" y="3" width="18" height="18" rx="5" />
             <circle cx="12" cy="12" r="4" />
             <circle cx="17.5" cy="6.5" r="1" fill="#b6924f" stroke="none" />
