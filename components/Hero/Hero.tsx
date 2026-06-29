@@ -7,12 +7,27 @@ import { useEntered } from "../SplashGate/SplashGate";
 import { useT } from "@/lib/i18n/useT";
 import styles from "./Hero.module.css";
 
+// The hero video is the 77 MB Cloudinary master (1920px). We never serve it raw:
+// q_auto/f_auto let Cloudinary pick the lightest format & bitrate — that alone
+// drops it to ≈51 MB at native resolution (desktop). Mobile additionally caps
+// the width to 768px (≈16 MB). The source is chosen on the client so the heavy
+// file is never referenced in the prerendered HTML.
+const CLOUDINARY_VIDEO =
+  "https://res.cloudinary.com/dnukoemsb/video/upload/{t}/v1781873549/compressed-al50Dazp_sg6mpt.mp4";
+const DESKTOP_TRANSFORM = "q_auto,f_auto";
+const MOBILE_TRANSFORM = "w_768,q_auto,f_auto";
+const POSTER = "/images/card1.webp";
+
 export default function Hero() {
   const t = useT();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(true);
   const [videoError, setVideoError] = useState(false);
+  // Resolved on the client: the source to load, or `posterOnly` when the visitor
+  // prefers reduced motion or has Data Saver on — then we show the static poster.
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+  const [posterOnly, setPosterOnly] = useState(false);
   const entered = useEntered();
 
   function togglePlay() {
@@ -29,6 +44,31 @@ export default function Hero() {
     setMuted(v.muted);
   }
 
+  // Pick the source after mount, where device width and user preferences are known.
+  useEffect(() => {
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const saveData =
+      (navigator as Navigator & { connection?: { saveData?: boolean } })
+        .connection?.saveData === true;
+    if (reduceMotion || saveData) {
+      setPosterOnly(true);
+      return;
+    }
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const transform = isMobile ? MOBILE_TRANSFORM : DESKTOP_TRANSFORM;
+    setVideoSrc(CLOUDINARY_VIDEO.replace("{t}", transform));
+  }, []);
+
+  // Begin playback once the chosen source is attached (autoPlay may not refire
+  // when the src is set from state after mount).
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v || !videoSrc) return;
+    v.play().catch(() => {});
+  }, [videoSrc]);
+
   // When the visitor clicks "VSTOPITE", that user gesture lets us unmute the video.
   useEffect(() => {
     if (!entered) return;
@@ -40,26 +80,13 @@ export default function Hero() {
     v.play().catch(() => {});
   }, [entered]);
 
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    const checkTime = () => {
-      if (v.duration && v.currentTime >= v.duration - 0.5) {
-        v.currentTime = 0;
-        v.play().catch(() => {});
-      }
-    };
-    v.addEventListener("timeupdate", checkTime);
-    return () => v.removeEventListener("timeupdate", checkTime);
-  }, []);
-
   return (
     <section className={styles.hero}>
 
       <div className={styles.videoWrapper}>
-        {videoError ? (
+        {videoError || posterOnly ? (
           <Image
-            src="/images/card1.webp"
+            src={POSTER}
             alt="Violinski vrt"
             width={1600}
             height={560}
@@ -70,15 +97,17 @@ export default function Hero() {
           <video
             ref={videoRef}
             className={styles.video}
-            src="https://res.cloudinary.com/dnukoemsb/video/upload/v1781873549/compressed-al50Dazp_sg6mpt.mp4"
+            src={videoSrc ?? undefined}
+            poster={POSTER}
             autoPlay
             muted
+            loop
             playsInline
-            poster="/images/card1.webp"
+            preload="auto"
             onError={() => setVideoError(true)}
           />
         )}
-        {!videoError && (
+        {!videoError && !posterOnly && (
         <div className={styles.videoControls}>
           <button onClick={togglePlay} className={styles.controlBtn} aria-label={playing ? t.a11y.pause : t.a11y.play}>
             {playing ? (
