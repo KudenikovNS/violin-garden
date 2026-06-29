@@ -11,7 +11,7 @@
 }
 
 .topBackLink {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -60,7 +60,7 @@
 }
 
 .name {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 500;
   font-size: 52px;
   line-height: 1;
@@ -69,7 +69,7 @@
 }
 
 .maker {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 19px;
   letter-spacing: 0.04em;
   color: #b6924f;
@@ -95,7 +95,7 @@
 }
 
 .lead {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-style: italic;
   font-size: 21px;
   line-height: 1.4;
@@ -118,7 +118,7 @@
 }
 
 .statusEyebrow {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -139,7 +139,7 @@
 }
 
 .statusName {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 18px;
   color: #5a4f3f;
@@ -168,7 +168,7 @@
 }
 
 .panelTitle {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 16px;
   color: #5a4f3f;
@@ -194,7 +194,7 @@
 }
 
 .specLabel {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 15px;
   font-weight: 600;
   color: #bf8f8c;
@@ -217,7 +217,7 @@
 }
 
 .ctaEyebrow {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -225,7 +225,7 @@
 }
 
 .ctaTitle {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 500;
   font-size: 32px;
   color: #3c3326;
@@ -246,7 +246,7 @@
 }
 
 .backLink {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.1em;

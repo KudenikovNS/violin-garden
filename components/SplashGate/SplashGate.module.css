@@ -47,7 +47,7 @@
   background: none;
   cursor: pointer;
   color: #b6924f;
-  font-family: "Cinzel", "Cormorant Garamond", serif;
+  font-family: var(--font-cinzel), var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 26px;
   letter-spacing: 0.18em;

@@ -77,7 +77,7 @@
 
 .title {
   margin: 0;
-  font-family: "Cinzel", serif;
+  font-family: var(--font-cinzel), serif;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -88,7 +88,7 @@
 .subtitle {
   margin: 6px 0 0;
   text-align: center;
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 16px;
   color: #b6924f;
   letter-spacing: 0.03em;
@@ -97,7 +97,7 @@
 .intro {
   margin: 14px 0 22px;
   text-align: center;
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 15px;
   line-height: 1.5;
   color: #8a7f6c;
@@ -116,7 +116,7 @@
 }
 
 .label {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 14px;
   letter-spacing: 0.04em;
   color: #5a4f3f;
@@ -126,7 +126,7 @@
 .textarea {
   width: 100%;
   padding: 10px 12px;
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 15px;
   color: #4a4234;
   background: #fffefb;
@@ -152,7 +152,7 @@
 .submit {
   margin-top: 6px;
   padding: 13px 20px;
-  font-family: "Cinzel", serif;
+  font-family: var(--font-cinzel), serif;
   font-size: 14px;
   letter-spacing: 0.12em;
   color: #fffdf8;
@@ -178,7 +178,7 @@
 
 .error {
   margin: 0;
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 14px;
   line-height: 1.4;
   color: #9c3b2e;
@@ -193,7 +193,7 @@
 .privacy {
   margin: 4px 0 0;
   text-align: center;
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 12px;
   line-height: 1.4;
   color: #a99e88;
@@ -225,7 +225,7 @@
 .result .text {
   margin: 0;
   max-width: 320px;
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 15px;
   line-height: 1.5;
   color: #8a7f6c;

@@ -31,7 +31,7 @@
 }
 
 .title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 19px;
   letter-spacing: 0.05em;
@@ -46,7 +46,7 @@
 }
 
 .link {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.1em;

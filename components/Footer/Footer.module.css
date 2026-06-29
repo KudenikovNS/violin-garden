@@ -22,7 +22,7 @@
 }
 
 .quote {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-cormorant), serif;
   font-style: italic;
   font-size: 25px;
   line-height: 1.4;
@@ -51,7 +51,7 @@
 }
 
 .welcome {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 22px;
   letter-spacing: 0.14em;

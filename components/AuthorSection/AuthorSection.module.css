@@ -45,7 +45,7 @@
 }
 
 .heading {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 28px;
   letter-spacing: 0.06em;
@@ -69,7 +69,7 @@
   display: inline-flex;
   align-items: center;
   gap: 44px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.12em;

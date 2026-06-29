@@ -26,7 +26,7 @@
 }
 
 .heading {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 28px;
   letter-spacing: 0.06em;
@@ -57,7 +57,7 @@
 }
 
 .quote {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-cormorant), serif;
   font-style: italic;
   font-weight: 600;
   font-size: 18px;
@@ -67,7 +67,7 @@
 }
 
 .link {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 0.12em;

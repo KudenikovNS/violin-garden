@@ -79,7 +79,7 @@
 }
 
 .tagline {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-style: italic;
   font-size: 26px;
   color: #4a4234;
@@ -101,7 +101,7 @@
   flex: 1;
   min-width: 0;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 18px;
   letter-spacing: 0.09em;

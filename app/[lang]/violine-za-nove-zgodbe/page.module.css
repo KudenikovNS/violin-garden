@@ -103,7 +103,7 @@
 }
 
 .name {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 32px;
   color: #3c3326;
@@ -115,7 +115,7 @@
 }
 
 .meta {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-size: 15px;
   letter-spacing: 0.04em;
   color: #b6924f;
@@ -130,7 +130,7 @@
 }
 
 .link {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.1em;
@@ -155,7 +155,7 @@
 }
 
 .backLink {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), serif;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.1em;

@@ -1,10 +1,37 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Cinzel, Cormorant_Garamond, Playfair_Display } from "next/font/google";
 import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import { LANGS, isLang, type Lang } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { SITE_URL, alternatesFor } from "@/lib/site";
 import "../globals.css";
+
+// Self-hosted Google Fonts (replaces the render-blocking @import in globals.css).
+// All three are variable fonts, so the full weight axis ships in one file per
+// style. latin-ext is required for Slovenian (č/š/ž) and German (ä/ö/ü/ß).
+// Each exposes a CSS variable consumed by the (hardcoded) CSS modules.
+const cinzel = Cinzel({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-cinzel",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin", "latin-ext"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-cormorant",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin", "latin-ext"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-playfair",
+});
+
+const fontVariables = `${cinzel.variable} ${cormorant.variable} ${playfair.variable}`;
 
 // One statically-exported HTML tree per locale: /sl, /en, /de.
 export function generateStaticParams() {
@@ -64,7 +91,7 @@ export default async function LangLayout({
   if (!isLang(lang)) notFound();
 
   return (
-    <html lang={lang}>
+    <html lang={lang} className={fontVariables}>
       <body>
         <LanguageProvider lang={lang as Lang}>
           <div className="appShell">{children}</div>
