@@ -163,9 +163,8 @@ const sl = {
   },
 
   inquiryForm: {
-    heading: "Povpraševanje",
     intro:
-      "Izpolnite obrazec in z veseljem vam odgovorimo ter inštrument predstavimo.",
+      "Prosimo vas, izpolnite obrazec in kontaktirali vas bomo da se dogovorimo o možnosti in terminu ogleda in preizkusa.",
     subjectPrefix: "Povpraševanje",
     nameLabel: "Ime in priimek",
     namePlaceholder: "Vaše ime",
@@ -182,8 +181,19 @@ const sl = {
     errorText:
       "Sporočila ni bilo mogoče poslati. Poskusite znova ali nam pišite na",
     close: "Zapri",
-    privacyNote:
-      "Vaše podatke uporabimo izključno za odgovor na vaše povpraševanje.",
+    consentBefore: "Strinjam se z obdelavo svojih osebnih podatkov v skladu s",
+    consentLink: "politiko zasebnosti",
+    consentAfter: ".",
+    validation: {
+      nameShort: "Vnesite ime (vsaj 2 znaka).",
+      nameLong: "Ime je predolgo.",
+      nameSpam: "Ime vsebuje nedovoljeno povezavo.",
+      emailRequired: "Vnesite e-poštni naslov.",
+      emailInvalid: "Vnesite veljaven e-poštni naslov.",
+      phoneInvalid: "Vnesite veljavno telefonsko številko.",
+      messageShort: "Sporočilo naj ima vsaj 10 znakov.",
+      messageLong: "Sporočilo je predolgo (največ 2000 znakov).",
+    },
   },
 };
 

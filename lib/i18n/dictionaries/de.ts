@@ -166,9 +166,8 @@ const de: Dict = {
   },
 
   inquiryForm: {
-    heading: "Anfrage",
     intro:
-      "Füllen Sie das Formular aus — wir antworten Ihnen gerne und stellen Ihnen das Instrument vor.",
+      "Bitte füllen Sie das Formular aus, und wir kontaktieren Sie, um die Möglichkeit und einen Termin für eine Besichtigung und ein Probespiel zu vereinbaren.",
     subjectPrefix: "Anfrage",
     nameLabel: "Vor- und Nachname",
     namePlaceholder: "Ihr Name",
@@ -186,8 +185,20 @@ const de: Dict = {
     errorText:
       "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns an",
     close: "Schließen",
-    privacyNote:
-      "Wir verwenden Ihre Daten ausschließlich zur Beantwortung Ihrer Anfrage.",
+    consentBefore:
+      "Ich stimme der Verarbeitung meiner personenbezogenen Daten gemäß der",
+    consentLink: "Datenschutzerklärung",
+    consentAfter: " zu.",
+    validation: {
+      nameShort: "Bitte geben Sie Ihren Namen ein (mindestens 2 Zeichen).",
+      nameLong: "Dieser Name ist zu lang.",
+      nameSpam: "Der Name enthält einen unzulässigen Link.",
+      emailRequired: "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+      emailInvalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      phoneInvalid: "Bitte geben Sie eine gültige Telefonnummer ein.",
+      messageShort: "Ihre Nachricht sollte mindestens 10 Zeichen lang sein.",
+      messageLong: "Ihre Nachricht ist zu lang (max. 2000 Zeichen).",
+    },
   },
 };
 

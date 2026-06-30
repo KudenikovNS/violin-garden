@@ -163,9 +163,8 @@ const en: Dict = {
   },
 
   inquiryForm: {
-    heading: "Inquiry",
     intro:
-      "Fill in the form and we will gladly reply and present the instrument.",
+      "Please fill in the form and we will contact you to arrange the possibility and a time for a viewing and trial.",
     subjectPrefix: "Inquiry",
     nameLabel: "Full name",
     namePlaceholder: "Your name",
@@ -181,7 +180,20 @@ const en: Dict = {
     successText: "We have received your inquiry and will get back to you soon.",
     errorText: "The message could not be sent. Please try again or email us at",
     close: "Close",
-    privacyNote: "We use your details solely to respond to your inquiry.",
+    consentBefore:
+      "I agree to the processing of my personal data as set out in the",
+    consentLink: "privacy policy",
+    consentAfter: ".",
+    validation: {
+      nameShort: "Please enter your name (at least 2 characters).",
+      nameLong: "This name is too long.",
+      nameSpam: "The name contains a disallowed link.",
+      emailRequired: "Please enter your email address.",
+      emailInvalid: "Please enter a valid email address.",
+      phoneInvalid: "Please enter a valid phone number.",
+      messageShort: "Your message should be at least 10 characters.",
+      messageLong: "Your message is too long (max 2000 characters).",
+    },
   },
 };
 
