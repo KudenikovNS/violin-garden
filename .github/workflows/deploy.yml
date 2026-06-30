@@ -19,12 +19,15 @@ jobs:
 
       - uses: actions/setup-node@v5
         with:
-          # Node 24 (npm 11) — matches the npm that generates package-lock.json,
-          # so `npm ci` validates the lock; also satisfies lint-staged/listr2 engines.
+          # Node 24 also satisfies the lint-staged / listr2 engine requirements.
           node-version: 24
           cache: npm
 
-      - run: npm ci
+      # `npm install` (not `npm ci`): the lock is generated on macOS and lacks the
+      # Linux-only optional deps of `sharp` (Next's optional image dep, unused here
+      # with the custom loader + static export). `npm install` fills those in on
+      # Linux instead of failing the strict `npm ci` lock check.
+      - run: npm install --no-audit --no-fund
 
       # Quality gate — a failure here stops the deploy (no broken code reaches prod).
       - run: npm run typecheck
