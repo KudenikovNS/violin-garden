@@ -7,7 +7,9 @@ on:
 
 concurrency:
   group: "cpanel-deploy"
-  cancel-in-progress: true
+  # Queue new deploys instead of cancelling a running one — cancelling mid-rsync
+  # could leave the server in a partial state. New pushes wait, then run in order.
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
@@ -41,7 +43,9 @@ jobs:
 
       - name: Deploy via rsync over SSH
         run: |
-          rsync -avz --delete \
+          # --delete-after: upload everything first, delete stale files only at
+          # the end — so an interrupted run never deletes without having uploaded.
+          rsync -avz --delete-after \
             --exclude='.htaccess' \
             --exclude='cgi-bin/' \
             --exclude='.DS_Store' \
