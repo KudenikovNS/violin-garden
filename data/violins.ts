@@ -15,7 +15,7 @@ export type ViolinStatus = "sale" | "rent" | "collection";
 type L = Record<Lang, string>;
 type LList = Record<Lang, string[]>;
 
-export interface SpecRow {
+interface SpecRow {
   label: L;
   value: L;
 }

@@ -5,7 +5,7 @@ import de from "./de";
 
 export type { Dict };
 
-export const dictionaries: Record<Lang, Dict> = { sl, en, de };
+const dictionaries: Record<Lang, Dict> = { sl, en, de };
 
 export function getDictionary(lang: Lang): Dict {
   return dictionaries[lang];
