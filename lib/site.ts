@@ -26,3 +26,28 @@ export function alternatesFor(lang: string, path = "") {
   languages["x-default"] = localeUrl(DEFAULT_LANG, path);
   return { canonical: localeUrl(lang, path), languages };
 }
+
+// Canonical social profiles (clean URLs, no tracking params) — used for the
+// `sameAs` entity signal in the home-page Person JSON-LD.
+export const SOCIAL_PROFILES = [
+  "https://www.instagram.com/ingaulokina",
+  "https://www.facebook.com/profile.php?id=61590796929561",
+  "https://www.youtube.com/@ingaulokina",
+];
+
+/** BreadcrumbList JSON-LD from a Home → … trail of (name, locale-less path). */
+export function breadcrumbLd(
+  lang: string,
+  items: { name: string; path: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      item: localeUrl(lang, it.path),
+    })),
+  };
+}

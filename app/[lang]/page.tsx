@@ -8,7 +8,7 @@ import SplashGate from "@/components/SplashGate/SplashGate";
 import JsonLd from "@/components/JsonLd";
 import { isLang } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import { SITE_URL, localeUrl } from "@/lib/site";
+import { SITE_URL, localeUrl, SOCIAL_PROFILES } from "@/lib/site";
 import styles from "./page.module.css";
 
 export default async function Home({
@@ -40,6 +40,7 @@ export default async function Home({
               name: "Inga Ulokina",
               jobTitle: "Violinist",
               url: localeUrl(lang),
+              sameAs: SOCIAL_PROFILES,
             }}
           />
         </>

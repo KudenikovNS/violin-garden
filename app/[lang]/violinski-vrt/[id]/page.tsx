@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { violins, getViolin } from "@/data/violins";
 import { isLang, DEFAULT_LANG } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import { SITE_URL, alternatesFor } from "@/lib/site";
+import { SITE_URL, alternatesFor, breadcrumbLd } from "@/lib/site";
 import JsonLd from "@/components/JsonLd";
 import DetailView from "./DetailView";
 
@@ -68,9 +68,17 @@ export default async function ViolinDetailPage({
     },
   };
 
+  const t = getDictionary(l);
+  const breadcrumb = breadcrumbLd(l, [
+    { name: t.nav.home, path: "" },
+    { name: t.nav.collection, path: "/violinski-vrt" },
+    { name: violin.name, path: `/violinski-vrt/${id}` },
+  ]);
+
   return (
     <>
       <JsonLd data={productLd} />
+      <JsonLd data={breadcrumb} />
       <DetailView violin={violin} />
     </>
   );
