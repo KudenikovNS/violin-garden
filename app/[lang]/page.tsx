@@ -1,6 +1,6 @@
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
-import ZbirkaSection from "@/components/ZbirkaSection/ZbirkaSection";
+import CollectionIntro from "@/components/CollectionIntro/CollectionIntro";
 import CardsSection from "@/components/CardsSection/CardsSection";
 import AuthorSection from "@/components/AuthorSection/AuthorSection";
 import Footer from "@/components/Footer/Footer";
@@ -48,7 +48,7 @@ export default async function Home({
         <Header />
         <main>
           <Hero />
-          <ZbirkaSection />
+          <CollectionIntro />
           <CardsSection />
           <AuthorSection />
         </main>

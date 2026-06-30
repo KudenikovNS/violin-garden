@@ -3,9 +3,9 @@
 import Image from "next/image";
 import LocaleLink from "../LocaleLink";
 import { useT } from "@/lib/i18n/useT";
-import styles from "./ZbirkaSection.module.css";
+import styles from "./CollectionIntro.module.css";
 
-export default function ZbirkaSection() {
+export default function CollectionIntro() {
   const t = useT();
   return (
     <section className={styles.section}>
