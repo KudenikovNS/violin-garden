@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/violinski-vrt",
     "/violine-za-nove-zgodbe",
     ...violins.map((v) => `/violinski-vrt/${v.id}`),
+    "/zasebnost",
+    "/impressum",
   ];
 
   return paths.map((path) => ({

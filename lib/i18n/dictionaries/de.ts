@@ -104,6 +104,8 @@ const de: Dict = {
     quoteLine1: "Die Melodie einer Geige ist wie der Duft der schönsten Rose.",
     quoteLine2: "Wie das Lied einer Nachtigall im Morgengrauen.",
     welcome: "WILLKOMMEN IM GEIGENGARTEN.",
+    privacy: "Datenschutz",
+    impressum: "Impressum",
   },
 
   subHeader: {

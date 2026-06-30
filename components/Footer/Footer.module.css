@@ -110,3 +110,30 @@
     gap: 14px;
   }
 }
+
+/* ── Pravne povezave ─────────────────────────────── */
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.legalLink {
+  font-family: var(--font-cormorant), serif;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: #8a7c63;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.legalLink:hover {
+  color: #b6924f;
+}
+
+.legalSep {
+  color: #cdb27c;
+}

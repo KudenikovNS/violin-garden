@@ -104,6 +104,8 @@ const sl = {
     quoteLine1: "Melodija violine je kot aroma najlepše vrtnice.",
     quoteLine2: "Kot pesem slavčka ob jutranji zori.",
     welcome: "DOBRODOŠLI V VIOLINSKEM VRTU.",
+    privacy: "Politika zasebnosti",
+    impressum: "Pravne informacije",
   },
 
   subHeader: {

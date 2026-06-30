@@ -104,6 +104,8 @@ const en: Dict = {
     quoteLine1: "A violin's melody is like the scent of the loveliest rose.",
     quoteLine2: "Like a nightingale's song at the break of dawn.",
     welcome: "WELCOME TO THE VIOLIN GARDEN.",
+    privacy: "Privacy Policy",
+    impressum: "Legal Notice",
   },
 
   subHeader: {

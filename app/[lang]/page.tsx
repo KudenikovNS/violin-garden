@@ -3,7 +3,6 @@ import Hero from "@/components/Hero/Hero";
 import CollectionIntro from "@/components/CollectionIntro/CollectionIntro";
 import CardsSection from "@/components/CardsSection/CardsSection";
 import AuthorSection from "@/components/AuthorSection/AuthorSection";
-import Footer from "@/components/Footer/Footer";
 import SplashGate from "@/components/SplashGate/SplashGate";
 import JsonLd from "@/components/JsonLd";
 import { isLang } from "@/lib/i18n/config";
@@ -53,7 +52,6 @@ export default async function Home({
           <CardsSection />
           <AuthorSection />
         </main>
-        <Footer />
       </div>
     </SplashGate>
   );

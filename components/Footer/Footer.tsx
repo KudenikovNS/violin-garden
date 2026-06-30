@@ -1,5 +1,6 @@
 "use client";
 
+import LocaleLink from "@/components/LocaleLink";
 import { useT } from "@/lib/i18n/useT";
 import styles from "./Footer.module.css";
 
@@ -116,6 +117,18 @@ export default function Footer() {
             <path d="M22 7.5c-.2-1.4-.8-2.4-2.3-2.6C17.6 4.5 12 4.5 12 4.5s-5.6 0-7.7.4C2.8 5.1 2.2 6.1 2 7.5 1.7 9 1.7 12 1.7 12s0 3 .3 4.5c.2 1.4.8 2.4 2.3 2.6 2.1.4 7.7.4 7.7.4s5.6 0 7.7-.4c1.5-.2 2.1-1.2 2.3-2.6.3-1.5.3-4.5.3-4.5s0-3-.3-4.5zM10 15V9l5.2 3L10 15z" />
           </svg>
         </a>
+      </div>
+
+      <div className={styles.legal}>
+        <LocaleLink href="/zasebnost" className={styles.legalLink}>
+          {t.footer.privacy}
+        </LocaleLink>
+        <span className={styles.legalSep} aria-hidden="true">
+          ·
+        </span>
+        <LocaleLink href="/impressum" className={styles.legalLink}>
+          {t.footer.impressum}
+        </LocaleLink>
       </div>
     </footer>
   );

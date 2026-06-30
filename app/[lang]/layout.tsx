@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Cinzel, Cormorant_Garamond, Playfair_Display } from "next/font/google";
 import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
+import Footer from "@/components/Footer/Footer";
 import { LANGS, isLang, type Lang } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { SITE_URL, alternatesFor } from "@/lib/site";
@@ -96,7 +97,10 @@ export default async function LangLayout({
     <html lang={lang} className={fontVariables}>
       <body>
         <LanguageProvider lang={lang as Lang}>
-          <div className="appShell">{children}</div>
+          <div className="appShell">
+            {children}
+            <Footer />
+          </div>
         </LanguageProvider>
       </body>
     </html>
