@@ -19,7 +19,9 @@ jobs:
 
       - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          # Node 24 (npm 11) — matches the npm that generates package-lock.json,
+          # so `npm ci` validates the lock; also satisfies lint-staged/listr2 engines.
+          node-version: 24
           cache: npm
 
       - run: npm ci
