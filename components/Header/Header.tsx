@@ -24,7 +24,7 @@ export default function Header() {
         src="/images/logo.webp"
         alt="Violin Garden logo"
         width={240}
-        height={190}
+        height={180}
         className={styles.logo}
         priority
       />

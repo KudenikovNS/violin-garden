@@ -56,7 +56,7 @@ export default function SubPageHeader({
             src="/images/logo.webp"
             alt="Violin Garden"
             width={120}
-            height={95}
+            height={90}
             className={styles.logo}
           />
         </LocaleLink>

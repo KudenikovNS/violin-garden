@@ -8,7 +8,15 @@ const nextConfig: NextConfig = {
   // returns 404. Canonical/sitemap URLs are kept trailing-slashed to match.
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    // Static export can't use the default optimizer; a custom loader serves
+    // pre-generated width variants (scripts/optimize-images.mjs) so next/image
+    // still emits a responsive srcset. Sizes match the loader's width ladder.
+    loader: "custom",
+    loaderFile: "./lib/imageLoader.ts",
+    // Small widths map to pre-generated variants; larger ones fall back to the
+    // (display-capped) base image in the loader.
+    deviceSizes: [384, 768, 1200],
+    imageSizes: [256],
   },
 };
 

@@ -59,7 +59,7 @@ export default function MobileMenu({
           src="/images/logo.webp"
           alt="Violin Garden logo"
           width={120}
-          height={95}
+          height={90}
           className={styles.menuLogo}
         />
         <div className={styles.menuDivider}>

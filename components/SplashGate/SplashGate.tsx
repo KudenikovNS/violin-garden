@@ -61,7 +61,7 @@ export default function SplashGate({ children }: { children: ReactNode }) {
               src="/images/logo.webp"
               alt="Violin Garden logo"
               width={520}
-              height={412}
+              height={390}
               priority
               className={styles.logo}
             />
